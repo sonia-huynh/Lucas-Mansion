@@ -3,14 +3,14 @@ import Jigsaw from './GamePopups/Jigsaw'
 import CombinationLock from './GamePopups/CombinationLock'
 import Matching from './GamePopups/Matching'
 import MatchingExample from './GamePopups/MatchingExample'
-import Clock from './GamePopups/CombinationLock copy'
+import Clock from './GamePopups/Clock'
 
 export default function Dinner() {
   const [jigsaw, setJigsaw] = useState(false)
   const [lock, setLock] = useState(false)
   const [matching, setMatching] = useState(false)
   const [matchingE, setMatchingE] = useState(false)
-  const [clock, setClock] = useState(true)
+  const [clock, setClock] = useState(false)
 
   return (
     <>
