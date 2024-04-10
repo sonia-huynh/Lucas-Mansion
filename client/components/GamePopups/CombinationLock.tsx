@@ -1,18 +1,23 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 interface Props {
   setLock: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export default function CombinationLock({ setLock }: Props) {
+  const navigate = useNavigate()
   const [pinOne, setPinOne] = useState(0)
   const [pinTwo, setPinTwo] = useState(0)
   const [pinThree, setPinThree] = useState(0)
   const [pinFour, setPinFour] = useState(0)
 
   function handleSubmit() {
-    if (pinOne === 9 && pinTwo === 3 && pinThree === 6 && pinFour === 2) {
+    if (pinOne === 1 && pinTwo === 1 && pinThree === 1 && pinFour === 1) {
       console.log('correct!')
+      navigate('/Foyer')
+    } else {
+      console.log('Nope')
     }
   }
 
