@@ -7,10 +7,10 @@ import Clock from './GamePopups/CombinationLock copy'
 
 export default function Dinner() {
   const [jigsaw, setJigsaw] = useState(false)
-  const [lock, setLock] = useState(false)
+  const [lock, setLock] = useState(true)
   const [matching, setMatching] = useState(false)
   const [matchingE, setMatchingE] = useState(false)
-  const [clock, setClock] = useState(true)
+  const [clock, setClock] = useState(false)
 
   return (
     <>
