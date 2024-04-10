@@ -2,11 +2,13 @@ import { useState } from 'react'
 import Jigsaw from './GamePopups/Jigsaw'
 import CombinationLock from './GamePopups/CombinationLock'
 import Matching from './GamePopups/Matching'
+import MatchingExample from './GamePopups/MatchingExample'
 
 export default function Dinner() {
   const [jigsaw, setJigsaw] = useState(false)
   const [lock, setLock] = useState(false)
   const [matching, setMatching] = useState(false)
+  const [matchingE, setMatchingE] = useState(false)
 
   return (
     <>
@@ -14,6 +16,7 @@ export default function Dinner() {
       {jigsaw && <Jigsaw setJigsaw={setJigsaw} />}
       {lock && <CombinationLock setLock={setLock} />}
       {matching && <Matching setMatching={setMatching} />}
+      {matchingE && <MatchingExample setMatchingE={setMatchingE} />}
     </>
   )
 }
