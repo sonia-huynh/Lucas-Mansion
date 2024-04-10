@@ -1,9 +1,9 @@
 import { createRoutesFromElements, Route } from 'react-router-dom'
-import App from './components/App.tsx'
-import { Congrats } from './components/Congrats.tsx'
-import { Dinner } from './components/Dinner.tsx'
-import { Foyer } from './components/Foyer.tsx'
-import { Maze } from './components/Maze.tsx'
+import App from './components/Layout.tsx'
+import Congrats from './components/Congrats.tsx'
+import Dinner from './components/Dinner.tsx'
+import Foyer from './components/Foyer.tsx'
+import Maze from './components/Maze.tsx'
 // export default createRoutesFromElements(<Route index element={<App />} />)
 
 export default createRoutesFromElements(

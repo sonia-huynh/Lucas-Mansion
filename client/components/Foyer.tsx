@@ -1,3 +1,3 @@
-export function Foyer() {
+export default function Foyer() {
   return <>Foyer</>
 }

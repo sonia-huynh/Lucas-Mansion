@@ -1,3 +1,3 @@
-export function Congrats() {
+export default function Congrats() {
   return <>Congrats</>
 }

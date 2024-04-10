@@ -1,3 +1,3 @@
-export function Maze() {
+export default function Maze() {
   return <>Maze</>
 }
