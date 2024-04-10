@@ -7,7 +7,8 @@ interface Props {
 
 export default function Matching({ setMatching }: Props) {
   const [arr, setArr] = useState(['small fork', 'big fork', 'biggest fork'])
-  const correctAns = ['small fork', 'big fork']
+  const correctAns = ['small fork', 'big fork', 'biggest fork']
+  const [win, setWin] = useState(false)
 
   console.log(arr)
 
@@ -27,23 +28,31 @@ export default function Matching({ setMatching }: Props) {
     setArr(newArr)
   }
 
+  function handleCheck() {
+    if (arr == correctAns) {
+      setWin(true)
+    } else {
+      console.log(`${correctAns} - try again`)
+    }
+  }
+
   return (
     <>
       <h1>Matching</h1>
       <button onClick={() => setMatching(false)}>Close</button>
       <div className="matching">
         {arr.map((item, index) => (
-          <div key="item" className="item">
+          <div key={index} className="item">
             <p>{item}</p>
             {index === 0 ? (
               <button onClick={() => handleClick(index, 1)}>{'>'}</button>
             ) : index === arr.length - 1 ? (
               <button onClick={() => handleClick(index, -1)}>{'<'}</button>
             ) : (
-              <>
+              <div>
                 <button onClick={() => handleClick(index, -1)}>{'<'}</button>
                 <button onClick={() => handleClick(index, 1)}>{'>'}</button>
-              </>
+              </div>
             )}
           </div>
         ))}
@@ -61,6 +70,11 @@ export default function Matching({ setMatching }: Props) {
           <button onClick={() => handleClick(2, -1)}>{'<'}</button>
         </div> */}
       </div>
+      {win ? (
+        <p>go get the key</p>
+      ) : (
+        <button onClick={() => handleCheck()}>Check</button>
+      )}
     </>
   )
 }
