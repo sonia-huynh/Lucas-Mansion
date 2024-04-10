@@ -11,7 +11,7 @@ export default function Matching({ setMatching }: Props) {
 
   console.log(arr)
 
-  function handleToLeft(itemI: number, direction: number) {
+  function handleClick(itemI: number, direction: number) {
     const newArr = []
     const temp = arr[itemI + direction]
     for (let i = 0; i < arr.length; i++) {
@@ -32,18 +32,34 @@ export default function Matching({ setMatching }: Props) {
       <h1>Matching</h1>
       <button onClick={() => setMatching(false)}>Close</button>
       <div className="matching">
-        <div className="item">
+        {arr.map((item, index) => (
+          <div key="item" className="item">
+            <p>{item}</p>
+            {index === 0 ? (
+              <button onClick={() => handleClick(index, 1)}>{'>'}</button>
+            ) : index === arr.length - 1 ? (
+              <button onClick={() => handleClick(index, -1)}>{'<'}</button>
+            ) : (
+              <>
+                <button onClick={() => handleClick(index, -1)}>{'<'}</button>
+                <button onClick={() => handleClick(index, 1)}>{'>'}</button>
+              </>
+            )}
+          </div>
+        ))}
+        {/* <div className="item">
           <p>small fork</p>
           <button>{'>'}</button>
         </div>
         <div className="item">
           <p>BIG fork</p>
-          <button onClick={() => handleToLeft(1, -1)}>{'<'}</button>
+          <button onClick={() => handleClick(1, -1)}>{'<'}</button>
+          <button onClick={() => handleClick(1, 1)}>{'>'}</button>
         </div>
         <div className="item">
           <p>BIGGEST fork</p>
-          <button onClick={() => handleToLeft(2, -1)}>{'<'}</button>
-        </div>
+          <button onClick={() => handleClick(2, -1)}>{'<'}</button>
+        </div> */}
       </div>
     </>
   )
