@@ -6,15 +6,12 @@ interface Props {
 }
 
 export default function Matching({ setMatching }: Props) {
-  const bigFork = 'big fork'
-  const smallFork = 'small fork'
-  const biggestFork = 'biggest fork'
-  const [arr, setArr] = useState([smallFork, bigFork, biggestFork])
+  const [arr, setArr] = useState(['small fork', 'big fork', 'biggest fork'])
   const correctAns = ['small fork', 'big fork']
 
   console.log(arr)
 
-  function handleToLeft(item: string, itemI: number, direction: number) {
+  function handleToLeft(itemI: number, direction: number) {
     const newArr = []
     const temp = arr[itemI + direction]
     for (let i = 0; i < arr.length; i++) {
@@ -27,12 +24,6 @@ export default function Matching({ setMatching }: Props) {
       }
     }
     console.log(newArr)
-
-    // const newArr = []
-    // const temp = arr[0]
-    // newArr[0] = arr[itemI]
-    // newArr[1] = temp
-    // console.log(newArr)
     setArr(newArr)
   }
 
@@ -47,13 +38,11 @@ export default function Matching({ setMatching }: Props) {
         </div>
         <div className="item">
           <p>BIG fork</p>
-          <button onClick={() => handleToLeft(bigFork, 1, -1)}>{'<'}</button>
+          <button onClick={() => handleToLeft(1, -1)}>{'<'}</button>
         </div>
         <div className="item">
           <p>BIGGEST fork</p>
-          <button onClick={() => handleToLeft(biggestFork, 2, -1)}>
-            {'<'}
-          </button>
+          <button onClick={() => handleToLeft(2, -1)}>{'<'}</button>
         </div>
       </div>
     </>
