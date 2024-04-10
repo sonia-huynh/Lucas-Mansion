@@ -5,12 +5,16 @@ import Matching from './GamePopups/Matching'
 import MatchingExample from './GamePopups/MatchingExample'
 import Clock from './GamePopups/Clock'
 
+import CombinationLockKata from './GamePopups/CombinationLockKata'
+
 export default function Dinner() {
   const [jigsaw, setJigsaw] = useState(false)
-  const [lock, setLock] = useState(true)
+  const [lock, setLock] = useState(false)
   const [matching, setMatching] = useState(false)
   const [matchingE, setMatchingE] = useState(false)
   const [clock, setClock] = useState(false)
+
+  const [lockNum, setLockNum] = useState(true)
 
   return (
     <>
@@ -20,6 +24,8 @@ export default function Dinner() {
       {matching && <Matching setMatching={setMatching} />}
       {matchingE && <MatchingExample setMatchingE={setMatchingE} />}
       {clock && <Clock setClock={setClock} />}
+
+      {lockNum && <CombinationLockKata setLockNum={setLockNum} />}
     </>
   )
 }
