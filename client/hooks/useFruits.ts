@@ -15,7 +15,7 @@ export function useFruits() {
 }
 
 export function useFruitsMutation<TData = unknown, TVariables = unknown>(
-  mutationFn: MutationFunction<TData, TVariables>
+  mutationFn: MutationFunction<TData, TVariables>,
 ) {
   const queryClient = useQueryClient()
   const mutation = useMutation({
@@ -27,8 +27,3 @@ export function useFruitsMutation<TData = unknown, TVariables = unknown>(
 
   return mutation
 }
-
-// Query functions go here e.g. useAddFruit
-/* function useAddFruit() {
-  return useFruitsMutation(addFruit)
-} */
