@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import '../../styles/lock.css'
 
 interface Props {
   setLockNum: React.Dispatch<React.SetStateAction<boolean>>
