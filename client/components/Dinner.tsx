@@ -3,6 +3,7 @@ import Jigsaw from './GamePopups/Jigsaw'
 import Matching from './GamePopups/Matching'
 import MatchingExample from './GamePopups/MatchingExample'
 import Clock from './GamePopups/Clock'
+import '../styles/popup.css'
 import CombinationLock from './GamePopups/CombinationLock'
 
 export default function Dinner() {
@@ -16,17 +17,54 @@ export default function Dinner() {
   return (
     <>
       <h1>Dinner</h1>
-      {jigsaw && <Jigsaw setJigsaw={setJigsaw} />}
-      {matching && (
-        <Matching
-          setMatching={setMatching}
-          win={matchingWin}
-          setWin={setMatchingWin}
-        />
+      {jigsaw && (
+        <div className="popup-overlay">
+          <div className="game-popup">
+            <Jigsaw setJigsaw={setJigsaw} />
+          </div>
+        </div>
       )}
-      {matchingE && <MatchingExample setMatchingE={setMatchingE} />}
-      {clock && <Clock setClock={setClock} />}
-      {lockNum && <CombinationLock setLockNum={setLockNum} />}
+      <button onClick={() => setJigsaw(true)}>JIGSAW</button>
+
+      {lockNum && (
+        <div className="popup-overlay">
+          <div className="game-popup">
+            <CombinationLock setLockNum={setLockNum} />
+          </div>
+        </div>
+      )}
+      <button onClick={() => setLockNum(true)}>Combination Lock</button>
+
+      {matching && (
+        <div className="popup-overlay">
+          <div className="game-popup">
+            <Matching
+              setMatching={setMatching}
+              win={matchingWin}
+              setWin={setMatchingWin}
+            />
+          </div>
+        </div>
+      )}
+      <button onClick={() => setMatching(true)}>match-up GAME</button>
+
+      {matchingE && (
+        <div className="popup-overlay">
+          <div className="game-popup">
+            <MatchingExample setMatchingE={setMatchingE} />
+          </div>
+        </div>
+      )}
+      <button onClick={() => setMatchingE(true)}>match-up Example</button>
+
+      {clock && (
+        <div className="popup-overlay">
+          <div className="game-popup">
+            <Clock setClock={setClock} />
+          </div>
+        </div>
+      )}
+      <button onClick={() => setClock(true)}>Clock Inside</button>
     </>
   )
 }

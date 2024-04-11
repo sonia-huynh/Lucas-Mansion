@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import '../../styles/lock.css'
+import '../../styles/popup.css'
 
 interface Props {
   setLockNum: React.Dispatch<React.SetStateAction<boolean>>
@@ -121,7 +123,9 @@ export default function CombinationLock({ setLockNum }: Props) {
       <br />
       <div className="pin">
         <button onClick={handleSubmit}>Submit</button>
-        <button onClick={() => setLockNum(false)}>Close</button>
+        <button className="closeButton" onClick={() => setLockNum(false)}>
+          x
+        </button>
       </div>
     </>
   )

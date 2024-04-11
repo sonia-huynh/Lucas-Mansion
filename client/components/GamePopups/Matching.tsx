@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import '../../styles/matching.css'
+import '../../styles/popup.css'
 
 interface Props {
   setMatching: React.Dispatch<React.SetStateAction<boolean>>
@@ -10,7 +11,6 @@ interface Props {
 export default function Matching({ setMatching, win, setWin }: Props) {
   const [arr, setArr] = useState(['small fork', 'big fork', 'biggest fork'])
   const correctAns = ['small fork', 'big fork', 'biggest fork']
-  // const [win, setWin] = useState(false)
 
   function handleClick(itemI: number, direction: number) {
     const newArr = []
@@ -40,7 +40,9 @@ export default function Matching({ setMatching, win, setWin }: Props) {
   return (
     <>
       <h1>Matching</h1>
-      <button onClick={() => setMatching(false)}>Close</button>
+      <button className="closeButton" onClick={() => setMatching(false)}>
+        x
+      </button>
       <div className="matching">
         {arr.map((item, index) => (
           <div key={index} className="item">
