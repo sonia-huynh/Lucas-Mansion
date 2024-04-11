@@ -1,12 +1,128 @@
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+
 interface Props {
-  setLock: React.Dispatch<React.SetStateAction<boolean>>
+  setLockNum: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export default function CombinationLock({ setLock }: Props) {
+export default function CombinationLock({ setLockNum }: Props) {
+  const navigate = useNavigate()
+  const [pin1, setPin1] = useState(0)
+  const [pin2, setPin2] = useState(0)
+  const [pin3, setPin3] = useState(0)
+  const [pin4, setPin4] = useState(0)
+
+  function handleSubmit() {
+    if (pin1 === 1 && pin2 === 1 && pin3 === 1 && pin4 === 1) {
+      console.log('correct!')
+      navigate('/Foyer')
+    } else {
+      console.log('Try Again')
+    }
+  }
+
   return (
     <>
-      <h1>Lock</h1>
-      <button onClick={() => setLock(false)}>Close</button>
+      <h1>Combination Lock</h1>
+      <div className="box">
+        <div className="pin">
+          <button
+            onClick={() => {
+              setPin1(pin1 + 1)
+              if (pin1 > 8) {
+                setPin1(0)
+              }
+            }}
+          >
+            ▲
+          </button>
+          <p>{pin1}</p>
+          <button
+            onClick={() => {
+              setPin1(pin1 - 1)
+              if (pin1 < 1) {
+                setPin1(9)
+              }
+            }}
+          >
+            ▼
+          </button>
+        </div>
+        <div className="pin">
+          <button
+            onClick={() => {
+              setPin2(pin2 + 1)
+              if (pin2 > 8) {
+                setPin2(0)
+              }
+            }}
+          >
+            ▲
+          </button>
+          <p>{pin2}</p>
+          <button
+            onClick={() => {
+              setPin2(pin2 - 1)
+              if (pin2 < 1) {
+                setPin2(9)
+              }
+            }}
+          >
+            ▼
+          </button>
+        </div>
+        <div className="pin">
+          <button
+            onClick={() => {
+              setPin3(pin3 + 1)
+              if (pin3 > 8) {
+                setPin3(0)
+              }
+            }}
+          >
+            ▲
+          </button>
+          <p>{pin3}</p>
+          <button
+            onClick={() => {
+              setPin3(pin3 - 1)
+              if (pin3 < 1) {
+                setPin3(9)
+              }
+            }}
+          >
+            ▼
+          </button>
+        </div>
+        <div className="pin">
+          <button
+            onClick={() => {
+              setPin4(pin4 + 1)
+              if (pin4 > 8) {
+                setPin4(0)
+              }
+            }}
+          >
+            ▲
+          </button>
+          <p>{pin4}</p>
+          <button
+            onClick={() => {
+              setPin4(pin4 - 1)
+              if (pin4 < 1) {
+                setPin4(9)
+              }
+            }}
+          >
+            ▼
+          </button>
+        </div>
+      </div>
+      <br />
+      <div className="pin">
+        <button onClick={handleSubmit}>Submit</button>
+        <button onClick={() => setLockNum(false)}>Close</button>
+      </div>
     </>
   )
 }
