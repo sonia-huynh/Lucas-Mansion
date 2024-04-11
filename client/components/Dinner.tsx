@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import Jigsaw from './GamePopups/Jigsaw'
-import CombinationLock from './GamePopups/CombinationLock'
 import Matching from './GamePopups/Matching'
 import MatchingExample from './GamePopups/MatchingExample'
 import Clock from './GamePopups/Clock'
 import '../styles/popup.css'
+import CombinationLock from './GamePopups/CombinationLock'
 
 export default function Dinner() {
   const [jigsaw, setJigsaw] = useState(false)
@@ -13,6 +13,7 @@ export default function Dinner() {
   const [matchingWin, setMatchingWin] = useState(false)
   const [matchingE, setMatchingE] = useState(false)
   const [clock, setClock] = useState(false)
+  const [lockNum, setLockNum] = useState(false)
 
   return (
     <>
@@ -26,10 +27,10 @@ export default function Dinner() {
       )}
       <button onClick={() => setJigsaw(true)}>JIGSAW</button>
 
-      {lock && (
+      {lockNum && (
         <div className="popup-overlay">
           <div className="game-popup">
-            <CombinationLock setLock={setLock} />
+            <CombinationLock setLockNum={setLockNum} />
           </div>
         </div>
       )}
