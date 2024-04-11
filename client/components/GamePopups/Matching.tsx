@@ -56,6 +56,13 @@ export default function Matching({ setMatching, win, setWin }: Props) {
           <button className="closeButton" onClick={() => setMatching(false)}>
             x
           </button>
+          {win ? (
+            <p>go get the key</p>
+          ) : (
+            <button id="bell" onClick={() => handleCheck()}>
+              Check
+            </button>
+          )}
           <div className="cutlery-items">
             {arr.map((item, index) => (
               <div key={index} className="item">
@@ -75,12 +82,6 @@ export default function Matching({ setMatching, win, setWin }: Props) {
               </div>
             ))}
           </div>
-
-          {win ? (
-            <p>go get the key</p>
-          ) : (
-            <button onClick={() => handleCheck()}>Check</button>
-          )}
         </div>
       </div>
     </div>

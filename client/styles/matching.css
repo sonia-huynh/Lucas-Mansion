@@ -13,9 +13,12 @@
 }
 
 .cutlery-items {
-  border: 1px solid black;
+  border: 1px solid red;
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  height: 41rem;
 }
 
 .cutlery-items img {
@@ -26,4 +29,8 @@
   display: flex;
   flex-direction: column;
   border: 2px dotted blue;
+}
+
+#bell {
+  position: absolute;
 }
