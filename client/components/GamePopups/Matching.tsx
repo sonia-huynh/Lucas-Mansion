@@ -29,11 +29,18 @@ export default function Matching({ setMatching }: Props) {
   }
 
   function handleCheck() {
-    if (arr == correctAns) {
-      setWin(true)
-    } else {
-      console.log(`${correctAns} - try again`)
+    setWin(true)
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] !== correctAns[i]) {
+        setWin(false)
+        console.log('not a win')
+      }
     }
+    // if (arr == correctAns) {
+    //   setWin(true)
+    // } else {
+    //   console.log(`${correctAns} - try again`)
+    // }
   }
 
   return (
