@@ -36,11 +36,6 @@ export default function Matching({ setMatching }: Props) {
         console.log('not a win')
       }
     }
-    // if (arr == correctAns) {
-    //   setWin(true)
-    // } else {
-    //   console.log(`${correctAns} - try again`)
-    // }
   }
 
   return (
@@ -63,19 +58,6 @@ export default function Matching({ setMatching }: Props) {
             )}
           </div>
         ))}
-        {/* <div className="item">
-          <p>small fork</p>
-          <button>{'>'}</button>
-        </div>
-        <div className="item">
-          <p>BIG fork</p>
-          <button onClick={() => handleClick(1, -1)}>{'<'}</button>
-          <button onClick={() => handleClick(1, 1)}>{'>'}</button>
-        </div>
-        <div className="item">
-          <p>BIGGEST fork</p>
-          <button onClick={() => handleClick(2, -1)}>{'<'}</button>
-        </div> */}
       </div>
       {win ? (
         <p>go get the key</p>
