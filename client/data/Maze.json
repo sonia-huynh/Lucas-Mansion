@@ -98,5 +98,6 @@
   {"point":96,"left":null,"forward":null,"right":null,"back":67,"image":"maze-x"},
   {"point":97,"left":null,"forward":null,"right":null,"back":85,"image":"maze-x"},
   {"point":98,"left":null,"forward":null,"right":null,"back":87,"image":"maze-x"},
-  {"point":99,"left":51,"forward":null,"right":null,"back":32,"image":"maze-x"}
+  {"point":99,"left":51,"forward":null,"right":null,"back":32,"image":"maze-x"},
+  {"point":100,"left":null,"forward":null,"right":null,"back":null,"image":"maze-x"}
 ]
