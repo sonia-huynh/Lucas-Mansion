@@ -1,0 +1,15 @@
+.item {
+  display: flex;
+  flex-direction: column;
+  border: 2px dotted blue;
+
+  /* border-style: dotted;
+  border-width: 1px;
+  border-color: black; */
+}
+
+.matching {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+}

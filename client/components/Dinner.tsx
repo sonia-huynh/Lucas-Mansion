@@ -8,7 +8,7 @@ import Clock from './GamePopups/Clock'
 export default function Dinner() {
   const [jigsaw, setJigsaw] = useState(false)
   const [lock, setLock] = useState(false)
-  const [matching, setMatching] = useState(false)
+  const [matching, setMatching] = useState(true)
   const [matchingE, setMatchingE] = useState(false)
   const [clock, setClock] = useState(false)
 
