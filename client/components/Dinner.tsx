@@ -10,10 +10,10 @@ import CombinationLockKata from './GamePopups/CombinationLockKata'
 export default function Dinner() {
   const [jigsaw, setJigsaw] = useState(false)
   const [lock, setLock] = useState(false)
-  const [matching, setMatching] = useState(false)
+  const [matching, setMatching] = useState(true)
+  const [matchingWin, setMatchingWin] = useState(false)
   const [matchingE, setMatchingE] = useState(false)
   const [clock, setClock] = useState(false)
-
   const [lockNum, setLockNum] = useState(false)
 
   return (
@@ -21,10 +21,15 @@ export default function Dinner() {
       <h1>Dinner</h1>
       {jigsaw && <Jigsaw setJigsaw={setJigsaw} />}
       {lock && <CombinationLock setLock={setLock} />}
-      {matching && <Matching setMatching={setMatching} />}
+      {matching && (
+        <Matching
+          setMatching={setMatching}
+          win={matchingWin}
+          setWin={setMatchingWin}
+        />
+      )}
       {matchingE && <MatchingExample setMatchingE={setMatchingE} />}
       {clock && <Clock setClock={setClock} />}
-
       {lockNum && <CombinationLockKata setLockNum={setLockNum} />}
     </>
   )
