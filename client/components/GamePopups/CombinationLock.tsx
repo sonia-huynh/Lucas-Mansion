@@ -5,7 +5,7 @@ interface Props {
   setLockNum: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export default function CombinationLockKata({ setLockNum }: Props) {
+export default function CombinationLock({ setLockNum }: Props) {
   const navigate = useNavigate()
   const [pin1, setPin1] = useState(0)
   const [pin2, setPin2] = useState(0)
@@ -17,13 +17,13 @@ export default function CombinationLockKata({ setLockNum }: Props) {
       console.log('correct!')
       navigate('/Foyer')
     } else {
-      console.log('Nope')
+      console.log('Try Again')
     }
   }
 
   return (
     <>
-      <h1>Combination Lock Kata</h1>
+      <h1>Combination Lock</h1>
       <div className="box">
         <div className="pin">
           <button
