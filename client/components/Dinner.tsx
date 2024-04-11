@@ -14,7 +14,7 @@ export default function Dinner() {
   const [matchingE, setMatchingE] = useState(false)
   const [clock, setClock] = useState(false)
 
-  const [lockNum, setLockNum] = useState(true)
+  const [lockNum, setLockNum] = useState(false)
 
   return (
     <>
