@@ -38,33 +38,36 @@ export default function Matching({ setMatching, win, setWin }: Props) {
   }
 
   return (
-    <>
-      <h1>Matching</h1>
-      <button className="closeButton" onClick={() => setMatching(false)}>
-        x
-      </button>
-      <div className="matching">
-        {arr.map((item, index) => (
-          <div key={index} className="item">
-            <p>{item}</p>
-            {index === 0 ? (
-              <button onClick={() => handleClick(index, 1)}>{'>'}</button>
-            ) : index === arr.length - 1 ? (
-              <button onClick={() => handleClick(index, -1)}>{'<'}</button>
-            ) : (
-              <div>
-                <button onClick={() => handleClick(index, -1)}>{'<'}</button>
+    <div className="match-up-game">
+      <div className="plate-game">
+        <div>
+          <button className="closeButton" onClick={() => setMatching(false)}>
+            x
+          </button>
+
+          {arr.map((item, index) => (
+            <div key={index} className="item">
+              <p>{item}</p>
+              {index === 0 ? (
                 <button onClick={() => handleClick(index, 1)}>{'>'}</button>
-              </div>
-            )}
-          </div>
-        ))}
+              ) : index === arr.length - 1 ? (
+                <button onClick={() => handleClick(index, -1)}>{'<'}</button>
+              ) : (
+                <div>
+                  <button onClick={() => handleClick(index, -1)}>{'<'}</button>
+                  <button onClick={() => handleClick(index, 1)}>{'>'}</button>
+                </div>
+              )}
+            </div>
+          ))}
+
+          {win ? (
+            <p>go get the key</p>
+          ) : (
+            <button onClick={() => handleCheck()}>Check</button>
+          )}
+        </div>
       </div>
-      {win ? (
-        <p>go get the key</p>
-      ) : (
-        <button onClick={() => handleCheck()}>Check</button>
-      )}
-    </>
+    </div>
   )
 }
