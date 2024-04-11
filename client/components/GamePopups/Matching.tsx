@@ -65,7 +65,11 @@ export default function Matching({ setMatching, win, setWin }: Props) {
           )}
           <div className="cutlery-items">
             {arr.map((item, index) => (
-              <div key={index} className="item">
+              <div
+                key={index}
+                className="item"
+                id={index === 0 ? 'first' : index === 1 ? 'second' : ''}
+              >
                 <img src={item} alt={item} />
                 {index === 0 ? (
                   <button onClick={() => handleClick(index, 1)}>{'>'}</button>
