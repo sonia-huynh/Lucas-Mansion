@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import '../../styles/matching.css'
 import '../../styles/popup.css'
-import '../../../public/match-up/cutlery/small-fork.png'
 
 interface Props {
   setMatching: React.Dispatch<React.SetStateAction<boolean>>
@@ -10,10 +9,20 @@ interface Props {
 }
 
 export default function Matching({ setMatching, win, setWin }: Props) {
-  const smallFork = '../../../public/match-up/cutlery/small-fork.png'
+  const smallFork = '/match-up/cutlery/small-fork.png'
+  const bigFork = '/match-up/cutlery/big-fork.png'
+  const bigSpoon = '/match-up/cutlery/big-spoon.png'
+  const teaSpoon = '/match-up/cutlery/tea-spoon.png'
+  const knife = '/match-up/cutlery/knife.png'
 
-  const [arr, setArr] = useState([smallFork, 'big fork', 'biggest fork'])
-  const correctAns = [smallFork, 'big fork', 'biggest fork']
+  const [arr, setArr] = useState([
+    teaSpoon,
+    bigFork,
+    bigSpoon,
+    knife,
+    smallFork,
+  ])
+  const correctAns = [smallFork, bigFork, knife, teaSpoon, bigSpoon]
 
   function handleClick(itemI: number, direction: number) {
     const newArr = []
