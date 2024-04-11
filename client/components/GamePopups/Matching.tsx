@@ -3,12 +3,14 @@ import '../../styles/matching.css'
 
 interface Props {
   setMatching: React.Dispatch<React.SetStateAction<boolean>>
+  win: boolean
+  setWin: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export default function Matching({ setMatching }: Props) {
+export default function Matching({ setMatching, win, setWin }: Props) {
   const [arr, setArr] = useState(['small fork', 'big fork', 'biggest fork'])
   const correctAns = ['small fork', 'big fork', 'biggest fork']
-  const [win, setWin] = useState(false)
+  // const [win, setWin] = useState(false)
 
   function handleClick(itemI: number, direction: number) {
     const newArr = []
