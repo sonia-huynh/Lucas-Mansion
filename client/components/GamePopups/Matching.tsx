@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import '../../styles/matching.css'
 import '../../styles/popup.css'
+import '../../../public/match-up/cutlery/small-fork.png'
 
 interface Props {
   setMatching: React.Dispatch<React.SetStateAction<boolean>>
@@ -9,8 +10,10 @@ interface Props {
 }
 
 export default function Matching({ setMatching, win, setWin }: Props) {
-  const [arr, setArr] = useState(['small fork', 'big fork', 'biggest fork'])
-  const correctAns = ['small fork', 'big fork', 'biggest fork']
+  const smallFork = '../../../public/match-up/cutlery/small-fork.png'
+
+  const [arr, setArr] = useState([smallFork, 'big fork', 'biggest fork'])
+  const correctAns = [smallFork, 'big fork', 'biggest fork']
 
   function handleClick(itemI: number, direction: number) {
     const newArr = []
@@ -44,22 +47,25 @@ export default function Matching({ setMatching, win, setWin }: Props) {
           <button className="closeButton" onClick={() => setMatching(false)}>
             x
           </button>
-
-          {arr.map((item, index) => (
-            <div key={index} className="item">
-              <p>{item}</p>
-              {index === 0 ? (
-                <button onClick={() => handleClick(index, 1)}>{'>'}</button>
-              ) : index === arr.length - 1 ? (
-                <button onClick={() => handleClick(index, -1)}>{'<'}</button>
-              ) : (
-                <div>
-                  <button onClick={() => handleClick(index, -1)}>{'<'}</button>
+          <div className="cutlery-items">
+            {arr.map((item, index) => (
+              <div key={index} className="item">
+                <img src={item} alt={item} />
+                {index === 0 ? (
                   <button onClick={() => handleClick(index, 1)}>{'>'}</button>
-                </div>
-              )}
-            </div>
-          ))}
+                ) : index === arr.length - 1 ? (
+                  <button onClick={() => handleClick(index, -1)}>{'<'}</button>
+                ) : (
+                  <div>
+                    <button onClick={() => handleClick(index, -1)}>
+                      {'<'}
+                    </button>
+                    <button onClick={() => handleClick(index, 1)}>{'>'}</button>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
 
           {win ? (
             <p>go get the key</p>
