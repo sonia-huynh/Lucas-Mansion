@@ -31,6 +31,10 @@
   color: transparent;
 }
 
+.submit:hover {
+  border-color: white;
+}
+
 .bg {
   background-image: url(../../public/lock-closeup.png);
   /* width: 90rem;
