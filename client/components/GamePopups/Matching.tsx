@@ -10,8 +10,6 @@ export default function Matching({ setMatching }: Props) {
   const correctAns = ['small fork', 'big fork', 'biggest fork']
   const [win, setWin] = useState(false)
 
-  console.log(arr)
-
   function handleClick(itemI: number, direction: number) {
     const newArr = []
     const temp = arr[itemI + direction]
@@ -24,7 +22,6 @@ export default function Matching({ setMatching }: Props) {
         newArr[i] = arr[i]
       }
     }
-    console.log(newArr)
     setArr(newArr)
   }
 
