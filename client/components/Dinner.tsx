@@ -8,7 +8,6 @@ import CombinationLock from './GamePopups/CombinationLock'
 
 export default function Dinner() {
   const [jigsaw, setJigsaw] = useState(false)
-  const [lock, setLock] = useState(false)
   const [matching, setMatching] = useState(false)
   const [matchingWin, setMatchingWin] = useState(false)
   const [matchingE, setMatchingE] = useState(false)
@@ -34,7 +33,7 @@ export default function Dinner() {
           </div>
         </div>
       )}
-      <button onClick={() => setLock(true)}>Combination Lock</button>
+      <button onClick={() => setLockNum(true)}>Combination Lock</button>
 
       {matching && (
         <div className="popup-overlay">
