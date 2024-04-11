@@ -10,7 +10,6 @@ interface Props {
 export default function Matching({ setMatching, win, setWin }: Props) {
   const [arr, setArr] = useState(['small fork', 'big fork', 'biggest fork'])
   const correctAns = ['small fork', 'big fork', 'biggest fork']
-  // const [win, setWin] = useState(false)
 
   function handleClick(itemI: number, direction: number) {
     const newArr = []
@@ -38,33 +37,31 @@ export default function Matching({ setMatching, win, setWin }: Props) {
   }
 
   return (
-    <div className="popup-overlay">
-      <div>
-        <h1>Matching</h1>
-        <button onClick={() => setMatching(false)}>Close</button>
-        <div className="matching">
-          {arr.map((item, index) => (
-            <div key={index} className="item">
-              <p>{item}</p>
-              {index === 0 ? (
-                <button onClick={() => handleClick(index, 1)}>{'>'}</button>
-              ) : index === arr.length - 1 ? (
+    <>
+      <h1>Matching</h1>
+      <button onClick={() => setMatching(false)}>Close</button>
+      <div className="matching">
+        {arr.map((item, index) => (
+          <div key={index} className="item">
+            <p>{item}</p>
+            {index === 0 ? (
+              <button onClick={() => handleClick(index, 1)}>{'>'}</button>
+            ) : index === arr.length - 1 ? (
+              <button onClick={() => handleClick(index, -1)}>{'<'}</button>
+            ) : (
+              <div>
                 <button onClick={() => handleClick(index, -1)}>{'<'}</button>
-              ) : (
-                <div>
-                  <button onClick={() => handleClick(index, -1)}>{'<'}</button>
-                  <button onClick={() => handleClick(index, 1)}>{'>'}</button>
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-        {win ? (
-          <p>go get the key</p>
-        ) : (
-          <button onClick={() => handleCheck()}>Check</button>
-        )}
+                <button onClick={() => handleClick(index, 1)}>{'>'}</button>
+              </div>
+            )}
+          </div>
+        ))}
       </div>
-    </div>
+      {win ? (
+        <p>go get the key</p>
+      ) : (
+        <button onClick={() => handleCheck()}>Check</button>
+      )}
+    </>
   )
 }
