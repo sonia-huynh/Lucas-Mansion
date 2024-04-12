@@ -12,8 +12,10 @@
 
 .game-popup {
   background-color: white;
-  width: 60em;
-  height: 30em;
+  /* width: 90em;
+  height: 45em; */
+  width: 75%;
+  height: 80%;
   text-align: center;
   padding: 20px;
   border-radius: 8px;
