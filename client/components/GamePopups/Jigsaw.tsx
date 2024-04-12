@@ -16,7 +16,7 @@ const Jigsaw: React.FC<Props> = ({ setJigsaw }) => {
             x
           </button>
           <JigsawPuzzle />
-          <Puzzle />
+          {/* <Puzzle /> */}
         </div>
       </div>
     </>

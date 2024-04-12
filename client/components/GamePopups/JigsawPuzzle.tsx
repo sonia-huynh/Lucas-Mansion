@@ -43,19 +43,25 @@ export default function JigsawPuzzle() {
 
   return (
     <>
-      {/* <div className="puzzle-container">
-        <img
-          src="puzzle-images/middle.png"
-          alt="puzzle piece"
-          id="middle-piece"
-        />
-      </div> */}
-      <div className="puzzle-board">
-        <button onClick={() => handleClickBoard(0)}>0</button>
-        <button onClick={() => handleClickBoard(1)}>1</button>
-        <button onClick={() => handleClickBoard(2)}>2</button>
-        <button onClick={checkWin}>check answer</button>
+      <div className="puzzle-container">
+        <div className="entrance">
+          <button onClick={() => handleClickBoard(0)}>0</button>
+        </div>
+        <div className="middle">
+          <img src="puzzle-images/middle.png" alt="puzzle piece" />
+        </div>
+        <div className="corner">
+          <button onClick={() => handleClickBoard(1)}>1</button>
+        </div>
+        <div className="exit">
+          <button onClick={() => handleClickBoard(2)}>2</button>
+        </div>
       </div>
+
+      {/* <div className="puzzle-board"> */}
+
+      <button onClick={checkWin}>check answer</button>
+      {/* </div> */}
       <div className="pieces">
         {pieces.map((piece, index) => (
           // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
