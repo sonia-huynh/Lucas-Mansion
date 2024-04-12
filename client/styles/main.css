@@ -1,0 +1,34 @@
+body {
+  background-image: url(../../public/highangle-paper.png);
+}
+
+.frame {
+  margin: 218px 0px 0px 66px;
+  height: 270px;
+  opacity: 0;
+}
+
+.frame:hover {
+  filter: drop-shadow(2px 2px 2px white) drop-shadow(-2px 2px 2px white)
+    drop-shadow(-2px -2px 2px white) drop-shadow(2px -2px 2px white);
+  opacity: 1;
+}
+
+.button {
+  background-color: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+.lock {
+  margin: -155px 0px 0px 940px;
+  height: 200px;
+  opacity: 0;
+}
+
+.lock:hover {
+  filter: drop-shadow(0.5px 0.5px 0.5px white)
+    drop-shadow(0.5px 0.5px 0.5px white) drop-shadow(0.5px 0.5px 0.5px white)
+    drop-shadow(0.5px 0.5px 0.5px white);
+  opacity: 1;
+}

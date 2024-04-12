@@ -5,6 +5,8 @@ import MatchingExample from './GamePopups/MatchingExample'
 import Clock from './GamePopups/Clock'
 import '../styles/popup.css'
 import CombinationLock from './GamePopups/CombinationLock'
+import '../styles/main.css'
+// import '../../public/dinner-images/lucas-image.png'
 
 export default function Dinner() {
   const [jigsaw, setJigsaw] = useState(false)
@@ -16,7 +18,6 @@ export default function Dinner() {
 
   return (
     <>
-      <h1>Dinner</h1>
       {jigsaw && (
         <div className="popup-overlay">
           <div className="game-popup">
@@ -24,8 +25,15 @@ export default function Dinner() {
           </div>
         </div>
       )}
-      <button onClick={() => setJigsaw(true)}>JIGSAW</button>
-
+      <div>
+        <button className="button" onClick={() => setJigsaw(true)}>
+          <img
+            className="frame"
+            src="../../public/dinner-images/lucas-map.png"
+            alt="frame with map"
+          />
+        </button>
+      </div>
       {lockNum && (
         <div className="popup-overlay">
           <div className="game-popup">
@@ -33,8 +41,15 @@ export default function Dinner() {
           </div>
         </div>
       )}
-      <button onClick={() => setLockNum(true)}>Combination Lock</button>
-
+      <div>
+        <button className="button" onClick={() => setLockNum(true)}>
+          <img
+            className="lock"
+            src="../../public/dinner-images/door-handle.png"
+            alt="frame with map"
+          />
+        </button>
+      </div>
       {matching && (
         <div className="popup-overlay">
           <div className="game-popup">
@@ -46,8 +61,16 @@ export default function Dinner() {
           </div>
         </div>
       )}
-      <button onClick={() => setMatching(true)}>match-up GAME</button>
 
+      <div>
+        <button className="button" onClick={() => setMatching(true)}>
+          <img
+            className="plateL"
+            src="../../public/dinner-images/plate-left.png"
+            alt="frame with map"
+          />
+        </button>
+      </div>
       {matchingE && (
         <div className="popup-overlay">
           <div className="game-popup">
@@ -55,7 +78,7 @@ export default function Dinner() {
           </div>
         </div>
       )}
-      <button onClick={() => setMatchingE(true)}>match-up Example</button>
+      {/* <button onClick={() => setMatchingE(true)}>match-up Example</button> */}
 
       {clock && (
         <div className="popup-overlay">
@@ -64,7 +87,7 @@ export default function Dinner() {
           </div>
         </div>
       )}
-      <button onClick={() => setClock(true)}>Clock Inside</button>
+      {/* <button onClick={() => setClock(true)}>Clock Inside</button> */}
     </>
   )
 }
