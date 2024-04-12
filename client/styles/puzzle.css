@@ -1,34 +1,37 @@
 .puzzle-container {
-  border: 2px dotted blue;
+  border: 5px dotted blue;
   display: grid;
   grid-template-areas: 'entrance middle corner' 'entrance middle exit';
   justify-content: center;
+  justify-items: center;
+  width: 58%;
+  height: 450px;
+  margin: 0 auto;
 }
 
 .entrance {
   grid-area: entrance;
   position: relative;
-  /* Adjust this value to control vertical positioning */
-  /* top: 50px; */
-  left: 50px; /* Adjust this value to control horizontal positioning */
+  left: 140px;
 }
 
 .middle {
+  position: relative;
   grid-area: middle;
+  left: 90px;
 }
 
 .corner {
   grid-area: corner;
   position: relative;
-  /* top: 50px; */
-  left: -200px; /* Adjust this value to control horizontal positioning */
+  left: -140px;
 }
 
 .exit {
   grid-area: exit;
   position: relative;
   top: -40px;
-  left: -140px; /* Adjust this value to control horizontal positioning */
+  left: -70px;
 }
 
 /* .middle {
