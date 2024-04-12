@@ -8,9 +8,10 @@ export default function JigsawPuzzle() {
   const piece3 = 'puzzle-images/exit.png'
 
   const [pieces, setPieces] = useState([piece1, piece2, piece3])
-  const answer = [piece1, piece2, piece3]
+  const correctAns = [piece1, piece2, piece3]
   const [placedPieces, setPlacedPieces] = useState(['', '', ''])
   const [clickedPiece, setClickedPiece] = useState('')
+  const [win, setWin] = useState(false)
 
   function handleClickPiece(index: number) {
     setClickedPiece(pieces[index])
@@ -19,14 +20,6 @@ export default function JigsawPuzzle() {
   console.log(clickedPiece)
 
   function handleClickBoard(index: number) {
-    // for (let i = 0; i < placedPieces.length; i++) {
-    //   if (i === index) {
-    // const newArr = placedPieces.splice(e.target.id, 1, clickedPiece)
-    // console.log(newArr)
-    // setPlacedPieces(newArr)
-    //   }
-    // }
-    // setPlacedPieces(placedPieces[index])
     for (let i = 0; i < placedPieces.length; i++) {
       if (i === index) {
         placedPieces[i] = clickedPiece
@@ -35,6 +28,18 @@ export default function JigsawPuzzle() {
   }
 
   console.log(placedPieces)
+
+  function checkWin() {
+    setWin(true)
+    for (let i = 0; i < placedPieces.length; i++) {
+      if (placedPieces[i] !== correctAns[i]) {
+        setWin(false)
+        console.log('not a win')
+      }
+    }
+  }
+
+  console.log(win)
 
   return (
     <>
@@ -46,11 +51,10 @@ export default function JigsawPuzzle() {
         />
       </div> */}
       <div className="puzzle-board">
-        <button id="0" onClick={() => handleClickBoard(0)}>
-          0
-        </button>
-        <button>1</button>
-        <button>2</button>
+        <button onClick={() => handleClickBoard(0)}>0</button>
+        <button onClick={() => handleClickBoard(1)}>1</button>
+        <button onClick={() => handleClickBoard(2)}>2</button>
+        <button onClick={checkWin}>check answer</button>
       </div>
       <div className="pieces">
         {pieces.map((piece, index) => (
