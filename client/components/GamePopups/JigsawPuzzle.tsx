@@ -7,7 +7,7 @@ export default function JigsawPuzzle() {
   const piece2 = 'puzzle-images/corner1.png'
   const piece3 = 'puzzle-images/exit.png'
 
-  const [pieces, setPieces] = useState([piece1, piece2, piece3])
+  const [pieces, setPieces] = useState([piece3, piece1, piece2])
   const correctAns = [piece1, piece2, piece3]
   const [placedPieces, setPlacedPieces] = useState(['', '', ''])
   const [clickedPiece, setClickedPiece] = useState('')
@@ -44,11 +44,15 @@ export default function JigsawPuzzle() {
   return (
     <>
       <div className="puzzle-container">
-        <div className="entrance">
-          <button onClick={() => handleClickBoard(0)}>0</button>
-        </div>
         <div className="middle">
           <img src="puzzle-images/middle.png" alt="puzzle piece" />
+        </div>
+        <div className="entrance">
+          {!placedPieces[0] ? (
+            <button onClick={() => handleClickBoard(0)}>0</button>
+          ) : (
+            <img alt="puzzle-piece" src={placedPieces[0]} />
+          )}
         </div>
         <div className="corner">
           <button onClick={() => handleClickBoard(1)}>1</button>
@@ -56,12 +60,11 @@ export default function JigsawPuzzle() {
         <div className="exit">
           <button onClick={() => handleClickBoard(2)}>2</button>
         </div>
+        {/* {placedPieces.map()} */}
       </div>
 
-      {/* <div className="puzzle-board"> */}
-
       <button onClick={checkWin}>check answer</button>
-      {/* </div> */}
+      {/* pieces from around the room render below */}
       <div className="pieces">
         {pieces.map((piece, index) => (
           // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
