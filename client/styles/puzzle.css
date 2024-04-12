@@ -1,9 +1,8 @@
 .puzzle-container {
   border: 2px dotted blue;
-  /* z-index: 10; */
-  /* position: relative; */
   display: grid;
   grid-template-areas: 'entrance middle corner' 'entrance middle exit';
+  justify-content: center;
 }
 
 .entrance {
@@ -22,18 +21,10 @@
   grid-area: exit;
 }
 
-/* #middle-piece {
+/* .middle {
   top: 3em;
   left: 25em;
-  position: absolute;
-  z-index: 8;
 } */
-
-.middle {
-  /* position: absolute; */
-  top: 3em;
-  left: 25em;
-}
 
 .pieces {
   display: flex;
