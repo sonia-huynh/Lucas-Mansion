@@ -23,6 +23,7 @@ export default function JigsawPuzzle() {
     for (let i = 0; i < placedPieces.length; i++) {
       if (i === index) {
         placedPieces[i] = clickedPiece
+        setClickedPiece('')
       }
     }
   }
@@ -55,10 +56,18 @@ export default function JigsawPuzzle() {
           )}
         </div>
         <div className="corner">
-          <button onClick={() => handleClickBoard(1)}>1</button>
+          {!placedPieces[1] ? (
+            <button onClick={() => handleClickBoard(1)}>1</button>
+          ) : (
+            <img alt="puzzle-piece" src={placedPieces[1]} />
+          )}
         </div>
         <div className="exit">
-          <button onClick={() => handleClickBoard(2)}>2</button>
+          {!placedPieces[2] ? (
+            <button onClick={() => handleClickBoard(2)}>2</button>
+          ) : (
+            <img alt="puzzle-piece" src={placedPieces[2]} />
+          )}
         </div>
         {/* {placedPieces.map()} */}
       </div>
