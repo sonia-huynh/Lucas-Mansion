@@ -2,7 +2,18 @@ body {
   background-image: url(../../public/highangle-paper.png);
 }
 
+.button {
+  background-color: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+.jigdiv {
+  position: relative;
+}
+
 .frame {
+  position: absolute;
   margin: 218px 0px 0px 66px;
   height: 270px;
   opacity: 0;
@@ -14,21 +25,32 @@ body {
   opacity: 1;
 }
 
-.button {
-  background-color: transparent;
-  border-color: transparent;
-  color: transparent;
+.block {
+  display: none;
 }
 
+.doordiv {
+  position: relative;
+}
 .lock {
-  margin: -155px 0px 0px 940px;
-  height: 200px;
-  opacity: 0;
+  position: absolute;
+  outline: 2px solid blue;
+
+  /* height: 500px; */
+  /* margin: -155px 0px 0px 940px; */
+
+  /* opacity: 0; */
 }
 
-.lock:hover {
+/* .lock:hover {
   filter: drop-shadow(0.5px 0.5px 0.5px white)
     drop-shadow(0.5px 0.5px 0.5px white) drop-shadow(0.5px 0.5px 0.5px white)
     drop-shadow(0.5px 0.5px 0.5px white);
   opacity: 1;
-}
+} */
+
+/* .plateL {
+  margin: -155px 0px 0px 940px;
+  height: 200px;
+  opacity: 0;
+} */

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Jigsaw from './GamePopups/Jigsaw'
 import Matching from './GamePopups/Matching'
 import MatchingExample from './GamePopups/MatchingExample'
@@ -15,6 +15,16 @@ export default function Dinner() {
   const [matchingE, setMatchingE] = useState(false)
   const [clock, setClock] = useState(false)
   const [lockNum, setLockNum] = useState(false)
+  const [block, setBlock] = useState(true)
+
+  useEffect(() => {
+    if (!jigsaw && !matchingE && !matching && !clock && !lockNum) {
+      setBlock(false)
+    } else {
+      setBlock(true)
+    }
+    console.log(block, jigsaw)
+  }, [jigsaw, matching, matchingE, clock, lockNum, block])
 
   return (
     <>
@@ -25,15 +35,15 @@ export default function Dinner() {
           </div>
         </div>
       )}
-      <div>
-        <button className="button" onClick={() => setJigsaw(true)}>
-          <img
-            className="frame"
-            src="../../public/dinner-images/lucas-map.png"
-            alt="frame with map"
-          />
-        </button>
+      <div className="jigdiv">
+        <img
+          className={block ? 'block' : 'frame'}
+          src="../../public/dinner-images/lucas-map.png"
+          alt="frame with map"
+          onClick={() => setJigsaw(true)}
+        />
       </div>
+
       {lockNum && (
         <div className="popup-overlay">
           <div className="game-popup">
@@ -63,13 +73,7 @@ export default function Dinner() {
       )}
 
       <div>
-        <button className="button" onClick={() => setMatching(true)}>
-          <img
-            className="plateL"
-            src="../../public/dinner-images/plate-left.png"
-            alt="frame with map"
-          />
-        </button>
+        <button onClick={() => setMatching(true)}>match-up GAME</button>
       </div>
       {matchingE && (
         <div className="popup-overlay">
