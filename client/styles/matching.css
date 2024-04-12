@@ -1,15 +1,69 @@
+.plate-game {
+  height: 45rem;
+  width: 90rem;
+  padding: 0;
+  margin: 0 auto;
+  background-image: url('match-up/plate-game.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.match-up-game {
+  text-align: center;
+}
+
+.cutlery-items {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  height: 42rem;
+}
+
+.cutlery-items img {
+  height: 32rem;
+}
+
 .item {
   display: flex;
   flex-direction: column;
-  border: 2px dotted blue;
-
-  /* border-style: dotted;
-  border-width: 1px;
-  border-color: black; */
+  /* border: 2px dotted blue; */
+  padding: 0.3em;
 }
 
-.matching {
-  border: 1px solid black;
-  display: flex;
-  flex-direction: row;
+#bell {
+  position: absolute;
+  max-width: 18em;
+  left: 0em;
+}
+
+#bell:hover {
+  /* filter: drop-shadow(2px 2px 0 white) drop-shadow(-2px -2px 0 white)
+    drop-shadow(2px -2px 0 white) drop-shadow(-2px 2px 0 white); */
+  filter: drop-shadow(8px 8px 5px rgb(249, 245, 223));
+}
+
+#first {
+  margin-left: 12em;
+}
+
+#second {
+  margin-right: 38em;
+}
+
+button.sides {
+  border: 0.3em solid rgb(99, 58, 27);
+  border-radius: 5px;
+  background-color: rgb(225, 191, 165);
+  margin: 0em 0.2em;
+  height: 3em;
+  width: 3.2em;
+  text-align: center;
+  text-decoration: none;
+  color: rgb(99, 58, 27);
+  font-weight: bold;
+}
+
+button.sides:hover {
+  background-color: rgb(236, 221, 209);
 }

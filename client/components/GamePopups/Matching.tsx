@@ -9,8 +9,20 @@ interface Props {
 }
 
 export default function Matching({ setMatching, win, setWin }: Props) {
-  const [arr, setArr] = useState(['small fork', 'big fork', 'biggest fork'])
-  const correctAns = ['small fork', 'big fork', 'biggest fork']
+  const smallFork = '/match-up/cutlery/small-fork.png'
+  const bigFork = '/match-up/cutlery/big-fork.png'
+  const bigSpoon = '/match-up/cutlery/big-spoon.png'
+  const teaSpoon = '/match-up/cutlery/tea-spoon.png'
+  const knife = '/match-up/cutlery/knife.png'
+
+  const [arr, setArr] = useState([
+    teaSpoon,
+    bigFork,
+    bigSpoon,
+    knife,
+    smallFork,
+  ])
+  const correctAns = [smallFork, bigFork, knife, teaSpoon, bigSpoon]
 
   function handleClick(itemI: number, direction: number) {
     const newArr = []
@@ -38,33 +50,70 @@ export default function Matching({ setMatching, win, setWin }: Props) {
   }
 
   return (
-    <>
-      <h1>Matching</h1>
-      <button className="closeButton" onClick={() => setMatching(false)}>
-        x
-      </button>
-      <div className="matching">
-        {arr.map((item, index) => (
-          <div key={index} className="item">
-            <p>{item}</p>
-            {index === 0 ? (
-              <button onClick={() => handleClick(index, 1)}>{'>'}</button>
-            ) : index === arr.length - 1 ? (
-              <button onClick={() => handleClick(index, -1)}>{'<'}</button>
-            ) : (
-              <div>
-                <button onClick={() => handleClick(index, -1)}>{'<'}</button>
-                <button onClick={() => handleClick(index, 1)}>{'>'}</button>
+    <div className="match-up-game">
+      <div className="plate-game">
+        <div>
+          <button className="closeButton" onClick={() => setMatching(false)}>
+            x
+          </button>
+          {win ? (
+            <p>go get the key</p>
+          ) : (
+            // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
+            <img
+              src="/match-up/cutlery/bell.png"
+              alt="submit-button"
+              id="bell"
+              onClick={() => handleCheck()}
+            />
+          )}
+          <div className="cutlery-items">
+            {arr.map((item, index) => (
+              <div
+                key={index}
+                className="item"
+                id={index === 0 ? 'first' : index === 1 ? 'second' : ''}
+              >
+                <img src={item} alt={item} />
+                {index === 0 ? (
+                  <div>
+                    <button
+                      className="sides"
+                      onClick={() => handleClick(index, 1)}
+                    >
+                      {'>'}
+                    </button>
+                  </div>
+                ) : index === arr.length - 1 ? (
+                  <div>
+                    <button
+                      className="sides"
+                      onClick={() => handleClick(index, -1)}
+                    >
+                      {'<'}
+                    </button>
+                  </div>
+                ) : (
+                  <div>
+                    <button
+                      className="sides"
+                      onClick={() => handleClick(index, -1)}
+                    >
+                      {'<'}
+                    </button>
+                    <button
+                      className="sides"
+                      onClick={() => handleClick(index, 1)}
+                    >
+                      {'>'}
+                    </button>
+                  </div>
+                )}
               </div>
-            )}
+            ))}
           </div>
-        ))}
+        </div>
       </div>
-      {win ? (
-        <p>go get the key</p>
-      ) : (
-        <button onClick={() => handleCheck()}>Check</button>
-      )}
-    </>
+    </div>
   )
 }
