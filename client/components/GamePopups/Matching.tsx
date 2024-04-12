@@ -76,15 +76,37 @@ export default function Matching({ setMatching, win, setWin }: Props) {
               >
                 <img src={item} alt={item} />
                 {index === 0 ? (
-                  <button onClick={() => handleClick(index, 1)}>{'>'}</button>
-                ) : index === arr.length - 1 ? (
-                  <button onClick={() => handleClick(index, -1)}>{'<'}</button>
-                ) : (
                   <div>
-                    <button onClick={() => handleClick(index, -1)}>
+                    <button
+                      className="sides"
+                      onClick={() => handleClick(index, 1)}
+                    >
+                      {'>'}
+                    </button>
+                  </div>
+                ) : index === arr.length - 1 ? (
+                  <div>
+                    <button
+                      className="sides"
+                      onClick={() => handleClick(index, -1)}
+                    >
                       {'<'}
                     </button>
-                    <button onClick={() => handleClick(index, 1)}>{'>'}</button>
+                  </div>
+                ) : (
+                  <div>
+                    <button
+                      className="sides"
+                      onClick={() => handleClick(index, -1)}
+                    >
+                      {'<'}
+                    </button>
+                    <button
+                      className="sides"
+                      onClick={() => handleClick(index, 1)}
+                    >
+                      {'>'}
+                    </button>
                   </div>
                 )}
               </div>
