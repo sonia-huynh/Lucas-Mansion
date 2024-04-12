@@ -7,6 +7,10 @@
 
 .entrance {
   grid-area: entrance;
+  position: relative;
+  /* Adjust this value to control vertical positioning */
+  /* top: 50px; */
+  left: 50px; /* Adjust this value to control horizontal positioning */
 }
 
 .middle {
@@ -15,10 +19,16 @@
 
 .corner {
   grid-area: corner;
+  position: relative;
+  /* top: 50px; */
+  left: -200px; /* Adjust this value to control horizontal positioning */
 }
 
 .exit {
   grid-area: exit;
+  position: relative;
+  top: -40px;
+  left: -140px; /* Adjust this value to control horizontal positioning */
 }
 
 /* .middle {
