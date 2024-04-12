@@ -59,9 +59,13 @@ export default function Matching({ setMatching, win, setWin }: Props) {
           {win ? (
             <p>go get the key</p>
           ) : (
-            <button id="bell" onClick={() => handleCheck()}>
-              Check
-            </button>
+            // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
+            <img
+              src="/match-up/cutlery/bell.png"
+              alt="submit-button"
+              id="bell"
+              onClick={() => handleCheck()}
+            />
           )}
           <div className="cutlery-items">
             {arr.map((item, index) => (
