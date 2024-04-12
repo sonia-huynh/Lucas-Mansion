@@ -43,6 +43,9 @@ export default function JigsawPuzzle() {
   console.log(win)
 
   return (
+    // const piece1 = 'puzzle-images/entrance.png'
+    // const piece2 = 'puzzle-images/corner1.png'
+    // const piece3 = 'puzzle-images/exit.png'
     <>
       <div className="puzzle-container">
         <div className="middle">
@@ -50,21 +53,36 @@ export default function JigsawPuzzle() {
         </div>
         <div className="entrance">
           {!placedPieces[0] ? (
-            <button onClick={() => handleClickBoard(0)}>0</button>
+            // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
+            <img
+              src="puzzle-images/entrance-empty.png"
+              alt="button-0"
+              onClick={() => handleClickBoard(0)}
+            />
           ) : (
             <img alt="puzzle-piece" src={placedPieces[0]} />
           )}
         </div>
         <div className="corner">
           {!placedPieces[1] ? (
-            <button onClick={() => handleClickBoard(1)}>1</button>
+            // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
+            <img
+              src="puzzle-images/corner1-empty.png"
+              alt="button-1"
+              onClick={() => handleClickBoard(1)}
+            />
           ) : (
             <img alt="puzzle-piece" src={placedPieces[1]} />
           )}
         </div>
         <div className="exit">
           {!placedPieces[2] ? (
-            <button onClick={() => handleClickBoard(2)}>2</button>
+            // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
+            <img
+              src="puzzle-images/exit-empty.png"
+              alt="button-2"
+              onClick={() => handleClickBoard(2)}
+            />
           ) : (
             <img alt="puzzle-piece" src={placedPieces[2]} />
           )}
