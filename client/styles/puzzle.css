@@ -1,5 +1,13 @@
-.puzzle-container {
-  border: 5px dotted blue;
+.puzzle-table {
+  background-image: url('puzzle-images/console-top.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.puzzle-outline {
+  /* border: 5px dotted blue; */
+  border-width: 5px;
+  border-style: dashed;
   display: grid;
   grid-template-areas: 'entrance middle corner' 'entrance middle exit';
   justify-content: center;
@@ -7,6 +15,10 @@
   width: 58%;
   height: 450px;
   margin: 0 auto;
+}
+
+.puzzle-container {
+  padding: 20px;
 }
 
 .entrance {

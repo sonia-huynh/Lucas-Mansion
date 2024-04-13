@@ -69,116 +69,118 @@ export default function JigsawPuzzle() {
   console.log(win)
 
   return (
-    <>
+    <div className="puzzle-table">
       <div className="puzzle-container">
-        <div className="middle">
-          <img src="puzzle-images/middle.png" alt="puzzle piece" />
-        </div>
+        <div className="puzzle-outline">
+          <div className="middle">
+            <img src="puzzle-images/middle.png" alt="puzzle piece" />
+          </div>
 
-        {!placedPieces[0] ? (
-          <div className="entrance-empty empty-slot">
-            {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,
+          {!placedPieces[0] ? (
+            <div className="entrance-empty empty-slot">
+              {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,
             jsx-a11y/no-noninteractive-element-interactions */}
-            <img
-              src="puzzle-images/entrance-empty.png"
-              alt="button-0"
-              onClick={() => handleClickBoard(0)}
-            />
-          </div>
-        ) : placedPieces[0] === correctAns[0] ? (
-          <div className="entrance">
-            <img
-              alt="puzzle-piece"
-              src={placedPieces[0]}
-              style={{ transform: `rotate(${rotationStates[1]}deg)` }}
-            />
-          </div>
-        ) : placedPieces[0] === correctAns[1] ? (
-          <div className="entrance">
-            <img
-              alt="puzzle-piece"
-              src={placedPieces[0]}
-              style={{ transform: `rotate(${rotationStates[2]}deg)` }}
-            />
-          </div>
-        ) : (
-          <div className="entrance">
-            <img
-              alt="puzzle-piece"
-              src={placedPieces[0]}
-              style={{ transform: `rotate(${rotationStates[0]}deg)` }}
-            />
-          </div>
-        )}
+              <img
+                src="puzzle-images/entrance-empty.png"
+                alt="button-0"
+                onClick={() => handleClickBoard(0)}
+              />
+            </div>
+          ) : placedPieces[0] === correctAns[0] ? (
+            <div className="entrance">
+              <img
+                alt="puzzle-piece"
+                src={placedPieces[0]}
+                style={{ transform: `rotate(${rotationStates[1]}deg)` }}
+              />
+            </div>
+          ) : placedPieces[0] === correctAns[1] ? (
+            <div className="entrance">
+              <img
+                alt="puzzle-piece"
+                src={placedPieces[0]}
+                style={{ transform: `rotate(${rotationStates[2]}deg)` }}
+              />
+            </div>
+          ) : (
+            <div className="entrance">
+              <img
+                alt="puzzle-piece"
+                src={placedPieces[0]}
+                style={{ transform: `rotate(${rotationStates[0]}deg)` }}
+              />
+            </div>
+          )}
 
-        {!placedPieces[1] ? (
-          <div className="corner-empty empty-slot">
-            {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
-            <img
-              src="puzzle-images/corner1-empty.png"
-              alt="button-1"
-              onClick={() => handleClickBoard(1)}
-            />
-          </div>
-        ) : placedPieces[1] === correctAns[0] ? (
-          <div className="corner">
-            <img
-              alt="puzzle-piece"
-              src={placedPieces[1]}
-              style={{ transform: `rotate(${rotationStates[1]}deg)` }}
-            />
-          </div>
-        ) : placedPieces[1] === correctAns[1] ? (
-          <div className="corner">
-            <img
-              alt="puzzle-piece"
-              src={placedPieces[1]}
-              style={{ transform: `rotate(${rotationStates[2]}deg)` }}
-            />
-          </div>
-        ) : (
-          <div className="corner">
-            <img
-              alt="puzzle-piece"
-              src={placedPieces[1]}
-              style={{ transform: `rotate(${rotationStates[0]}deg)` }}
-            />
-          </div>
-        )}
-        {!placedPieces[2] ? (
-          <div className="exit-empty empty-slot">
-            {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
-            <img
-              src="puzzle-images/exit-empty.png"
-              alt="button-2"
-              onClick={() => handleClickBoard(2)}
-            />
-          </div>
-        ) : placedPieces[2] === correctAns[0] ? (
-          <div className="exit">
-            <img
-              alt="puzzle-piece"
-              src={placedPieces[2]}
-              style={{ transform: `rotate(${rotationStates[1]}deg)` }}
-            />
-          </div>
-        ) : placedPieces[2] === correctAns[1] ? (
-          <div className="exit">
-            <img
-              alt="puzzle-piece"
-              src={placedPieces[2]}
-              style={{ transform: `rotate(${rotationStates[2]}deg)` }}
-            />
-          </div>
-        ) : (
-          <div className="exit">
-            <img
-              alt="puzzle-piece"
-              src={placedPieces[2]}
-              style={{ transform: `rotate(${rotationStates[0]}deg)` }}
-            />
-          </div>
-        )}
+          {!placedPieces[1] ? (
+            <div className="corner-empty empty-slot">
+              {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
+              <img
+                src="puzzle-images/corner1-empty.png"
+                alt="button-1"
+                onClick={() => handleClickBoard(1)}
+              />
+            </div>
+          ) : placedPieces[1] === correctAns[0] ? (
+            <div className="corner">
+              <img
+                alt="puzzle-piece"
+                src={placedPieces[1]}
+                style={{ transform: `rotate(${rotationStates[1]}deg)` }}
+              />
+            </div>
+          ) : placedPieces[1] === correctAns[1] ? (
+            <div className="corner">
+              <img
+                alt="puzzle-piece"
+                src={placedPieces[1]}
+                style={{ transform: `rotate(${rotationStates[2]}deg)` }}
+              />
+            </div>
+          ) : (
+            <div className="corner">
+              <img
+                alt="puzzle-piece"
+                src={placedPieces[1]}
+                style={{ transform: `rotate(${rotationStates[0]}deg)` }}
+              />
+            </div>
+          )}
+          {!placedPieces[2] ? (
+            <div className="exit-empty empty-slot">
+              {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
+              <img
+                src="puzzle-images/exit-empty.png"
+                alt="button-2"
+                onClick={() => handleClickBoard(2)}
+              />
+            </div>
+          ) : placedPieces[2] === correctAns[0] ? (
+            <div className="exit">
+              <img
+                alt="puzzle-piece"
+                src={placedPieces[2]}
+                style={{ transform: `rotate(${rotationStates[1]}deg)` }}
+              />
+            </div>
+          ) : placedPieces[2] === correctAns[1] ? (
+            <div className="exit">
+              <img
+                alt="puzzle-piece"
+                src={placedPieces[2]}
+                style={{ transform: `rotate(${rotationStates[2]}deg)` }}
+              />
+            </div>
+          ) : (
+            <div className="exit">
+              <img
+                alt="puzzle-piece"
+                src={placedPieces[2]}
+                style={{ transform: `rotate(${rotationStates[0]}deg)` }}
+              />
+            </div>
+          )}
+        </div>
       </div>
 
       <button onClick={checkWin} style={{ margin: '50px' }}>
@@ -204,6 +206,6 @@ export default function JigsawPuzzle() {
           </div>
         ))}
       </div>
-    </>
+    </div>
   )
 }
