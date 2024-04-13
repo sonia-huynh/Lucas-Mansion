@@ -45,6 +45,9 @@ export default function JigsawPuzzle() {
         console.log('not a win')
       }
     }
+    if (rotationStates[0] !== 0) setWin(false)
+    if (rotationStates[1] !== 0) setWin(false)
+    if (rotationStates[2] !== 0) setWin(false)
   }
 
   console.log(win)
