@@ -6,16 +6,15 @@ import Clock from './GamePopups/Clock'
 import '../styles/popup.css'
 import CombinationLock from './GamePopups/CombinationLock'
 import '../styles/main.css'
-// import '../../public/dinner-images/lucas-image.png'
 
 export default function Dinner() {
+  const [block, setBlock] = useState(true)
   const [jigsaw, setJigsaw] = useState(false)
   const [matching, setMatching] = useState(false)
   const [matchingWin, setMatchingWin] = useState(false)
   const [matchingE, setMatchingE] = useState(false)
   const [clock, setClock] = useState(false)
   const [lockNum, setLockNum] = useState(false)
-  const [block, setBlock] = useState(true)
 
   useEffect(() => {
     if (!jigsaw && !matchingE && !matching && !clock && !lockNum) {
@@ -120,6 +119,17 @@ export default function Dinner() {
           />
       </button>
       </div>
+
+
+
+
+<div className="duckdiv">
+      <img              
+            className="duck"
+            src="../../public/dinner-images/duck.png"
+            alt="frame with map"
+          />
+          </div>
     </>
   )
 }

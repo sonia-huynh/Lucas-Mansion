@@ -137,3 +137,21 @@ body {
     drop-shadow(0.5px 0.5px 0.5px white);
   opacity: 1;
 }
+
+
+.duckdiv {
+  position:relative
+}
+
+.duck {
+  position:absolute;
+  height: 33px;
+  margin:180px 0px 0px 1190px; 
+}
+
+.duck:hover {
+  filter: drop-shadow(0.5px 0.5px 0.5px white)
+    drop-shadow(0.5px 0.5px 0.5px white) drop-shadow(0.5px 0.5px 0.5px white)
+    drop-shadow(0.5px 0.5px 0.5px white);
+  opacity: 1;
+}
