@@ -19,11 +19,11 @@ export default function Dinner() {
 
   useEffect(() => {
     if (!jigsaw && !matchingE && !matching && !clock && !lockNum) {
-      setBlock(false)
+      setBlock (false)
     } else {
       setBlock(true)
     }
-    console.log(block, jigsaw)
+    console.log(block, lockNum)
   }, [jigsaw, matching, matchingE, clock, lockNum, block])
 
   return (
@@ -36,12 +36,13 @@ export default function Dinner() {
         </div>
       )}
       <div className="jigdiv">
+        <button className="frame"  onClick={() => setJigsaw(true)}>
         <img
           className={block ? 'block' : 'frame'}
           src="../../public/dinner-images/lucas-map.png"
           alt="frame with map"
-          onClick={() => setJigsaw(true)}
-        />
+          />
+          </button>
       </div>
 
       {lockNum && (
@@ -51,15 +52,16 @@ export default function Dinner() {
           </div>
         </div>
       )}
-      <div>
-        <button className="button" onClick={() => setLockNum(true)}>
+      <div className="lockdiv">
+        <button className="lock" onClick={() => setLockNum(true)}>
           <img
-            className="lock"
+            className={block ? 'block' : 'lock'} 
             src="../../public/dinner-images/door-handle.png"
             alt="frame with map"
           />
         </button>
       </div>
+      
       {matching && (
         <div className="popup-overlay">
           <div className="game-popup">
