@@ -122,18 +122,6 @@ export default function Dinner() {
 
 
 
-<div className="clockfacediv">
-      <img              
-            className="clockface"
-            src="../../public/dinner-images/clock-time.png"
-            alt="frame with map"
-          />
-          </div>
-
-
-
-
-
 
 <div className="duckdiv">
       <img              
