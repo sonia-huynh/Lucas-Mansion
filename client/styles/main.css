@@ -32,8 +32,8 @@ body {
 }
 
 .frame:hover {
-  filter: drop-shadow(2px 2px 2px white) drop-shadow(-2px 2px 2px white)
-    drop-shadow(-2px -2px 2px white) drop-shadow(2px -2px 2px white);
+  filter: drop-shadow(2px 2px 0.5px white) drop-shadow(-2px 2px 0.5px white)
+    drop-shadow(-2px -2px 0.5px white) drop-shadow(2px -2px 0.5px white);
   opacity: 1;
 }
 
@@ -49,7 +49,8 @@ body {
   height: 0px;
   width: 0px;
   padding: 0px;
-  margin: 211.5px 0px 0px 529px
+  margin: 211.5px 0px 0px 529px;
+  opacity: 0%
 }
 
 .lock img {
@@ -74,17 +75,38 @@ body {
   position: absolute;
   background: none;
   border:none;
-  height: 0px;
-  width: 0px;
+  opacity:0;
   padding: 0px;
-  margin: 700px 0px 0px 1100px
+  margin: 706px 0px 0px 1114px
 }
 
 .plateR img{
-  height:80px;
+  height:68px;
 }
 
 .plateR:hover {
+  filter: drop-shadow(0.5px 0.5px 0.5px white)
+    drop-shadow(0.5px 0.5px 0.5px white) drop-shadow(0.5px 0.5px 0.5px white)
+    drop-shadow(0.5px 0.5px 0.5px white);
+  opacity: 1;
+}
+
+
+.plateL {
+  position: absolute;
+  background: none;
+  border:none;
+  padding: 0px;
+  margin: 355px 0px 0px 322px;
+  opacity:0%
+
+}
+
+.plateL img{
+  height:72px;
+}
+
+.plateL:hover {
   filter: drop-shadow(0.5px 0.5px 0.5px white)
     drop-shadow(0.5px 0.5px 0.5px white) drop-shadow(0.5px 0.5px 0.5px white)
     drop-shadow(0.5px 0.5px 0.5px white);

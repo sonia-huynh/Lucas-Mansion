@@ -91,7 +91,22 @@ export default function Dinner() {
           </div>
         </div>
       )}
-      {/* <button onClick={() => setMatchingE(true)}>match-up Example</button> */}
+     
+      <div className="platediv">
+        <button className="plateL" onClick={() => setMatching(true)}>
+        <img              
+        className={block ? 'block' : 'plateL'}
+            src="../../public/dinner-images/plate-left.png"
+            alt="frame with map"
+          />
+        </button>
+      </div>
+
+
+
+
+
+
 
       {clock && (
         <div className="popup-overlay">
