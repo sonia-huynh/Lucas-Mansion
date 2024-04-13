@@ -82,11 +82,23 @@ export default function JigsawPuzzle() {
               alt="button-0"
               onClick={() => handleClickBoard(0)}
             />
-          ) : (
+          ) : placedPieces[0] === correctAns[0] ? (
             <img
               alt="puzzle-piece"
               src={placedPieces[0]}
               style={{ transform: `rotate(${rotationStates[1]}deg)` }}
+            />
+          ) : placedPieces[0] === correctAns[1] ? (
+            <img
+              alt="puzzle-piece"
+              src={placedPieces[0]}
+              style={{ transform: `rotate(${rotationStates[2]}deg)` }}
+            />
+          ) : (
+            <img
+              alt="puzzle-piece"
+              src={placedPieces[0]}
+              style={{ transform: `rotate(${rotationStates[0]}deg)` }}
             />
           )}
         </div>
@@ -98,11 +110,23 @@ export default function JigsawPuzzle() {
               alt="button-1"
               onClick={() => handleClickBoard(1)}
             />
-          ) : (
+          ) : placedPieces[1] === correctAns[0] ? (
+            <img
+              alt="puzzle-piece"
+              src={placedPieces[1]}
+              style={{ transform: `rotate(${rotationStates[1]}deg)` }}
+            />
+          ) : placedPieces[1] === correctAns[1] ? (
             <img
               alt="puzzle-piece"
               src={placedPieces[1]}
               style={{ transform: `rotate(${rotationStates[2]}deg)` }}
+            />
+          ) : (
+            <img
+              alt="puzzle-piece"
+              src={placedPieces[1]}
+              style={{ transform: `rotate(${rotationStates[0]}deg)` }}
             />
           )}
         </div>
@@ -113,6 +137,18 @@ export default function JigsawPuzzle() {
               src="puzzle-images/exit-empty.png"
               alt="button-2"
               onClick={() => handleClickBoard(2)}
+            />
+          ) : placedPieces[2] === correctAns[0] ? (
+            <img
+              alt="puzzle-piece"
+              src={placedPieces[2]}
+              style={{ transform: `rotate(${rotationStates[1]}deg)` }}
+            />
+          ) : placedPieces[2] === correctAns[1] ? (
+            <img
+              alt="puzzle-piece"
+              src={placedPieces[2]}
+              style={{ transform: `rotate(${rotationStates[2]}deg)` }}
             />
           ) : (
             <img
