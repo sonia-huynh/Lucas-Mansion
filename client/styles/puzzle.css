@@ -35,14 +35,6 @@
   left: -70px;
 }
 
-.pieces {
-  display: flex;
-  height: 10em;
-  top: 35em;
-  left: 25em;
-  position: absolute;
-}
-
 /* .empty-slot {
   position: absolute;
 } */
@@ -64,4 +56,24 @@
   position: relative;
   top: -53px;
   left: -70px;
+}
+
+.pieces {
+  display: flex;
+  height: 5px;
+  top: 35em;
+  left: 25em;
+  position: absolute;
+}
+
+.inventory-piece {
+  display: flex;
+  flex-direction: column;
+  height: 10px;
+  margin: 5px 50px;
+}
+
+.inventory-piece img {
+  height: 150px;
+  margin: 10px 0px;
 }

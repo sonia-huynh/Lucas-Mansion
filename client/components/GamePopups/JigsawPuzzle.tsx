@@ -24,8 +24,8 @@ export default function JigsawPuzzle() {
   function handleClickBoard(index: number): void {
     // removing img selected from option
     const removeIndex = pieces.indexOf(clickedPiece)
-    const newString = pieces[removeIndex].replace('.png', '-empty.png')
-    pieces[removeIndex] = newString
+    // const newString = pieces[removeIndex].replace('.png', '-empty.png')
+    pieces[removeIndex] = ''
     // placing selected piece on puzzle board
     for (let i = 0; i < placedPieces.length; i++) {
       if (i === index) {
@@ -187,15 +187,20 @@ export default function JigsawPuzzle() {
       {/* pieces from around the room render below */}
       <div className="pieces">
         {pieces.map((piece, index) => (
-          <div key={index}>
-            {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
-            <img
-              src={piece}
-              alt="puzzle"
-              onClick={() => handleClickPiece(index)}
-              style={{ transform: `rotate(${rotationStates[index]}deg)` }}
-            />
-            <button onClick={() => handleRotation(index)}>rotate</button>
+          <div key={index} className="inventory-piece">
+            {piece !== '' && (
+              <>
+                {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
+                <img
+                  src={piece}
+                  alt="puzzle"
+                  onClick={() => handleClickPiece(index)}
+                  style={{ transform: `rotate(${rotationStates[index]}deg)` }}
+                />
+
+                <button onClick={() => handleRotation(index)}>rotate</button>
+              </>
+            )}
           </div>
         ))}
       </div>
