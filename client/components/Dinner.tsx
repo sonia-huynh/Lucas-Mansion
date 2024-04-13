@@ -117,6 +117,38 @@ export default function Dinner() {
         </button>
       </div>
 
+      <div className="clockfacediv">
+        <img
+          className="clockface"
+          src="../../public/dinner-images/clock-face.png"
+          alt="frame with map"
+        />
+      </div>
+
+      <div className="gnomediv">
+        <img
+          className="gnome"
+          src="../../public/dinner-images/gnome.png"
+          alt="frame with map"
+        />
+      </div>
+
+      <div className="stooldiv">
+        <img
+          className="stool"
+          src="../../public/dinner-images/fallen-stool.png"
+          alt="frame with map"
+        />
+      </div>
+
+      <div className="chestdiv">
+        <img
+          className="chest"
+          src="../../public/dinner-images/chest.png"
+          alt="frame with map"
+        />
+      </div>
+
       <div className="duckdiv">
         <img
           className="duck"

@@ -8,7 +8,7 @@ body {
 }
 
 .block img {
-  display: none
+  display: none;
 }
 
 .button {
@@ -25,7 +25,7 @@ body {
   position: absolute;
   opacity: 0;
   background: none;
-  border:none;
+  border: none;
   height: 270px;
   padding: 0;
   margin: 41px 0px 0px 38px;
@@ -37,7 +37,6 @@ body {
   opacity: 1;
 }
 
-
 .lockdiv {
   position: relative;
 }
@@ -45,18 +44,17 @@ body {
 .lock {
   position: absolute;
   background: none;
-  border:none;
+  border: none;
   height: 0px;
   width: 0px;
   padding: 0px;
-  margin: 211.5px 0px 0px 529px;
-  opacity: 0%
+  margin: 210px 0px 0px 530px;
+  opacity: 0%;
 }
 
 .lock img {
-  height: 40px;
+  height: 45px;
   width: 25px;
-  
 }
 
 .lock:hover {
@@ -66,7 +64,6 @@ body {
   opacity: 1;
 }
 
-
 .platediv {
   position: relative;
 }
@@ -74,36 +71,34 @@ body {
 .plateR {
   position: absolute;
   background: none;
-  border:none;
-  opacity:0;
+  border: none;
+  opacity: 0;
   padding: 0px;
-  margin: 706px 0px 0px 1114px
+  margin: 706px 0px 0px 1114px;
 }
 
-.plateR img{
-  height:68px;
+.plateR img {
+  height: 68px;
 }
 
 .plateR:hover {
-  filter: drop-shadow(0.5px 0.5px 0.5px white)
-    drop-shadow(0.5px 0.5px 0.5px white) drop-shadow(0.5px 0.5px 0.5px white)
-    drop-shadow(0.5px 0.5px 0.5px white);
+  filter: drop-shadow(0.5px 0.5px 1.5px white)
+    drop-shadow(0.5px 0.5px 1.5px white) drop-shadow(0.5px 0.5px 1.5px white)
+    drop-shadow(0.5px 0.5px 1.5px white);
   opacity: 1;
 }
-
 
 .plateL {
   position: absolute;
   background: none;
-  border:none;
+  border: none;
   padding: 0px;
   margin: 356px 0px 0px 322px;
-  opacity:0%
-
+  opacity: 0%;
 }
 
-.plateL img{
-  height:72px;
+.plateL img {
+  height: 72px;
 }
 
 .plateL:hover {
@@ -114,21 +109,20 @@ body {
 }
 
 .clockdiv {
-  position:relative
+  position: relative;
 }
 
 .clockbod {
   position: absolute;
   background: none;
-  border:none;
+  border: none;
   padding: 0px;
   margin: 152px 0px 0px 282px;
-  opacity:0%
-
+  opacity: 0%;
 }
 
-.clockbod img{
-  height:148px;
+.clockbod img {
+  height: 148px;
 }
 
 .clockbod:hover {
@@ -138,15 +132,74 @@ body {
   opacity: 1;
 }
 
+.clockface {
+  position: relative;
+}
+
+.clockface {
+  position: absolute;
+  margin: 235px 0px 0px 566px;
+}
+
+.clockface:hover {
+  filter: drop-shadow(0.5px 0.5px 1px white) drop-shadow(0.5px 0.5px 1px white)
+    drop-shadow(0.5px 0.5px 1px white) drop-shadow(0.5px 0.5px 1px white);
+  opacity: 1;
+}
+
+.gnomediv {
+  position: relative;
+}
+
+.gnome {
+  position: absolute;
+  margin: 475px 0px 0px 320px;
+}
+
+.gnome:hover {
+  filter: drop-shadow(0.5px 0.5px 1px white) drop-shadow(0.5px 0.5px 1px white)
+    drop-shadow(0.5px 0.5px 1px white) drop-shadow(0.5px 0.5px 1px white);
+  opacity: 1;
+}
+
+.chestdiv {
+  position: relative;
+}
+
+.chest {
+  position: absolute;
+  margin: 550px 0px 0px 1310px;
+}
+
+.chest:hover {
+  filter: drop-shadow(0.5px 0.5px 1px white) drop-shadow(0.5px 0.5px 1px white)
+    drop-shadow(0.5px 0.5px 1px white) drop-shadow(0.5px 0.5px 1px white);
+  opacity: 1;
+}
+
+.stool {
+  position: relative;
+}
+
+.stool {
+  position: absolute;
+  margin: 510px 0px 0px 555px;
+}
+
+.stool:hover {
+  filter: drop-shadow(0.5px 0.5px 1px white) drop-shadow(0.5px 0.5px 1px white)
+    drop-shadow(0.5px 0.5px 1px white) drop-shadow(0.5px 0.5px 1px white);
+  opacity: 1;
+}
 
 .duckdiv {
-  position:relative
+  position: relative;
 }
 
 .duck {
-  position:absolute;
+  position: absolute;
   height: 33px;
-  margin:180px 0px 0px 1190px; 
+  margin: 180px 0px 0px 1190px;
 }
 
 .duck:hover {
@@ -157,13 +210,13 @@ body {
 }
 
 .mirror {
-  position:relative
+  position: relative;
 }
 
 .mirror {
-  position:absolute;
-  height:80px;
-  margin:285px 0px 0px 1230px; 
+  position: absolute;
+  height: 80px;
+  margin: 285px 0px 0px 1230px;
 }
 
 .mirror:hover {
@@ -173,16 +226,14 @@ body {
   opacity: 1;
 }
 
-
-
 .pumpkin {
-  position:relative
+  position: relative;
 }
 
 .pumpkin {
-  position:absolute;
-  height:62px;
-  margin:486px 0px 0px 1200px; 
+  position: absolute;
+  height: 62px;
+  margin: 486px 0px 0px 1200px;
 }
 
 .pumpkin:hover {
