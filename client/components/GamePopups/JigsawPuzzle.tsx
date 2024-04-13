@@ -70,7 +70,11 @@ export default function JigsawPuzzle() {
               onClick={() => handleClickBoard(0)}
             />
           ) : (
-            <img alt="puzzle-piece" src={placedPieces[0]} />
+            <img
+              alt="puzzle-piece"
+              src={placedPieces[0]}
+              style={{ transform: `rotate(${rotationStates[1]}deg)` }}
+            />
           )}
         </div>
         <div className="corner">
@@ -82,7 +86,11 @@ export default function JigsawPuzzle() {
               onClick={() => handleClickBoard(1)}
             />
           ) : (
-            <img alt="puzzle-piece" src={placedPieces[1]} />
+            <img
+              alt="puzzle-piece"
+              src={placedPieces[1]}
+              style={{ transform: `rotate(${rotationStates[2]}deg)` }}
+            />
           )}
         </div>
         <div className="exit">
@@ -94,7 +102,11 @@ export default function JigsawPuzzle() {
               onClick={() => handleClickBoard(2)}
             />
           ) : (
-            <img alt="puzzle-piece" src={placedPieces[2]} />
+            <img
+              alt="puzzle-piece"
+              src={placedPieces[2]}
+              style={{ transform: `rotate(${rotationStates[0]}deg)` }}
+            />
           )}
         </div>
       </div>
