@@ -104,10 +104,6 @@ export default function Dinner() {
 
 
 
-
-
-
-
       {clock && (
         <div className="popup-overlay">
           <div className="game-popup">
@@ -115,7 +111,15 @@ export default function Dinner() {
           </div>
         </div>
       )}
-      {/* <button onClick={() => setClock(true)}>Clock Inside</button> */}
+      <div className="clockdiv">
+      <button className="clockbod" onClick={() => setClock(true)}>
+      <img              
+        className={block ? 'block' : 'clockbod'}
+            src="../../public/dinner-images/clock-body.png"
+            alt="frame with map"
+          />
+      </button>
+      </div>
     </>
   )
 }
