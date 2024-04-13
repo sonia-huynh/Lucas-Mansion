@@ -8,21 +8,25 @@ export default function JigsawPuzzle() {
   const piece3 = 'puzzle-images/exit.png'
 
   const [pieces, setPieces] = useState([piece3, piece1, piece2])
+  const [rotationStates, setRotationStates] = useState([0, 0, 0])
+
   const correctAns = [piece1, piece2, piece3]
   const [placedPieces, setPlacedPieces] = useState(['', '', ''])
   const [clickedPiece, setClickedPiece] = useState('')
   const [win, setWin] = useState(false)
 
-  function handleClickPiece(index: number) {
+  function handleClickPiece(index: number): void {
     setClickedPiece(pieces[index])
   }
 
   console.log(clickedPiece)
 
-  function handleClickBoard(index: number) {
+  function handleClickBoard(index: number): void {
+    // removing img selected from option
     const removeIndex = pieces.indexOf(clickedPiece)
     const newString = pieces[removeIndex].replace('.png', '-empty.png')
     pieces[removeIndex] = newString
+    // placing selected piece on puzzle board
     for (let i = 0; i < placedPieces.length; i++) {
       if (i === index) {
         placedPieces[i] = clickedPiece
@@ -33,7 +37,7 @@ export default function JigsawPuzzle() {
 
   console.log(placedPieces)
 
-  function checkWin() {
+  function checkWin(): void {
     setWin(true)
     for (let i = 0; i < placedPieces.length; i++) {
       if (placedPieces[i] !== correctAns[i]) {
@@ -44,6 +48,12 @@ export default function JigsawPuzzle() {
   }
 
   console.log(win)
+
+  function handleRotation(index: number): void {
+    const newRotatedPieces = [...rotationStates]
+    newRotatedPieces[index] = rotationStates[index] + 90
+    setRotationStates(newRotatedPieces)
+  }
 
   return (
     <>
@@ -93,13 +103,16 @@ export default function JigsawPuzzle() {
       {/* pieces from around the room render below */}
       <div className="pieces">
         {pieces.map((piece, index) => (
-          // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
-          <img
-            src={piece}
-            alt="puzzle"
-            key={index}
-            onClick={() => handleClickPiece(index)}
-          />
+          <div key={index}>
+            {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
+            <img
+              src={piece}
+              alt="puzzle"
+              onClick={() => handleClickPiece(index)}
+              style={{ transform: `rotate(${rotationStates[index]}deg)` }}
+            />
+            <button onClick={() => handleRotation(index)}>rotate</button>
+          </div>
         ))}
       </div>
     </>
