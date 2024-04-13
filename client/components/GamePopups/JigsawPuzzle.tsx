@@ -37,26 +37,36 @@ export default function JigsawPuzzle() {
 
   console.log(placedPieces)
 
-  function checkWin(): void {
-    setWin(true)
+  function checkWin() {
+    let isWin = true
+    console.log('checkingAnswer')
+
+    // check piece placement
     for (let i = 0; i < placedPieces.length; i++) {
       if (placedPieces[i] !== correctAns[i]) {
-        setWin(false)
+        isWin = false
         console.log('not a win')
+        break
       }
     }
-    if (rotationStates[0] !== 0) setWin(false)
-    if (rotationStates[1] !== 0) setWin(false)
-    if (rotationStates[2] !== 0) setWin(false)
-  }
 
-  console.log(win)
+    // check rotation of pieces
+    if (rotationStates[0] !== 0) isWin = false
+    if (rotationStates[1] !== 0) isWin = false
+    if (rotationStates[2] !== 0) isWin = false
+
+    setWin(isWin)
+    if (win === true) console.log(`you win! - ${win}`)
+    if (win === false) console.log(`not right :( - ${win}`)
+  }
 
   function handleRotation(index: number): void {
     const newRotatedPieces = [...rotationStates]
     newRotatedPieces[index] = rotationStates[index] + 90
     setRotationStates(newRotatedPieces)
   }
+
+  console.log(win)
 
   return (
     <>
@@ -114,7 +124,9 @@ export default function JigsawPuzzle() {
         </div>
       </div>
 
-      <button onClick={checkWin}>check answer</button>
+      <button onClick={checkWin} style={{ margin: '50px' }}>
+        check answer
+      </button>
       {/* pieces from around the room render below */}
       <div className="pieces">
         {pieces.map((piece, index) => (
