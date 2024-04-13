@@ -78,7 +78,7 @@ export default function Dinner() {
       {matchingE && (
         <div className="popup-overlay">
           <div className="game-popup">
-            <MatchingExample setMatchingE={setMatchingE} />
+            <MatchingExample setMatching={setMatchingE} />
           </div>
         </div>
       )}
