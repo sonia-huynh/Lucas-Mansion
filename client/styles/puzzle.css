@@ -25,7 +25,6 @@
   grid-area: corner;
   position: relative;
   top: -73px;
-
   left: -140px;
 }
 
@@ -42,4 +41,27 @@
   top: 35em;
   left: 25em;
   position: absolute;
+}
+
+/* .empty-slot {
+  position: absolute;
+} */
+
+.entrance-empty {
+  grid-area: entrance;
+  position: relative;
+  left: 135px;
+}
+
+.corner-empty {
+  grid-area: corner;
+  position: relative;
+  left: -135px;
+}
+
+.exit-empty {
+  grid-area: exit;
+  position: relative;
+  top: -53px;
+  left: -70px;
 }
