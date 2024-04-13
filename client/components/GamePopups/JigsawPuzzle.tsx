@@ -20,6 +20,9 @@ export default function JigsawPuzzle() {
   console.log(clickedPiece)
 
   function handleClickBoard(index: number) {
+    const removeIndex = pieces.indexOf(clickedPiece)
+    const newString = pieces[removeIndex].replace('.png', '-empty.png')
+    pieces[removeIndex] = newString
     for (let i = 0; i < placedPieces.length; i++) {
       if (i === index) {
         placedPieces[i] = clickedPiece
@@ -43,9 +46,6 @@ export default function JigsawPuzzle() {
   console.log(win)
 
   return (
-    // const piece1 = 'puzzle-images/entrance.png'
-    // const piece2 = 'puzzle-images/corner1.png'
-    // const piece3 = 'puzzle-images/exit.png'
     <>
       <div className="puzzle-container">
         <div className="middle">
@@ -87,7 +87,6 @@ export default function JigsawPuzzle() {
             <img alt="puzzle-piece" src={placedPieces[2]} />
           )}
         </div>
-        {/* {placedPieces.map()} */}
       </div>
 
       <button onClick={checkWin}>check answer</button>
