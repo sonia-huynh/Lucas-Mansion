@@ -155,3 +155,39 @@ body {
     drop-shadow(0.5px 0.5px 0.5px white);
   opacity: 1;
 }
+
+.mirror {
+  position:relative
+}
+
+.mirror {
+  position:absolute;
+  height:80px;
+  margin:285px 0px 0px 1230px; 
+}
+
+.mirror:hover {
+  filter: drop-shadow(0.5px 0.5px 0.5px white)
+    drop-shadow(0.5px 0.5px 0.5px white) drop-shadow(0.5px 0.5px 0.5px white)
+    drop-shadow(0.5px 0.5px 0.5px white);
+  opacity: 1;
+}
+
+
+
+.pumpkin {
+  position:relative
+}
+
+.pumpkin {
+  position:absolute;
+  height:62px;
+  margin:486px 0px 0px 1200px; 
+}
+
+.pumpkin:hover {
+  filter: drop-shadow(0.5px 0.5px 0.5px white)
+    drop-shadow(0.5px 0.5px 0.5px white) drop-shadow(0.5px 0.5px 0.5px white)
+    drop-shadow(0.5px 0.5px 0.5px white);
+  opacity: 1;
+}

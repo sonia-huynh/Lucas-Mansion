@@ -38,7 +38,7 @@ export default function Dinner() {
         <button className="frame"  onClick={() => setJigsaw(true)}>
         <img
           className={block ? 'block' : 'frame'}
-          src="../../public/dinner-images/lucas-map.png"
+          src="../../public/dinner-images/lucas-map2.png"
           alt="frame with map"
           />
           </button>
@@ -122,11 +122,42 @@ export default function Dinner() {
 
 
 
+<div className="clockfacediv">
+      <img              
+            className="clockface"
+            src="../../public/dinner-images/clock-time.png"
+            alt="frame with map"
+          />
+          </div>
+
+
+
+
+
 
 <div className="duckdiv">
       <img              
             className="duck"
             src="../../public/dinner-images/duck.png"
+            alt="frame with map"
+          />
+          </div>
+
+
+
+<div className="mirrordiv">
+      <img              
+            className="mirror"
+            src="../../public/dinner-images/mirror.png"
+            alt="frame with map"
+          />
+          </div>
+
+
+<div className="pumpkindiv">
+      <img              
+            className="pumpkin"
+            src="../../public/dinner-images/pumpkins.png"
             alt="frame with map"
           />
           </div>
