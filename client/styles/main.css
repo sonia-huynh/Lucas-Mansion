@@ -142,6 +142,7 @@ body {
   border: none;
   padding: 0px;
   margin: 118px 0px 0px 283px;
+  opacity: 0%;
 }
 
 .clockface:hover {
@@ -157,10 +158,33 @@ body {
 
 .gnome {
   position: absolute;
-  margin: 475px 0px 0px 320px;
+  background: none;
+  border: none;
+  padding: 0px;
+  margin: 238px 0px 0px 160px;
 }
 
 .gnome:hover {
+  filter: drop-shadow(0.5px 0.5px 0.5px white)
+    drop-shadow(0.5px 0.5px 0.5px white) drop-shadow(0.5px 0.5px 0.5px white)
+    drop-shadow(0.5px 0.5px 0.5px white);
+  opacity: 1;
+}
+
+.stool {
+  position: relative;
+}
+
+.stool {
+  position: absolute;
+  background: none;
+  border: none;
+  padding: 0px;
+  margin: 254px 0px 0px 279px;
+  opacity: 0%;
+}
+
+.stool:hover {
   filter: drop-shadow(0.5px 0.5px 1px white) drop-shadow(0.5px 0.5px 1px white)
     drop-shadow(0.5px 0.5px 1px white) drop-shadow(0.5px 0.5px 1px white);
   opacity: 1;
@@ -176,21 +200,6 @@ body {
 }
 
 .chest:hover {
-  filter: drop-shadow(0.5px 0.5px 1px white) drop-shadow(0.5px 0.5px 1px white)
-    drop-shadow(0.5px 0.5px 1px white) drop-shadow(0.5px 0.5px 1px white);
-  opacity: 1;
-}
-
-.stool {
-  position: relative;
-}
-
-.stool {
-  position: absolute;
-  margin: 510px 0px 0px 555px;
-}
-
-.stool:hover {
   filter: drop-shadow(0.5px 0.5px 1px white) drop-shadow(0.5px 0.5px 1px white)
     drop-shadow(0.5px 0.5px 1px white) drop-shadow(0.5px 0.5px 1px white);
   opacity: 1;

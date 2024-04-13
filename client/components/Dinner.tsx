@@ -3,20 +3,32 @@ import Jigsaw from './GamePopups/Jigsaw'
 import Matching from './GamePopups/Matching'
 import MatchingExample from './GamePopups/MatchingExample'
 import Clock from './GamePopups/Clock'
-import ClockFace from './CluePopups/ClockFace'
-import '../styles/popup.css'
 import CombinationLock from './GamePopups/CombinationLock'
+
+//clues:
+import ClockFace from './CluePopups/ClockFace'
+import Gnome from './CluePopups/Gnome'
+import Stool from './CluePopups/Stool'
+
+//style:
+import '../styles/popup.css'
 import '../styles/main.css'
 
 export default function Dinner() {
   const [block, setBlock] = useState(true)
+
+  //game popups:
   const [jigsaw, setJigsaw] = useState(false)
   const [matching, setMatching] = useState(false)
   const [matchingWin, setMatchingWin] = useState(false)
   const [matchingE, setMatchingE] = useState(false)
-  const [clock, setClock] = useState(false)
-  const [clockFace, setClockFace] = useState(false)
   const [lockNum, setLockNum] = useState(false)
+
+  //clue popups:
+  const [clockFace, setClockFace] = useState(false)
+  const [clock, setClock] = useState(false)
+  const [gnome, setGnome] = useState(false)
+  const [stool, setStool] = useState(false)
 
   useEffect(() => {
     if (
@@ -25,14 +37,26 @@ export default function Dinner() {
       !matching &&
       !clock &&
       !lockNum &&
-      !clockFace
+      !clockFace &&
+      !gnome &&
+      !stool
     ) {
       setBlock(false)
     } else {
       setBlock(true)
     }
     console.log(block, matching)
-  }, [jigsaw, matching, matchingE, clock, lockNum, block, clockFace])
+  }, [
+    jigsaw,
+    matching,
+    matchingE,
+    clock,
+    lockNum,
+    block,
+    clockFace,
+    gnome,
+    stool,
+  ])
 
   return (
     <>
@@ -143,20 +167,38 @@ export default function Dinner() {
         </button>
       </div>
 
+      {gnome && (
+        <div className="popup-overlay">
+          <div className="game-popup">
+            <Gnome setGnome={setGnome} />
+          </div>
+        </div>
+      )}
       <div className="gnomediv">
-        <img
-          className="gnome"
-          src="../../public/dinner-images/gnome.png"
-          alt="frame with map"
-        />
+        <button className="gnome" onClick={() => setGnome(true)}>
+          <img
+            className={block ? 'block' : 'gnome'}
+            src="../../public/dinner-images/gnome.png"
+            alt="frame with map"
+          />
+        </button>
       </div>
 
+      {stool && (
+        <div className="popup-overlay">
+          <div className="game-popup">
+            <Stool setStool={setStool} />
+          </div>
+        </div>
+      )}
       <div className="stooldiv">
-        <img
-          className="stool"
-          src="../../public/dinner-images/fallen-stool.png"
-          alt="frame with map"
-        />
+        <button className="stool" onClick={() => setStool(true)}>
+          <img
+            className={block ? 'block' : 'stool'}
+            src="../../public/dinner-images/fallen-stool.png"
+            alt="frame with map"
+          />
+        </button>
       </div>
 
       <div className="chestdiv">
