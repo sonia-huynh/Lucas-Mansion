@@ -132,18 +132,22 @@ body {
   opacity: 1;
 }
 
-.clockface {
+.clockfacediv {
   position: relative;
 }
 
 .clockface {
   position: absolute;
-  margin: 235px 0px 0px 566px;
+  background: none;
+  border: none;
+  padding: 0px;
+  margin: 118px 0px 0px 283px;
 }
 
 .clockface:hover {
-  filter: drop-shadow(0.5px 0.5px 1px white) drop-shadow(0.5px 0.5px 1px white)
-    drop-shadow(0.5px 0.5px 1px white) drop-shadow(0.5px 0.5px 1px white);
+  filter: drop-shadow(0.5px 0.5px 0.5px white)
+    drop-shadow(0.5px 0.5px 0.5px white) drop-shadow(0.5px 0.5px 0.5px white)
+    drop-shadow(0.5px 0.5px 0.5px white);
   opacity: 1;
 }
 

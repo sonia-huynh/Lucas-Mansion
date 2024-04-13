@@ -3,6 +3,7 @@ import Jigsaw from './GamePopups/Jigsaw'
 import Matching from './GamePopups/Matching'
 import MatchingExample from './GamePopups/MatchingExample'
 import Clock from './GamePopups/Clock'
+import ClockFace from './CluePopups/ClockFace'
 import '../styles/popup.css'
 import CombinationLock from './GamePopups/CombinationLock'
 import '../styles/main.css'
@@ -14,16 +15,24 @@ export default function Dinner() {
   const [matchingWin, setMatchingWin] = useState(false)
   const [matchingE, setMatchingE] = useState(false)
   const [clock, setClock] = useState(false)
+  const [clockFace, setClockFace] = useState(false)
   const [lockNum, setLockNum] = useState(false)
 
   useEffect(() => {
-    if (!jigsaw && !matchingE && !matching && !clock && !lockNum) {
+    if (
+      !jigsaw &&
+      !matchingE &&
+      !matching &&
+      !clock &&
+      !lockNum &&
+      !clockFace
+    ) {
       setBlock(false)
     } else {
       setBlock(true)
     }
     console.log(block, matching)
-  }, [jigsaw, matching, matchingE, clock, lockNum, block])
+  }, [jigsaw, matching, matchingE, clock, lockNum, block, clockFace])
 
   return (
     <>
@@ -117,12 +126,21 @@ export default function Dinner() {
         </button>
       </div>
 
+      {clockFace && (
+        <div className="popup-overlay">
+          <div className="game-popup">
+            <ClockFace setClockFace={setClockFace} />
+          </div>
+        </div>
+      )}
       <div className="clockfacediv">
-        <img
-          className="clockface"
-          src="../../public/dinner-images/clock-face.png"
-          alt="frame with map"
-        />
+        <button className="clockface" onClick={() => setClockFace(true)}>
+          <img
+            className={block ? 'block' : 'clockface'}
+            src="../../public/dinner-images/clock-face.png"
+            alt="frame with map"
+          />
+        </button>
       </div>
 
       <div className="gnomediv">
