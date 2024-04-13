@@ -18,7 +18,7 @@ export default function Dinner() {
 
   useEffect(() => {
     if (!jigsaw && !matchingE && !matching && !clock && !lockNum) {
-      setBlock (false)
+      setBlock(false)
     } else {
       setBlock(true)
     }
@@ -35,13 +35,13 @@ export default function Dinner() {
         </div>
       )}
       <div className="jigdiv">
-        <button className="frame"  onClick={() => setJigsaw(true)}>
-        <img
-          className={block ? 'block' : 'frame'}
-          src="../../public/dinner-images/lucas-map2.png"
-          alt="frame with map"
+        <button className="frame" onClick={() => setJigsaw(true)}>
+          <img
+            className={block ? 'block' : 'frame'}
+            src="../../public/dinner-images/lucas-map2.png"
+            alt="frame with map"
           />
-          </button>
+        </button>
       </div>
 
       {lockNum && (
@@ -52,15 +52,15 @@ export default function Dinner() {
         </div>
       )}
       <div className="lockdiv">
-        <button className="lock"  onClick={() => setLockNum(true)}>
+        <button className="lock" onClick={() => setLockNum(true)}>
           <img
-            className={block ? 'block' : 'lock'} 
+            className={block ? 'block' : 'lock'}
             src="../../public/dinner-images/door-handle.png"
             alt="frame with map"
           />
         </button>
       </div>
-      
+
       {matching && (
         <div className="popup-overlay">
           <div className="game-popup">
@@ -74,34 +74,31 @@ export default function Dinner() {
       )}
       <div className="platediv">
         <button className="plateR" onClick={() => setMatching(true)}>
-        <img              
-        // className={block ? 'block' : 'plateR'}
+          <img
+            // className={block ? 'block' : 'plateR'}
             src="../../public/dinner-images/plate-right.png"
             alt="frame with map"
           />
         </button>
       </div>
 
-
       {matchingE && (
         <div className="popup-overlay">
           <div className="game-popup">
-            <MatchingExample setMatching={setMatchingE} />
+            <MatchingExample setMatchingE={setMatchingE} />
           </div>
         </div>
       )}
-     
+
       <div className="platediv">
-        <button className="plateL" onClick={() => setMatching(true)}>
-        <img              
-        className={block ? 'block' : 'plateL'}
+        <button className="plateL" onClick={() => setMatchingE(true)}>
+          <img
+            className={block ? 'block' : 'plateL'}
             src="../../public/dinner-images/plate-left.png"
             alt="frame with map"
           />
         </button>
       </div>
-
-
 
       {clock && (
         <div className="popup-overlay">
@@ -111,44 +108,38 @@ export default function Dinner() {
         </div>
       )}
       <div className="clockdiv">
-      <button className="clockbod" onClick={() => setClock(true)}>
-      <img              
-        className={block ? 'block' : 'clockbod'}
+        <button className="clockbod" onClick={() => setClock(true)}>
+          <img
+            className={block ? 'block' : 'clockbod'}
             src="../../public/dinner-images/clock-body.png"
             alt="frame with map"
           />
-      </button>
+        </button>
       </div>
 
+      <div className="duckdiv">
+        <img
+          className="duck"
+          src="../../public/dinner-images/duck.png"
+          alt="frame with map"
+        />
+      </div>
 
+      <div className="mirrordiv">
+        <img
+          className="mirror"
+          src="../../public/dinner-images/mirror.png"
+          alt="frame with map"
+        />
+      </div>
 
-
-<div className="duckdiv">
-      <img              
-            className="duck"
-            src="../../public/dinner-images/duck.png"
-            alt="frame with map"
-          />
-          </div>
-
-
-
-<div className="mirrordiv">
-      <img              
-            className="mirror"
-            src="../../public/dinner-images/mirror.png"
-            alt="frame with map"
-          />
-          </div>
-
-
-<div className="pumpkindiv">
-      <img              
-            className="pumpkin"
-            src="../../public/dinner-images/pumpkins.png"
-            alt="frame with map"
-          />
-          </div>
+      <div className="pumpkindiv">
+        <img
+          className="pumpkin"
+          src="../../public/dinner-images/pumpkins.png"
+          alt="frame with map"
+        />
+      </div>
     </>
   )
 }
