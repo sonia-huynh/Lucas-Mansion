@@ -9,6 +9,7 @@ import CombinationLock from './GamePopups/CombinationLock'
 import ClockFace from './CluePopups/ClockFace'
 import Gnome from './CluePopups/Gnome'
 import Stool from './CluePopups/Stool'
+import Chest from './CluePopups/Chest'
 
 //style:
 import '../styles/popup.css'
@@ -29,17 +30,20 @@ export default function Dinner() {
   const [clock, setClock] = useState(false)
   const [gnome, setGnome] = useState(false)
   const [stool, setStool] = useState(false)
+  const [chest, setChest] = useState(false)
 
   useEffect(() => {
     if (
       !jigsaw &&
       !matchingE &&
       !matching &&
+      !matchingWin &&
       !clock &&
       !lockNum &&
       !clockFace &&
       !gnome &&
-      !stool
+      !stool &&
+      !chest
     ) {
       setBlock(false)
     } else {
@@ -56,6 +60,8 @@ export default function Dinner() {
     clockFace,
     gnome,
     stool,
+    chest,
+    matchingWin,
   ])
 
   return (
@@ -201,12 +207,21 @@ export default function Dinner() {
         </button>
       </div>
 
+      {chest && (
+        <div className="popup-overlay">
+          <div className="game-popup">
+            <Chest setChest={setChest} />
+          </div>
+        </div>
+      )}
       <div className="chestdiv">
-        <img
-          className="chest"
-          src="../../public/dinner-images/chest.png"
-          alt="frame with map"
-        />
+        <button className="chest" onClick={() => setChest(true)}>
+          <img
+            className={block ? 'block' : 'chest'}
+            src="../../public/dinner-images/chest.png"
+            alt="frame with map"
+          />
+        </button>
       </div>
 
       <div className="duckdiv">

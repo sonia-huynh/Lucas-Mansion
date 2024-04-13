@@ -72,7 +72,7 @@ body {
   position: absolute;
   background: none;
   border: none;
-  opacity: 0;
+  opacity: 0px;
   padding: 0px;
   margin: 706px 0px 0px 1114px;
 }
@@ -196,12 +196,17 @@ body {
 
 .chest {
   position: absolute;
-  margin: 550px 0px 0px 1310px;
+  background: none;
+  border: none;
+  padding: 0px;
+  margin: 275px 0px 0px 655px;
+  opacity: 0%;
 }
 
 .chest:hover {
-  filter: drop-shadow(0.5px 0.5px 1px white) drop-shadow(0.5px 0.5px 1px white)
-    drop-shadow(0.5px 0.5px 1px white) drop-shadow(0.5px 0.5px 1px white);
+  filter: drop-shadow(0.5px 0.5px 0.5px white)
+    drop-shadow(0.5px 0.5px 0.5px white) drop-shadow(0.5px 0.5px 0.5px white)
+    drop-shadow(0.5px 0.5px 0.5px white);
   opacity: 1;
 }
 
