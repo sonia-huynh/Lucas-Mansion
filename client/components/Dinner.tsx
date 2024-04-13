@@ -23,7 +23,7 @@ export default function Dinner() {
     } else {
       setBlock(true)
     }
-    console.log(block, lockNum)
+    console.log(block, matching)
   }, [jigsaw, matching, matchingE, clock, lockNum, block])
 
   return (
@@ -53,7 +53,7 @@ export default function Dinner() {
         </div>
       )}
       <div className="lockdiv">
-        <button className="lock" onClick={() => setLockNum(true)}>
+        <button className="lock"  onClick={() => setLockNum(true)}>
           <img
             className={block ? 'block' : 'lock'} 
             src="../../public/dinner-images/door-handle.png"
@@ -73,10 +73,17 @@ export default function Dinner() {
           </div>
         </div>
       )}
-
-      <div>
-        <button onClick={() => setMatching(true)}>match-up GAME</button>
+      <div className="platediv">
+        <button className="plateR" onClick={() => setMatching(true)}>
+        <img              
+        // className={block ? 'block' : 'plateR'}
+            src="../../public/dinner-images/plate-right.png"
+            alt="frame with map"
+          />
+        </button>
       </div>
+
+
       {matchingE && (
         <div className="popup-overlay">
           <div className="game-popup">

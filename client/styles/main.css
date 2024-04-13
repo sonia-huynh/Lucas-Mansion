@@ -7,6 +7,10 @@ body {
   display: none;
 }
 
+.block img {
+  display: none
+}
+
 .button {
   background-color: transparent;
   border-color: transparent;
@@ -45,7 +49,7 @@ body {
   height: 0px;
   width: 0px;
   padding: 0px;
-  margin: 211px 0px 0px 529px
+  margin: 211.5px 0px 0px 529px
 }
 
 .lock img {
@@ -61,3 +65,28 @@ body {
   opacity: 1;
 }
 
+
+.platediv {
+  position: relative;
+}
+
+.plateR {
+  position: absolute;
+  background: none;
+  border:none;
+  height: 0px;
+  width: 0px;
+  padding: 0px;
+  margin: 700px 0px 0px 1100px
+}
+
+.plateR img{
+  height:80px;
+}
+
+.plateR:hover {
+  filter: drop-shadow(0.5px 0.5px 0.5px white)
+    drop-shadow(0.5px 0.5px 0.5px white) drop-shadow(0.5px 0.5px 0.5px white)
+    drop-shadow(0.5px 0.5px 0.5px white);
+  opacity: 1;
+}
