@@ -5,9 +5,9 @@
 }
 
 .puzzle-outline {
-  /* border: 5px dotted blue; */
-  border-width: 5px;
-  border-style: dashed;
+  border: 5px dashed rgb(35, 16, 3);
+  /* border-width: 5px;
+  border-style: dashed; */
   display: grid;
   grid-template-areas: 'entrance middle corner' 'entrance middle exit';
   justify-content: center;
@@ -19,6 +19,12 @@
 
 .puzzle-container {
   padding: 20px;
+}
+
+#submit {
+  position: absolute;
+  top: 250px;
+  left: 1250px;
 }
 
 .entrance {
@@ -72,20 +78,35 @@
 
 .pieces {
   display: flex;
-  height: 5px;
-  top: 35em;
-  left: 25em;
-  position: absolute;
+  height: 200px;
+  width: 800px;
+  top: 1em;
+  left: 22em;
+  position: relative;
+  background-image: url('puzzle-images/inventory-board.png');
+  background-size: cover;
+  background-position: center;
 }
 
-.inventory-piece {
+.inventory-pieces {
   display: flex;
   flex-direction: column;
+  align-content: center;
+  /* justify-content: center; */
   height: 10px;
   margin: 5px 50px;
 }
 
-.inventory-piece img {
+.inventory-pieces > img.inventory-piece {
   height: 150px;
   margin: 10px 0px;
+}
+
+.rotate-button {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  margin-left: 45px;
+  /* width: 100%;
+  height: 100%; */
 }

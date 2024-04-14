@@ -183,13 +183,11 @@ export default function JigsawPuzzle() {
         </div>
       </div>
 
-      <button onClick={checkWin} style={{ margin: '50px' }}>
-        check answer
-      </button>
+      <img alt="" onClick={checkWin} id="submit" />
       {/* pieces from around the room render below */}
       <div className="pieces">
         {pieces.map((piece, index) => (
-          <div key={index} className="inventory-piece">
+          <div key={index} className="inventory-pieces">
             {piece !== '' && (
               <>
                 {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
@@ -197,10 +195,18 @@ export default function JigsawPuzzle() {
                   src={piece}
                   alt="puzzle"
                   onClick={() => handleClickPiece(index)}
+                  className="inventory-piece"
                   style={{ transform: `rotate(${rotationStates[index]}deg)` }}
                 />
 
-                <button onClick={() => handleRotation(index)}>rotate</button>
+                {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
+                <img
+                  src="puzzle-images/rotate-dark.png"
+                  alt="rotation-button"
+                  className="rotate-button"
+                  style={{ height: '20px', width: '20px' }}
+                  onClick={() => handleRotation(index)}
+                />
               </>
             )}
           </div>
