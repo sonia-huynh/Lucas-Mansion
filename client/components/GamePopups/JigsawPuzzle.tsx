@@ -2,7 +2,12 @@ import { useState } from 'react'
 import '../../../public/puzzle-images/middle.png'
 import '../../styles/puzzle.css'
 
-export default function JigsawPuzzle() {
+interface Props {
+  setWin: React.Dispatch<React.SetStateAction<boolean>>
+  win: boolean
+}
+
+export default function JigsawPuzzle({ setWin, win }: Props) {
   const piece1 = 'puzzle-images/entrance.png'
   const piece2 = 'puzzle-images/corner1.png'
   const piece3 = 'puzzle-images/exit.png'
@@ -13,7 +18,6 @@ export default function JigsawPuzzle() {
   const correctAns = [piece1, piece2, piece3]
   const [placedPieces, setPlacedPieces] = useState(['', '', ''])
   const [clickedPiece, setClickedPiece] = useState('')
-  const [win, setWin] = useState(false)
 
   function handleClickPiece(index: number): void {
     setClickedPiece(pieces[index])

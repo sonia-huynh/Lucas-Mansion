@@ -1,13 +1,19 @@
-html body {
-  height: 100vh;
-  width: 100vw;
+/* .dinner {
+  background-image: url('/highangle-paper.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 1068px;
+  width: 1905px;
   padding: none;
   margin: none;
-}
+  overflow: hidden;
+} */
 
-/* body {
-  background-image: url(../../public/highangle-paper.png);
+body {
+  background-image: url('/highangle-paper.png');
   background-repeat: no-repeat;
+  overflow: hidden;
 }
 
 .block {
@@ -299,4 +305,4 @@ html body {
     drop-shadow(0.5px 0.5px 0.5px white) drop-shadow(0.5px 0.5px 0.5px white)
     drop-shadow(0.5px 0.5px 0.5px white);
   opacity: 1;
-} */
+}

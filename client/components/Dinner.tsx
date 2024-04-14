@@ -4,7 +4,6 @@ import Matching from './GamePopups/Matching'
 import MatchingExample from './GamePopups/MatchingExample'
 import Clock from './GamePopups/Clock'
 import CombinationLock from './GamePopups/CombinationLock'
-import '../styles/popup.css'
 
 //clues:
 import ClockFace from './CluePopups/ClockFace'
@@ -19,12 +18,14 @@ import Chandelier from './CluePopups/Chandelier'
 //style:
 import '../styles/popup.css'
 import '../styles/main.css'
+import '../styles/dinner.css'
 
 export default function Dinner() {
   const [block, setBlock] = useState(true)
 
   //game popups:
   const [jigsaw, setJigsaw] = useState(false)
+  const [jigsawWin, setJigsawWin] = useState(false)
   const [matching, setMatching] = useState(false)
   const [matchingWin, setMatchingWin] = useState(false)
   const [matchingE, setMatchingE] = useState(false)
@@ -81,11 +82,15 @@ export default function Dinner() {
   ])
 
   return (
-    <>
+    <div className="dinner">
       {jigsaw && (
         <div className="popup-overlay">
           <div className="game-popup">
-            <Jigsaw setJigsaw={setJigsaw} />
+            <Jigsaw
+              setJigsaw={setJigsaw}
+              win={jigsawWin}
+              setWin={setJigsawWin}
+            />
           </div>
         </div>
       )}
@@ -304,6 +309,6 @@ export default function Dinner() {
           />
         </button>
       </div>
-    </>
+    </div>
   )
 }
