@@ -82,6 +82,10 @@ export default function Dinner() {
     chandelier,
   ])
 
+  function haruka() {
+    console.log(matchingWin)
+  }
+
   return (
     <div className="dinner">
       {jigsaw && (
@@ -96,19 +100,25 @@ export default function Dinner() {
         </div>
       )}
 
-      {jigsawWin === true ? (
-        <img className="noMap" src="/lucas-no-map.png" alt="frame with map" />
-      ) : (
-        <div className="jigdiv">
-          <button className="frame" onClick={() => setJigsaw(true)}>
-            <img
-              className={block ? 'block' : 'frame'}
-              src="/dinner-images/lucas-map2.png"
-              alt="frame with map"
-            />
-          </button>
-        </div>
-      )}
+      {/* {jigsawWin === true ? (
+        <img
+          className={block ? 'block' : 'noMap'}
+          src="/lucas-no-map.png"
+          alt="frame with map"
+        />
+      ) : ( */}
+      <div className="jigdiv">
+        <button className="frame" onClick={() => setJigsaw(true)}>
+          <img
+            src={
+              jigsawWin ? '/lucas-no-map.png' : '/dinner-images/lucas-map2.png'
+            }
+            className={block ? 'block' : 'frame'}
+            alt="frame with map"
+          />
+        </button>
+      </div>
+      {/* )} */}
 
       {lockNum && (
         <div className="popup-overlay">
@@ -135,16 +145,21 @@ export default function Dinner() {
         </div>
       )}
 
-      <div className="clockdiv"></div>
       <div className="clockdiv">
-        <button className="clockbod" onClick={() => setClock(true)}>
+        <button
+          className={matchingWin ? 'clockbod' : 'clock-empty'}
+          onClick={() => setClock(true)}
+        >
           <img
-            className={block ? 'block' : 'clockbod'}
+            className={
+              block ? 'block' : matchingWin ? 'clockbod' : 'clock-empty'
+            }
             src="/dinner-images/clock-body.png"
             alt="frame with map"
           />
         </button>
       </div>
+
       {matchingE && (
         <div className="popup-overlay">
           <div className="game-popup">

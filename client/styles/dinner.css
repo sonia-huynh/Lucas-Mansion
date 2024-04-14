@@ -14,6 +14,7 @@ body {
   background-image: url('/highangle-paper.png');
   background-repeat: no-repeat;
   overflow: hidden;
+  z-index: 10;
 }
 
 .block {
@@ -51,11 +52,11 @@ body {
 }
 
 .noMap {
-  position:absolute;
-  height:auto;
+  position: absolute;
+  height: auto;
   margin: 221px 0px 0px 75px;
+  z-index: 11;
 }
-
 
 .lockdiv {
   position: relative;
@@ -133,6 +134,15 @@ body {
 }
 
 .clockbod {
+  position: absolute;
+  background: none;
+  border: none;
+  padding: 0px;
+  margin: 152px 0px 0px 282px;
+  opacity: 0%;
+}
+
+.clock-empty {
   position: absolute;
   background: none;
   border: none;
