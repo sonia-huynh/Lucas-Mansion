@@ -1,19 +1,19 @@
 import '../../styles/popup.css'
 interface Props {
   setMirror: React.Dispatch<React.SetStateAction<boolean>>
-  setFoundPaper: React.Dispatch<React.SetStateAction<boolean[]>>
+  setFoundPapers: React.Dispatch<React.SetStateAction<boolean[]>>
   foundPapers: boolean[]
 }
 
 export default function Mirror({
   setMirror,
-  setFoundPaper,
+  setFoundPapers,
   foundPapers,
 }: Props) {
   function collect() {
     const newArr = [...foundPapers]
     newArr[1] = true
-    setFoundPaper(newArr)
+    setFoundPapers(newArr)
   }
   return (
     <>

@@ -140,7 +140,12 @@ export default function Dinner() {
       {clock && (
         <div className="popup-overlay">
           <div className="clockbod-popup">
-            <Clock setClock={setClock} win={matchingWin} />
+            <Clock
+              setClock={setClock}
+              win={matchingWin}
+              foundPapers={foundPapers}
+              setFoundPapers={setFoundPapers}
+            />
           </div>
         </div>
       )}
@@ -281,7 +286,7 @@ export default function Dinner() {
             <Mirror
               setMirror={setMirror}
               foundPapers={foundPapers}
-              setFoundPaper={setFoundPapers}
+              setFoundPapers={setFoundPapers}
             />
           </div>
         </div>
