@@ -1,0 +1,36 @@
+.direction {
+  background: none;
+  border:none;
+  filter: drop-shadow(1px 1px 1px black)
+          drop-shadow(-1px -1px 1px black)
+          drop-shadow(1px -1px 1px black)
+          drop-shadow(-1px 1px 1px black);
+}
+
+.direction:hover {
+  filter: drop-shadow(2px 2px 1px #fafdc4)
+          drop-shadow(-2px -2px 1px #fafdc4)
+          drop-shadow(2px -2px 1px #fafdc4)
+          drop-shadow(-2px 2px 1px #fafdc4);
+}
+
+.left{
+  position: absolute;
+  top: 44%;
+  left: 2%;
+}
+.right{
+  position: absolute;
+  top: 44%;
+  right: 2%;
+}
+.forward{
+  position: absolute;
+  top: 2%;
+  left:33%
+}
+.back{
+  position: absolute;
+  bottom: 2%;
+  left:40%
+}
