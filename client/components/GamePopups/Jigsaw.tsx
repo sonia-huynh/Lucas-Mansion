@@ -5,18 +5,19 @@ import JigsawPuzzle from './JigsawPuzzle'
 
 interface Props {
   setJigsaw: React.Dispatch<React.SetStateAction<boolean>>
+  setWin: React.Dispatch<React.SetStateAction<boolean>>
+  win: boolean
 }
 
-const Jigsaw: React.FC<Props> = ({ setJigsaw }) => {
+const Jigsaw: React.FC<Props> = ({ setJigsaw, setWin, win }) => {
   return (
     <>
-      <div className="popup">
-        <div className="popup_inner">
+      <div>
+        <div>
           <button className="closeButton" onClick={() => setJigsaw(false)}>
             x
           </button>
-          <JigsawPuzzle />
-          {/* <Puzzle /> */}
+          {!win ? <JigsawPuzzle win={win} setWin={setWin} /> : <Puzzle />}
         </div>
       </div>
     </>

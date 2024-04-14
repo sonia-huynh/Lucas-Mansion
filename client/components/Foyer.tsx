@@ -1,3 +1,10 @@
+import '../../public/foyer-images/foyer.png'
+import '../styles/foyer.css'
+
 export default function Foyer() {
-  return <>Foyer</>
+  return (
+    <div className="foyer">
+      <img src="/foyer-images/foyer.png" alt="foyer-background" />
+    </div>
+  )
 }
