@@ -1,8 +1,15 @@
 import { useState } from 'react'
-import '../../../public/puzzle-images/middle.png'
+// import '../../../public/puzzle-images/middle.png'
+import tape from '/audio/stretch-tape.mp3'
+
 import '../../styles/puzzle.css'
 
-export default function JigsawPuzzle() {
+interface Props {
+  setWin: React.Dispatch<React.SetStateAction<boolean>>
+  win: boolean
+}
+
+export default function JigsawPuzzle({ setWin, win }: Props) {
   const piece1 = 'puzzle-images/entrance.png'
   const piece2 = 'puzzle-images/corner1.png'
   const piece3 = 'puzzle-images/exit.png'
@@ -13,7 +20,6 @@ export default function JigsawPuzzle() {
   const correctAns = [piece1, piece2, piece3]
   const [placedPieces, setPlacedPieces] = useState(['', '', ''])
   const [clickedPiece, setClickedPiece] = useState('')
-  const [win, setWin] = useState(false)
 
   function handleClickPiece(index: number): void {
     setClickedPiece(pieces[index])
@@ -39,7 +45,6 @@ export default function JigsawPuzzle() {
 
   function checkWin() {
     let isWin = true
-    console.log('checkingAnswer')
 
     // check piece placement
     for (let i = 0; i < placedPieces.length; i++) {
@@ -51,13 +56,19 @@ export default function JigsawPuzzle() {
     }
 
     // check rotation of pieces
-    if (rotationStates[0] !== 0) isWin = false
-    if (rotationStates[1] !== 0) isWin = false
-    if (rotationStates[2] !== 0) isWin = false
+    if (rotationStates[0] % 270 !== 0) isWin = false
+    if (rotationStates[1] % 180 !== 0) isWin = false
+    if (rotationStates[2] % 90 !== 0) isWin = false
 
     setWin(isWin)
-    if (win === true) console.log(`you win! - ${win}`)
-    if (win === false) console.log(`not right :( - ${win}`)
+
+    if (isWin === true) {
+      const tapeSound = new Audio(tape)
+      tapeSound.play()
+    }
+
+    if (isWin === true) console.log(`you win! - ${isWin}`)
+    if (isWin === false) console.log(`not right :( - ${isWin}`)
   }
 
   function handleRotation(index: number): void {
@@ -65,6 +76,8 @@ export default function JigsawPuzzle() {
     newRotatedPieces[index] = rotationStates[index] + 90
     setRotationStates(newRotatedPieces)
   }
+
+  console.log(rotationStates)
 
   console.log(win)
 
