@@ -7,7 +7,7 @@ export default function Puzzle() {
     setSide('back')
   }
   return (
-    <>
+    <div style={{ margin: '145px' }}>
       {side === 'front' ? (
         <>
           <img src="/puzzle-images/full_map.png" alt="maze-map" />
@@ -22,6 +22,6 @@ export default function Puzzle() {
           />
         </>
       )}
-    </>
+    </div>
   )
 }

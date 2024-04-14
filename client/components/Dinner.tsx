@@ -85,7 +85,7 @@ export default function Dinner() {
     <div className="dinner">
       {jigsaw && (
         <div className="popup-overlay">
-          <div className="game-popup">
+          <div className="map-popup">
             <Jigsaw
               setJigsaw={setJigsaw}
               win={jigsawWin}
