@@ -277,8 +277,12 @@ export default function Dinner() {
       </div>
       {mirror && (
         <div className="popup-overlay">
-          <div className="clue-popup">
-            <Mirror setMirror={setMirror} />
+          <div className="map-clue-popup">
+            <Mirror
+              setMirror={setMirror}
+              foundPapers={foundPapers}
+              setFoundPaper={setFoundPapers}
+            />
           </div>
         </div>
       )}
