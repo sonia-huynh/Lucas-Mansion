@@ -216,8 +216,12 @@ body {
 
 .duck {
   position: absolute;
-  height: 33px;
-  margin: 180px 0px 0px 1190px;
+  background: none;
+  border: none;
+  padding: 0px;
+  height: 30px;
+  margin: 85px 0px 0px 595px;
+  opacity: 0;
 }
 
 .duck:hover {
