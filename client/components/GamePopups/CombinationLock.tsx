@@ -2,7 +2,8 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import '../../styles/lock.css'
 import '../../styles/popup.css'
-import '../../../public/lock-closeup.png'
+import '/lock-closeup.png'
+import unlock from '/audio/combination-lock.mp3'
 
 interface Props {
   setLockNum: React.Dispatch<React.SetStateAction<boolean>>
@@ -17,7 +18,8 @@ export default function CombinationLock({ setLockNum }: Props) {
 
   function handleSubmit() {
     if (pin1 === 1 && pin2 === 1 && pin3 === 1 && pin4 === 1) {
-      console.log('correct!')
+      const sound = new Audio(unlock)
+      sound.play()
       navigate('/Foyer')
     } else {
       console.log('Try Again')
