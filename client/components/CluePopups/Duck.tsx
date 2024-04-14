@@ -7,7 +7,11 @@ export default function Duck({ setDuck }: Props) {
   return (
     <>
       <h1>Duck</h1>
-      <button className="closeButton" onClick={() => setDuck(false)}>
+      <p>
+        The duck reminds you of some method where you talk to a rubber ducky to
+        explain something step by step...
+      </p>
+      <button className="duckCloseButton" onClick={() => setDuck(false)}>
         x
       </button>
     </>

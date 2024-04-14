@@ -272,3 +272,23 @@ body {
     drop-shadow(0.5px 0.5px 0.5px white);
   opacity: 1;
 }
+
+.chandelierdiv {
+  position: relative;
+}
+
+.chandelier {
+  position: absolute;
+  background: none;
+  border: none;
+  padding: 0px;
+  height: 350px;
+  margin: -90px 0px 0px 400px;
+}
+
+.chandelier:hover {
+  filter: drop-shadow(0.5px 0.5px 0.5px white)
+    drop-shadow(0.5px 0.5px 0.5px white) drop-shadow(0.5px 0.5px 0.5px white)
+    drop-shadow(0.5px 0.5px 0.5px white);
+  opacity: 1;
+}

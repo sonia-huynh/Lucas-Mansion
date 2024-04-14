@@ -13,6 +13,7 @@ import Chest from './CluePopups/Chest'
 import Duck from './CluePopups/Duck'
 import Mirror from './CluePopups/Mirror'
 import Pumpkin from './CluePopups/Pumpkin'
+import Chandelier from './CluePopups/Chandelier'
 
 //style:
 import '../styles/popup.css'
@@ -37,6 +38,7 @@ export default function Dinner() {
   const [duck, setDuck] = useState(false)
   const [mirror, setMirror] = useState(false)
   const [pumpkin, setPumpkin] = useState(false)
+  const [chandelier, setChandelier] = useState(false)
 
   useEffect(() => {
     if (
@@ -52,13 +54,13 @@ export default function Dinner() {
       !chest &&
       !duck &&
       !mirror &&
-      !pumpkin
+      !pumpkin &&
+      !chandelier
     ) {
       setBlock(false)
     } else {
       setBlock(true)
     }
-    console.log({ block }, { matching }, { matchingWin })
   }, [
     jigsaw,
     matching,
@@ -74,6 +76,7 @@ export default function Dinner() {
     duck,
     mirror,
     pumpkin,
+    chandelier,
   ])
 
   return (
@@ -237,7 +240,7 @@ export default function Dinner() {
       </div>
       {duck && (
         <div className="popup-overlay">
-          <div className="game-popup">
+          <div className="duck-popup">
             <Duck setDuck={setDuck} />
           </div>
         </div>
@@ -269,7 +272,7 @@ export default function Dinner() {
       </div>
       {pumpkin && (
         <div className="popup-overlay">
-          <div className="game-popup">
+          <div className="duck-popup">
             <Pumpkin setPumpkin={setPumpkin} />
           </div>
         </div>
@@ -279,6 +282,23 @@ export default function Dinner() {
           <img
             className={block ? 'block' : 'pumpkin'}
             src="../../public/dinner-images/pumpkins.png"
+            alt="frame with map"
+          />
+        </button>
+      </div>
+
+      {chandelier && (
+        <div className="popup-overlay">
+          <div className="duck-popup">
+            <Chandelier setChandelier={setChandelier} />
+          </div>
+        </div>
+      )}
+      <div className="chandelierdiv">
+        <button className="chandelier" onClick={() => setChandelier(true)}>
+          <img
+            className={block ? 'block' : 'chandelier'}
+            src="../../public/dinner-images/chandelier.png"
             alt="frame with map"
           />
         </button>
