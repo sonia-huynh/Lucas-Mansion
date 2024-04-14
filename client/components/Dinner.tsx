@@ -85,8 +85,8 @@ export default function Dinner() {
 
 
   return (
+  
     <div className="dinner">
-      
       {jigsaw && (
         <div className="popup-overlay">
           <div className="map-popup">
@@ -133,10 +133,7 @@ export default function Dinner() {
           />
         </button>
       </div>
-
-
-
-
+   
       {clock && (
         <div className="popup-overlay">
           <div className="clockbod-popup">
@@ -144,40 +141,15 @@ export default function Dinner() {
           </div>
         </div>
       )}
-{matchingWin === true ? 
     <div className="clockdiv">
         <button className="clockbod" onClick={() => setClock(true)}>
           <img
-            // className={block ? 'block' : 'clockbod'}
+            className={block ? 'block' : 'clockbod'}
             src="../../public/dinner-images/clock-body.png"
             alt="clock body with lantern and piece of paper"
             />
         </button>
       </div>
-  
-:
-      <div className="platediv">
-        <button className="plateR" onClick={() => setMatching(true)}>
-          <img
-            className={block ? 'block' : 'plateR'}
-            src="../../public/dinner-imsages/plate-right.png"
-            alt="plate with utensils in the wrong order"
-            />
-        </button>
-      </div>
-}
-
-            {matching && (
-              <div className="popup-overlay">
-                <div className="game-popup">
-                  <Matching
-                    setMatching={setMatching}
-                    win={matchingWin}
-                    setWin={setMatchingWin}
-                  />
-                </div>
-              </div>
-            )}
 
       {matchingE && (
         <div className="popup-overlay">
@@ -195,6 +167,27 @@ export default function Dinner() {
             alt="plate with utensils"
           />
         </button>
+      </div>
+
+      {matching && (
+        <div className="popup-overlay">
+          <div className="game-popup">
+          <Matching
+          setMatching={setMatching}
+          win={matchingWin}
+          setWin={setMatchingWin}
+          />
+          </div>
+          </div>
+        )}
+        <div className="platediv">
+  <button className="plateR" onClick={() => setMatching(true)}>
+    <img
+      className={block ? 'block' : 'plateR'}
+      src="/dinner-images/plate-right.png"
+      alt="plate with utensils in the wrong order"
+      />
+  </button>
       </div>
 
 
@@ -330,6 +323,7 @@ export default function Dinner() {
           />
         </button>
       </div>
-    </div>
+
+      </div>
   )
 }
