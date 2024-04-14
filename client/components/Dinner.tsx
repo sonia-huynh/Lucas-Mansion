@@ -4,7 +4,6 @@ import Matching from './GamePopups/Matching'
 import MatchingExample from './GamePopups/MatchingExample'
 import Clock from './GamePopups/Clock'
 import CombinationLock from './GamePopups/CombinationLock'
-import '/lucas-no-map.png'
 
 //clues:
 import ClockFace from './CluePopups/ClockFace'
@@ -100,6 +99,7 @@ export default function Dinner() {
         <div className="popup-overlay">
           <div className="map-popup">
             <Jigsaw
+              foundPapers={foundPapers}
               setJigsaw={setJigsaw}
               win={jigsawWin}
               setWin={setJigsawWin}
@@ -217,7 +217,11 @@ export default function Dinner() {
       {gnome && (
         <div className="popup-overlay">
           <div className="clue-popup">
-            <Gnome setGnome={setGnome} />
+            <Gnome
+              setGnome={setGnome}
+              foundPapers={foundPapers}
+              setFoundPapers={setFoundPapers}
+            />
           </div>
         </div>
       )}
