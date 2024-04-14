@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import '../../styles/matching.css'
 import '../../styles/popup.css'
+import bell from '/audio/bell.mp3'
+import latchUnlock from '/audio/latch-unlock.mp3'
 
 interface Props {
   setMatching: React.Dispatch<React.SetStateAction<boolean>>
@@ -40,12 +42,22 @@ export default function Matching({ setMatching, win, setWin }: Props) {
   }
 
   function handleCheck() {
-    setWin(true)
+    const bellSound = new Audio(bell)
+    bellSound.play()
+    let winState = true
     for (let i = 0; i < arr.length; i++) {
       if (arr[i] !== correctAns[i]) {
-        setWin(false)
+        winState = false
         console.log('not a win')
       }
+    }
+    setWin(winState)
+    if (winState === true) {
+      setTimeout(() => {
+        const unlatchSound = new Audio(latchUnlock)
+        unlatchSound.play()
+        setMatching(false)
+      }, 1000)
     }
   }
 
@@ -56,17 +68,15 @@ export default function Matching({ setMatching, win, setWin }: Props) {
           <button className="closeButton" onClick={() => setMatching(false)}>
             x
           </button>
-          {win ? (
-            <p>go get the key</p>
-          ) : (
-            // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
-            <img
-              src="/match-up/cutlery/bell.png"
-              alt="submit-button"
-              id="bell"
-              onClick={() => handleCheck()}
-            />
-          )}
+
+          {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
+          <img
+            src="/match-up/cutlery/bell.png"
+            alt="submit-button"
+            id="bell"
+            onClick={() => handleCheck()}
+          />
+
           <div className="cutlery-items">
             {arr.map((item, index) => (
               <div
