@@ -5,6 +5,6 @@ export async function getAllScores() {
   return await db('fruit').select()
 }
 
-export async function getFruitById(name: string, time: string) {
-  return await db('leaderboard').insert{ name, time }
-}
+// export async function getFruitById(name: string, time: string) {
+//   return await db('leaderboard').insert{ name, time }
+// }
