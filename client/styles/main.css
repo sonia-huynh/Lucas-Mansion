@@ -252,14 +252,18 @@ body {
   opacity: 1;
 }
 
-.pumpkin {
+.pumpkindiv {
   position: relative;
 }
 
 .pumpkin {
   position: absolute;
+  background: none;
+  border: none;
+  padding: 0px;
   height: 62px;
-  margin: 486px 0px 0px 1200px;
+  margin: 228px 0px 0px 600px;
+  /* opacity: 0; */
 }
 
 .pumpkin:hover {
