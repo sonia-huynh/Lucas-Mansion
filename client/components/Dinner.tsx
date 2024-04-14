@@ -15,6 +15,7 @@ import Duck from './CluePopups/Duck'
 import Mirror from './CluePopups/Mirror'
 import Pumpkin from './CluePopups/Pumpkin'
 import Chandelier from './CluePopups/Chandelier'
+import Inventory from './CluePopups/Inventory'
 
 //style:
 import '../styles/popup.css'
@@ -42,8 +43,10 @@ export default function Dinner() {
   const [mirror, setMirror] = useState(false)
   const [pumpkin, setPumpkin] = useState(false)
   const [chandelier, setChandelier] = useState(false)
+  const [inventory, setInventory] = useState(false)
 
   useEffect(() => {
+    document.body.style.backgroundImage = "url('/highangle-paper.png')"
     if (
       !jigsaw &&
       !matchingE &&
@@ -58,7 +61,8 @@ export default function Dinner() {
       !duck &&
       !mirror &&
       !pumpkin &&
-      !chandelier
+      !chandelier &&
+      !inventory
     ) {
       setBlock(false)
     } else {
@@ -80,6 +84,7 @@ export default function Dinner() {
     mirror,
     pumpkin,
     chandelier,
+    inventory,
   ])
 
   function haruka() {
@@ -325,6 +330,23 @@ export default function Dinner() {
           <img
             className={block ? 'block' : 'chandelier'}
             src="/dinner-images/chandelier.png"
+            alt="frame with map"
+          />
+        </button>
+      </div>
+
+      {inventory && (
+        <div className="popup-overlay">
+          <div className="duck-popup">
+            <Inventory setInventory={setInventory} />
+          </div>
+        </div>
+      )}
+      <div className="inventorydiv">
+        <button className="inventory" onClick={() => setInventory(true)}>
+          <img
+            className={block ? 'block' : 'inventory'}
+            src="/dinner-images/backpack.png"
             alt="frame with map"
           />
         </button>
