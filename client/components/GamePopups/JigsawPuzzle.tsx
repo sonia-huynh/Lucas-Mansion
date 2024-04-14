@@ -183,7 +183,13 @@ export default function JigsawPuzzle() {
         </div>
       </div>
 
-      <img alt="" onClick={checkWin} id="submit" />
+      {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
+      <img
+        alt="submit-button"
+        src="puzzle-images/tape.png"
+        onClick={checkWin}
+        id="submit"
+      />
       {/* pieces from around the room render below */}
       <div className="pieces">
         {pieces.map((piece, index) => (

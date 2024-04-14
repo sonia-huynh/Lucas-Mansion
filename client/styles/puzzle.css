@@ -23,8 +23,13 @@
 
 #submit {
   position: absolute;
-  top: 250px;
-  left: 1250px;
+  top: 240px;
+  left: 1210px;
+  height: 25%;
+}
+
+#submit:hover {
+  filter: drop-shadow(8px 8px 5px rgb(231, 239, 201));
 }
 
 .entrance {
