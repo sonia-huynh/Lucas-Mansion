@@ -12,13 +12,13 @@ interface Props {
 const Jigsaw: React.FC<Props> = ({ setJigsaw, setWin, win }) => {
   return (
     <>
-      <div className="popup">
-        <div className="popup_inner">
-          <button className="closeButton" onClick={() => setJigsaw(false)}>
-            x
-          </button>
-          {!win ? <JigsawPuzzle win={win} setWin={setWin} /> : <Puzzle />}
-        </div>
+      <div className="map-popup">
+        {/* <div className="popup_inner"> */}
+        <button className="closeButton" onClick={() => setJigsaw(false)}>
+          x
+        </button>
+        {!win ? <JigsawPuzzle win={win} setWin={setWin} /> : <Puzzle />}
+        {/* </div> */}
       </div>
     </>
   )
