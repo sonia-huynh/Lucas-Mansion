@@ -196,7 +196,7 @@ export default function Dinner() {
 
       {gnome && (
         <div className="popup-overlay">
-          <div className="game-popup">
+          <div className="clue-popup">
             <Gnome setGnome={setGnome} />
           </div>
         </div>
@@ -213,7 +213,7 @@ export default function Dinner() {
 
       {stool && (
         <div className="popup-overlay">
-          <div className="game-popup">
+          <div className="clue-popup">
             <Stool setStool={setStool} />
           </div>
         </div>
@@ -230,7 +230,7 @@ export default function Dinner() {
 
       {chest && (
         <div className="popup-overlay">
-          <div className="game-popup">
+          <div className="clue-popup">
             <Chest setChest={setChest} />
           </div>
         </div>
@@ -246,7 +246,7 @@ export default function Dinner() {
       </div>
       {duck && (
         <div className="popup-overlay">
-          <div className="duck-popup">
+          <div className="clue-popup">
             <Duck setDuck={setDuck} />
           </div>
         </div>
@@ -262,7 +262,7 @@ export default function Dinner() {
       </div>
       {mirror && (
         <div className="popup-overlay">
-          <div className="game-popup">
+          <div className="clue-popup">
             <Mirror setMirror={setMirror} />
           </div>
         </div>
@@ -278,7 +278,7 @@ export default function Dinner() {
       </div>
       {pumpkin && (
         <div className="popup-overlay">
-          <div className="duck-popup">
+          <div className="clue-popup">
             <Pumpkin setPumpkin={setPumpkin} />
           </div>
         </div>
@@ -295,7 +295,7 @@ export default function Dinner() {
 
       {chandelier && (
         <div className="popup-overlay">
-          <div className="duck-popup">
+          <div className="clue-popup">
             <Chandelier setChandelier={setChandelier} />
           </div>
         </div>

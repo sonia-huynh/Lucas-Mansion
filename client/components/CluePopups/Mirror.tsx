@@ -7,7 +7,7 @@ export default function Mirror({ setMirror }: Props) {
   return (
     <>
       <h1>Mirror</h1>
-      <button className="closeButton" onClick={() => setMirror(false)}>
+      <button className="clueCloseButton" onClick={() => setMirror(false)}>
         x
       </button>
     </>

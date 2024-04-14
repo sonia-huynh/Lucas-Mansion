@@ -7,7 +7,7 @@ export default function Gnome({ setGnome }: Props) {
   return (
     <>
       <h1>Gnome</h1>
-      <button className="closeButton" onClick={() => setGnome(false)}>
+      <button className="clueCloseButton" onClick={() => setGnome(false)}>
         x
       </button>
     </>

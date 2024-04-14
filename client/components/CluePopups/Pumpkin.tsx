@@ -8,7 +8,7 @@ export default function Pumpkin({ setPumpkin }: Props) {
     <>
       <h1>Pumpkin</h1>
       <p>Hmmm, these pumpkins look like they have been quite neglected...</p>
-      <button className="duckCloseButton" onClick={() => setPumpkin(false)}>
+      <button className="clueCloseButton" onClick={() => setPumpkin(false)}>
         x
       </button>
     </>
