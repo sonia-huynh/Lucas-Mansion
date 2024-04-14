@@ -10,7 +10,7 @@ export default function ClockFace({ setClockFace }: Props) {
     <>
       <img
         className="clockimg"
-        src="../../../public/clock-face.png"
+        src="/clock-face.png"
         alt="inside clock has a lantern and a piece of a puzzle"
       />
       <button
