@@ -11,6 +11,7 @@ import Gnome from './CluePopups/Gnome'
 import Stool from './CluePopups/Stool'
 import Chest from './CluePopups/Chest'
 import Duck from './CluePopups/Duck'
+import Mirror from './CluePopups/Mirror'
 
 //style:
 import '../styles/popup.css'
@@ -33,6 +34,7 @@ export default function Dinner() {
   const [stool, setStool] = useState(false)
   const [chest, setChest] = useState(false)
   const [duck, setDuck] = useState(false)
+  const [mirror, setMirror] = useState(false)
 
   useEffect(() => {
     if (
@@ -46,7 +48,8 @@ export default function Dinner() {
       !gnome &&
       !stool &&
       !chest &&
-      !duck
+      !duck &&
+      !mirror
     ) {
       setBlock(false)
     } else {
@@ -66,6 +69,7 @@ export default function Dinner() {
     chest,
     matchingWin,
     duck,
+    mirror,
   ])
 
   return (
@@ -243,13 +247,21 @@ export default function Dinner() {
           />
         </button>
       </div>
-
+      {mirror && (
+        <div className="popup-overlay">
+          <div className="game-popup">
+            <Mirror setMirror={setMirror} />
+          </div>
+        </div>
+      )}
       <div className="mirrordiv">
-        <img
-          className="mirror"
-          src="../../public/dinner-images/mirror.png"
-          alt="frame with map"
-        />
+        <button className="mirror" onClick={() => setMirror(true)}>
+          <img
+            className={block ? 'block' : 'mirror'}
+            src="../../public/dinner-images/mirror.png"
+            alt="frame with map"
+          />
+        </button>
       </div>
 
       <div className="pumpkindiv">
