@@ -58,7 +58,7 @@ export default function Dinner() {
     } else {
       setBlock(true)
     }
-    console.log(block, matching)
+    console.log({ block }, { matching }, { matchingWin })
   }, [
     jigsaw,
     matching,
@@ -126,7 +126,7 @@ export default function Dinner() {
       <div className="platediv">
         <button className="plateR" onClick={() => setMatching(true)}>
           <img
-            // className={block ? 'block' : 'plateR'}
+            className={block ? 'block' : 'plateR'}
             src="../../public/dinner-images/plate-right.png"
             alt="frame with map"
           />

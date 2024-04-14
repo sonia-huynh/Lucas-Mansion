@@ -72,9 +72,9 @@ body {
   position: absolute;
   background: none;
   border: none;
-  opacity: 0px;
   padding: 0px;
-  margin: 706px 0px 0px 1114px;
+  margin: 353px 0px 0px 556px;
+  opacity: 0px;
 }
 
 .plateR img {
@@ -82,9 +82,9 @@ body {
 }
 
 .plateR:hover {
-  filter: drop-shadow(0.5px 0.5px 1.5px white)
-    drop-shadow(0.5px 0.5px 1.5px white) drop-shadow(0.5px 0.5px 1.5px white)
-    drop-shadow(0.5px 0.5px 1.5px white);
+  filter: drop-shadow(0.5px 0.5px 0.5px white)
+    drop-shadow(0.5px 0.5px 0.5px white) drop-shadow(0.5px 0.5px 0.5px white)
+    drop-shadow(0.5px 0.5px 0.5px white);
   opacity: 1;
 }
 
@@ -263,7 +263,7 @@ body {
   padding: 0px;
   height: 62px;
   margin: 228px 0px 0px 600px;
-  /* opacity: 0; */
+  opacity: 0;
 }
 
 .pumpkin:hover {
