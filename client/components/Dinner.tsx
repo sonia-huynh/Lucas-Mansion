@@ -46,12 +46,15 @@ export default function Dinner() {
   const [inventory, setInventory] = useState(false)
 
   useEffect(() => {
-    document.body.style.backgroundImage = "url('/highangle-paper.png')"
+    if (jigsawWin) {
+      document.body.style.backgroundImage = "url('/highangle.png')"
+    } else {
+      document.body.style.backgroundImage = "url('/highangle-paper.png')"
+    }
     if (
       !jigsaw &&
       !matchingE &&
       !matching &&
-      !matchingWin &&
       !clock &&
       !lockNum &&
       !clockFace &&
@@ -70,6 +73,7 @@ export default function Dinner() {
     }
   }, [
     jigsaw,
+    jigsawWin,
     matching,
     matchingE,
     clock,
@@ -145,20 +149,15 @@ export default function Dinner() {
       {clock && (
         <div className="popup-overlay">
           <div className="clockbod-popup">
-            <Clock setClock={setClock} />
+            <Clock setClock={setClock} win={matchingWin} />
           </div>
         </div>
       )}
 
       <div className="clockdiv">
-        <button
-          className={matchingWin ? 'clockbod' : 'clock-empty'}
-          onClick={() => setClock(true)}
-        >
+        <button className="clockbod" onClick={() => setClock(true)}>
           <img
-            className={
-              block ? 'block' : matchingWin ? 'clockbod' : 'clock-empty'
-            }
+            className={block ? 'block' : 'clockbod'}
             src="/dinner-images/clock-body.png"
             alt="frame with map"
           />
