@@ -213,7 +213,11 @@ export default function Dinner() {
       {gnome && (
         <div className="popup-overlay">
           <div className="clue-popup">
-            <Gnome setGnome={setGnome} />
+            <Gnome
+              setGnome={setGnome}
+              foundPapers={foundPapers}
+              setFoundPapers={setFoundPapers}
+            />
           </div>
         </div>
       )}
