@@ -32,8 +32,8 @@ body {
 }
 
 .frame:hover {
-  filter: drop-shadow(2px 2px 0.5px white) drop-shadow(-2px 2px 0.5px white)
-    drop-shadow(-2px -2px 0.5px white) drop-shadow(2px -2px 0.5px white);
+  filter: drop-shadow(2px 2px 0.25px white) drop-shadow(-2px 2px 0.25px white)
+    drop-shadow(-2px -2px 0.25px white) drop-shadow(2px -2px 0.25px white);
   opacity: 1;
 }
 

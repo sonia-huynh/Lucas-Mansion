@@ -153,7 +153,7 @@ export default function Dinner() {
 
       {clock && (
         <div className="popup-overlay">
-          <div className="game-popup">
+          <div className="clock-closeup ">
             <Clock setClock={setClock} />
           </div>
         </div>
