@@ -127,7 +127,7 @@ export default function Dinner() {
       <div className="lockdiv">
         <button className="lock" onClick={() => setLockNum(true)}>
           <img
-            className={block ? 'block' : 'lock'}
+            className={block ? 'block' : 'lock noMap'}
             src="/dinner-images/door-handle.png"
             alt="frame with map"
           />
@@ -141,16 +141,19 @@ export default function Dinner() {
           </div>
         </div>
       )}
+      
     <div className="clockdiv">
+     
+      </div>
+      <div className="clockdiv">
         <button className="clockbod" onClick={() => setClock(true)}>
           <img
-            className={block ? 'block' : 'plateR'}
-            src="/dinner-images/plate-right.png"
+            className={block ? 'block' : 'clockbod'}
+            src="/dinner-images/clock-body.png"
             alt="frame with map"
           />
         </button>
       </div>
-
       {matchingE && (
         <div className="popup-overlay">
           <div className="game-popup">
@@ -159,7 +162,7 @@ export default function Dinner() {
         </div>
       )}
 
-      <div className="platediv">
+<div className="platediv">
         <button className="plateL" onClick={() => setMatchingE(true)}>
           <img
             className={block ? 'block' : 'plateL'}
@@ -180,15 +183,14 @@ export default function Dinner() {
           </div>
         </div>
       )}
-      <div className="clockdiv">
-        <button className="clockbod" onClick={() => setClock(true)}>
+         <button className="plateR" onClick={() => setMatching(true)}>
           <img
-            className={block ? 'block' : 'clockbod'}
-            src="/dinner-images/clock-body.png"
+            className={block ? 'block' : 'plateR'}
+            src="/dinner-images/plate-right.png"
             alt="frame with map"
           />
         </button>
-      </div>
+      
 
 
       {clockFace && (
