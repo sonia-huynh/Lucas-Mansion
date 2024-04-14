@@ -47,7 +47,6 @@ export default function Dinner() {
       !jigsaw &&
       !matchingE &&
       !matching &&
-      !matchingWin &&
       !clock &&
       !lockNum &&
       !clockFace &&
