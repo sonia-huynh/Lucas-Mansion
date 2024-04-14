@@ -50,9 +50,7 @@ body {
   opacity: 1;
 }
 
-/* .noMapdiv{
-  position: relative
-} */
+
 .noMap {
   position:absolute;
   height:auto;

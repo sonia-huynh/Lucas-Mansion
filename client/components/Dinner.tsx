@@ -129,31 +129,55 @@ export default function Dinner() {
           <img
             className={block ? 'block' : 'lock'}
             src="../../public/dinner-images/door-handle.png"
-            alt="frame with map"
+            alt="doorknob with lock"
           />
         </button>
       </div>
 
-      {matching && (
+
+
+
+      {clock && (
         <div className="popup-overlay">
-          <div className="game-popup">
-            <Matching
-              setMatching={setMatching}
-              win={matchingWin}
-              setWin={setMatchingWin}
-            />
+          <div className="clockbod-popup">
+            <Clock setClock={setClock} />
           </div>
         </div>
       )}
+{matchingWin === true ? 
+    <div className="clockdiv">
+        <button className="clockbod" onClick={() => setClock(true)}>
+          <img
+            // className={block ? 'block' : 'clockbod'}
+            src="../../public/dinner-images/clock-body.png"
+            alt="clock body with lantern and piece of paper"
+            />
+        </button>
+      </div>
+  
+:
       <div className="platediv">
         <button className="plateR" onClick={() => setMatching(true)}>
           <img
             className={block ? 'block' : 'plateR'}
-            src="../../public/dinner-images/plate-right.png"
-            alt="frame with map"
-          />
+            src="../../public/dinner-imsages/plate-right.png"
+            alt="plate with utensils in the wrong order"
+            />
         </button>
       </div>
+}
+
+            {matching && (
+              <div className="popup-overlay">
+                <div className="game-popup">
+                  <Matching
+                    setMatching={setMatching}
+                    win={matchingWin}
+                    setWin={setMatchingWin}
+                  />
+                </div>
+              </div>
+            )}
 
       {matchingE && (
         <div className="popup-overlay">
@@ -168,27 +192,11 @@ export default function Dinner() {
           <img
             className={block ? 'block' : 'plateL'}
             src="../../public/dinner-images/plate-left.png"
-            alt="frame with map"
+            alt="plate with utensils"
           />
         </button>
       </div>
 
-      {clock && (
-        <div className="popup-overlay">
-          <div className="clockbod-popup">
-            <Clock setClock={setClock} />
-          </div>
-        </div>
-      )}
-      <div className="clockdiv">
-        <button className="clockbod" onClick={() => setClock(true)}>
-          <img
-            className={block ? 'block' : 'clockbod'}
-            src="../../public/dinner-images/clock-body.png"
-            alt="frame with map"
-          />
-        </button>
-      </div>
 
       {clockFace && (
         <div className="popup-overlay">
@@ -202,7 +210,7 @@ export default function Dinner() {
           <img
             className={block ? 'block' : 'clockface'}
             src="../../public/dinner-images/clock-face.png"
-            alt="frame with map"
+            alt="clock face"
           />
         </button>
       </div>
@@ -219,7 +227,7 @@ export default function Dinner() {
           <img
             className={block ? 'block' : 'gnome'}
             src="../../public/dinner-images/gnome.png"
-            alt="frame with map"
+            alt="golden gnome statue"
           />
         </button>
       </div>
@@ -236,7 +244,7 @@ export default function Dinner() {
           <img
             className={block ? 'block' : 'stool'}
             src="../../public/dinner-images/fallen-stool.png"
-            alt="frame with map"
+            alt="fallen stool"
           />
         </button>
       </div>
@@ -253,7 +261,7 @@ export default function Dinner() {
           <img
             className={block ? 'block' : 'chest'}
             src="../../public/dinner-images/chest.png"
-            alt="frame with map"
+            alt="red treasure chest"
           />
         </button>
       </div>
@@ -269,7 +277,7 @@ export default function Dinner() {
           <img
             className={block ? 'block' : 'duck'}
             src="../../public/dinner-images/duck.png"
-            alt="frame with map"
+            alt="yellow rubber duck"
           />
         </button>
       </div>
@@ -285,7 +293,7 @@ export default function Dinner() {
           <img
             className={block ? 'block' : 'mirror'}
             src="../../public/dinner-images/mirror.png"
-            alt="frame with map"
+            alt="oval mirror"
           />
         </button>
       </div>
@@ -301,7 +309,7 @@ export default function Dinner() {
           <img
             className={block ? 'block' : 'pumpkin'}
             src="../../public/dinner-images/pumpkins.png"
-            alt="frame with map"
+            alt="three rotting pumpkins"
           />
         </button>
       </div>
@@ -318,7 +326,7 @@ export default function Dinner() {
           <img
             className={block ? 'block' : 'chandelier'}
             src="../../public/dinner-images/chandelier.png"
-            alt="frame with map"
+            alt="chandelier"
           />
         </button>
       </div>
