@@ -11,10 +11,6 @@ export default function Gnome({
   foundPapers,
   setFoundPapers,
 }: Props) {
-  // const piece1 = 'puzzle-images/entrance.png'
-  // const piece2 = 'puzzle-images/corner1.png'
-  // const piece3 = 'puzzle-images/exit.png'
-
   function handleClick() {
     const newArr = [...foundPapers]
     newArr[0] = true
