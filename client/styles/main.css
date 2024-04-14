@@ -1,0 +1,295 @@
+body {
+  background-image: url(../../public/highangle-paper.png);
+  background-repeat: no-repeat;
+}
+
+.block {
+  display: none;
+}
+
+.block img {
+  display: none;
+}
+
+.button {
+  background-color: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+.jigdiv {
+  position: relative;
+}
+
+.frame {
+  position: absolute;
+  opacity: 0;
+  background: none;
+  border: none;
+  height: 270px;
+  padding: 0;
+  margin: 41px 0px 0px 38px;
+}
+
+.frame:hover {
+  filter: drop-shadow(2px 2px 0.25px white) drop-shadow(-2px 2px 0.25px white)
+    drop-shadow(-2px -2px 0.25px white) drop-shadow(2px -2px 0.25px white);
+  opacity: 1;
+}
+
+.lockdiv {
+  position: relative;
+}
+
+.lock {
+  position: absolute;
+  background: none;
+  border: none;
+  height: 0px;
+  width: 0px;
+  padding: 0px;
+  margin: 210px 0px 0px 530px;
+  opacity: 0%;
+}
+
+.lock img {
+  height: 45px;
+  width: 25px;
+}
+
+.lock:hover {
+  filter: drop-shadow(0.5px 0.5px 0.5px white)
+    drop-shadow(0.5px 0.5px 0.5px white) drop-shadow(0.5px 0.5px 0.5px white)
+    drop-shadow(0.5px 0.5px 0.5px white);
+  opacity: 1;
+}
+
+.platediv {
+  position: relative;
+}
+
+.plateR {
+  position: absolute;
+  background: none;
+  border: none;
+  padding: 0px;
+  margin: 353px 0px 0px 556px;
+  opacity: 0px;
+}
+
+.plateR img {
+  height: 68px;
+}
+
+.plateR:hover {
+  filter: drop-shadow(0.5px 0.5px 0.5px white)
+    drop-shadow(0.5px 0.5px 0.5px white) drop-shadow(0.5px 0.5px 0.5px white)
+    drop-shadow(0.5px 0.5px 0.5px white);
+  opacity: 1;
+}
+
+.plateL {
+  position: absolute;
+  background: none;
+  border: none;
+  padding: 0px;
+  margin: 356px 0px 0px 322px;
+  opacity: 0%;
+}
+
+.plateL img {
+  height: 72px;
+}
+
+.plateL:hover {
+  filter: drop-shadow(0.5px 0.5px 0.5px white)
+    drop-shadow(0.5px 0.5px 0.5px white) drop-shadow(0.5px 0.5px 0.5px white)
+    drop-shadow(0.5px 0.5px 0.5px white);
+  opacity: 1;
+}
+
+.clockdiv {
+  position: relative;
+}
+
+.clockbod {
+  position: absolute;
+  background: none;
+  border: none;
+  padding: 0px;
+  margin: 152px 0px 0px 282px;
+  opacity: 0%;
+}
+
+.clockbod img {
+  height: 148px;
+}
+
+.clockbod:hover {
+  filter: drop-shadow(0.5px 0.5px 0.5px white)
+    drop-shadow(0.5px 0.5px 0.5px white) drop-shadow(0.5px 0.5px 0.5px white)
+    drop-shadow(0.5px 0.5px 0.5px white);
+  opacity: 1;
+}
+
+.clockfacediv {
+  position: relative;
+}
+
+.clockface {
+  position: absolute;
+  background: none;
+  border: none;
+  padding: 0px;
+  margin: 118px 0px 0px 283px;
+  opacity: 0%;
+}
+
+.clockface:hover {
+  filter: drop-shadow(0.5px 0.5px 0.5px white)
+    drop-shadow(0.5px 0.5px 0.5px white) drop-shadow(0.5px 0.5px 0.5px white)
+    drop-shadow(0.5px 0.5px 0.5px white);
+  opacity: 1;
+}
+
+.gnomediv {
+  position: relative;
+}
+
+.gnome {
+  position: absolute;
+  background: none;
+  border: none;
+  padding: 0px;
+  margin: 238px 0px 0px 160px;
+}
+
+.gnome:hover {
+  filter: drop-shadow(0.5px 0.5px 0.5px white)
+    drop-shadow(0.5px 0.5px 0.5px white) drop-shadow(0.5px 0.5px 0.5px white)
+    drop-shadow(0.5px 0.5px 0.5px white);
+  opacity: 1;
+}
+
+.stool {
+  position: relative;
+}
+
+.stool {
+  position: absolute;
+  background: none;
+  border: none;
+  padding: 0px;
+  margin: 254px 0px 0px 279px;
+  opacity: 0%;
+}
+
+.stool:hover {
+  filter: drop-shadow(0.5px 0.5px 1px white) drop-shadow(0.5px 0.5px 1px white)
+    drop-shadow(0.5px 0.5px 1px white) drop-shadow(0.5px 0.5px 1px white);
+  opacity: 1;
+}
+
+.chestdiv {
+  position: relative;
+}
+
+.chest {
+  position: absolute;
+  background: none;
+  border: none;
+  padding: 0px;
+  margin: 275px 0px 0px 655px;
+  opacity: 0%;
+}
+
+.chest:hover {
+  filter: drop-shadow(0.5px 0.5px 0.5px white)
+    drop-shadow(0.5px 0.5px 0.5px white) drop-shadow(0.5px 0.5px 0.5px white)
+    drop-shadow(0.5px 0.5px 0.5px white);
+  opacity: 1;
+}
+
+.duckdiv {
+  position: relative;
+}
+
+.duck {
+  position: absolute;
+  background: none;
+  border: none;
+  padding: 0px;
+  height: 30px;
+  margin: 85px 0px 0px 595px;
+  opacity: 0;
+}
+
+.duck:hover {
+  filter: drop-shadow(0.5px 0.5px 0.5px white)
+    drop-shadow(0.5px 0.5px 0.5px white) drop-shadow(0.5px 0.5px 0.5px white)
+    drop-shadow(0.5px 0.5px 0.5px white);
+  opacity: 1;
+}
+
+.mirror {
+  position: relative;
+}
+
+.mirror {
+  position: absolute;
+  background: none;
+  border: none;
+  padding: 0px;
+  height: 80px;
+  margin: 123px 0px 0px 616px;
+  opacity: 0;
+}
+
+.mirror:hover {
+  filter: drop-shadow(0.5px 0.5px 0.5px white)
+    drop-shadow(0.5px 0.5px 0.5px white) drop-shadow(0.5px 0.5px 0.5px white)
+    drop-shadow(0.5px 0.5px 0.5px white);
+  opacity: 1;
+}
+
+.pumpkindiv {
+  position: relative;
+}
+
+.pumpkin {
+  position: absolute;
+  background: none;
+  border: none;
+  padding: 0px;
+  height: 62px;
+  margin: 228px 0px 0px 600px;
+  opacity: 0;
+}
+
+.pumpkin:hover {
+  filter: drop-shadow(0.5px 0.5px 0.5px white)
+    drop-shadow(0.5px 0.5px 0.5px white) drop-shadow(0.5px 0.5px 0.5px white)
+    drop-shadow(0.5px 0.5px 0.5px white);
+  opacity: 1;
+}
+
+.chandelierdiv {
+  position: relative;
+}
+
+.chandelier {
+  position: absolute;
+  background: none;
+  border: none;
+  padding: 0px;
+  height: 360px;
+  margin: -94px 0px 0px 402px;
+  opacity: 0;
+}
+
+.chandelier:hover {
+  filter: drop-shadow(0.5px 0.5px 0.5px white)
+    drop-shadow(0.5px 0.5px 0.5px white) drop-shadow(0.5px 0.5px 0.5px white)
+    drop-shadow(0.5px 0.5px 0.5px white);
+  opacity: 1;
+}

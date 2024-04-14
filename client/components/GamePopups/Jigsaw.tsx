@@ -1,16 +1,26 @@
-import '../../styles/popup.css'
+import React from 'react'
+import Puzzle from './Puzzle'
+import '../../styles/jigsaw.css'
+import JigsawPuzzle from './JigsawPuzzle'
 
 interface Props {
   setJigsaw: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export default function Jigsaw({ setJigsaw }: Props) {
+const Jigsaw: React.FC<Props> = ({ setJigsaw }) => {
   return (
     <>
-      <h1>Jigsaw</h1>
-      <button className="closeButton" onClick={() => setJigsaw(false)}>
-        x
-      </button>
+      <div className="popup">
+        <div className="popup_inner">
+          <button className="closeButton" onClick={() => setJigsaw(false)}>
+            x
+          </button>
+          <JigsawPuzzle />
+          {/* <Puzzle /> */}
+        </div>
+      </div>
     </>
   )
 }
+
+export default Jigsaw
