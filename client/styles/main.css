@@ -282,8 +282,9 @@ body {
   background: none;
   border: none;
   padding: 0px;
-  height: 350px;
-  margin: -90px 0px 0px 400px;
+  height: 360px;
+  margin: -94px 0px 0px 402px;
+  opacity: 0;
 }
 
 .chandelier:hover {
