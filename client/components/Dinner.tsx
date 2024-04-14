@@ -91,10 +91,6 @@ export default function Dinner() {
     inventory,
   ])
 
-  function haruka() {
-    console.log(matchingWin)
-  }
-
   return (
     <div className="dinner">
       {jigsaw && (
@@ -109,13 +105,6 @@ export default function Dinner() {
         </div>
       )}
 
-      {/* {jigsawWin === true ? (
-        <img
-          className={block ? 'block' : 'noMap'}
-          src="/lucas-no-map.png"
-          alt="frame with map"
-        />
-      ) : ( */}
       <div className="jigdiv">
         <button className="frame" onClick={() => setJigsaw(true)}>
           <img
@@ -127,7 +116,6 @@ export default function Dinner() {
           />
         </button>
       </div>
-      {/* )} */}
 
       {lockNum && (
         <div className="popup-overlay">
