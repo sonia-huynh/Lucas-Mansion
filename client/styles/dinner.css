@@ -39,9 +39,9 @@ body {
   opacity: 0;
   background: none;
   border: none;
-  height: 270px;
+  height: 254px;
   padding: 0;
-  margin: 41px 0px 0px 38px;
+  margin: 50px 0px 0px 38px;
 }
 
 .frame:hover {
@@ -49,6 +49,16 @@ body {
     drop-shadow(-2px -2px 0.25px white) drop-shadow(2px -2px 0.25px white);
   opacity: 1;
 }
+
+/* .noMapdiv{
+  position: relative
+} */
+.noMap {
+  position:absolute;
+  height:auto;
+  margin: 221px 0px 0px 75px;
+}
+
 
 .lockdiv {
   position: relative;

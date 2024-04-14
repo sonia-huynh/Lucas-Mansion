@@ -4,6 +4,7 @@ import Matching from './GamePopups/Matching'
 import MatchingExample from './GamePopups/MatchingExample'
 import Clock from './GamePopups/Clock'
 import CombinationLock from './GamePopups/CombinationLock'
+import "/lucas-no-map.png"
 
 //clues:
 import ClockFace from './CluePopups/ClockFace'
@@ -81,8 +82,11 @@ export default function Dinner() {
     chandelier,
   ])
 
+
+
   return (
     <div className="dinner">
+      
       {jigsaw && (
         <div className="popup-overlay">
           <div className="map-popup">
@@ -94,6 +98,14 @@ export default function Dinner() {
           </div>
         </div>
       )}
+
+      {jigsawWin === true ? 
+      <img
+      className= {block ? 'block' : 'noMap'}
+      src="/lucas-no-map.png"
+      alt="frame with map"
+    />
+      :   
       <div className="jigdiv">
         <button className="frame" onClick={() => setJigsaw(true)}>
           <img
@@ -102,7 +114,8 @@ export default function Dinner() {
             alt="frame with map"
           />
         </button>
-      </div>
+      </div>}
+    
 
       {lockNum && (
         <div className="popup-overlay">
