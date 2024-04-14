@@ -7,7 +7,8 @@ export default function Chest({ setChest }: Props) {
   return (
     <>
       <h1>Chest</h1>
-      <button className="closeButton" onClick={() => setChest(false)}>
+      <p>Within the chest, full of secrets but nil of treasure, lies the key to a certain lock.</p>
+      <button className="clueCloseButton" onClick={() => setChest(false)}>
         x
       </button>
     </>
