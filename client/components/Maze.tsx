@@ -7,6 +7,7 @@ export default function Maze() {
   const [position, setPosition] = useState(0)
   const navigate = useNavigate()
   useEffect(()=>{
+    document.body.style.backgroundImage = `url('/maze/routes/${pathing[position].image}.png')`
     if (position === 100){
       navigate("/congrats")
     }
@@ -14,7 +15,7 @@ export default function Maze() {
 
   if (pathing){
     return (<>
-    <img src={`/maze/routes/${pathing[position].image}.png`} alt={`maze orientation ${pathing[position].point}`}/>
+    {/* <img src={`/maze/routes/${pathing[position].image}.png`} alt={`maze orientation ${pathing[position].point}`}/> */}
     {pathing[position].left && <button className="left direction" onClick={()=>setPosition(pathing[position].left as number)}><img src="/maze/directions/left.png" alt="left"/></button>}
     {pathing[position].forward &&<button className="forward direction" onClick={()=>setPosition(pathing[position].forward as number)}><img src="/maze/directions/forward.png" alt="forward"/></button>}
     {pathing[position].right &&<button className="right direction" onClick={()=>setPosition(pathing[position].right as number)}><img src="/maze/directions/right.png" alt="right"/></button>}
