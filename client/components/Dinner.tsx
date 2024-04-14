@@ -100,6 +100,7 @@ export default function Dinner() {
         <div className="popup-overlay">
           <div className="map-popup">
             <Jigsaw
+              foundPapers={foundPapers}
               setJigsaw={setJigsaw}
               win={jigsawWin}
               setWin={setJigsawWin}
