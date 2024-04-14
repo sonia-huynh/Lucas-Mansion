@@ -5,8 +5,24 @@
   height: 100%;
 }
 
-/* body {
-  background-image: url('match-up/plate-game.png');
-  background-size: cover;
-  background-position: center;
-} */
+.foyerdoordiv{
+  position: relative;
+}
+
+.foyerdoor{
+  position: absolute;
+  margin-top:230px;
+  left:15.7%;
+  background: none;
+  border: none;
+}
+
+.foyerdoor:hover {
+  filter: drop-shadow(3px 3px 3px #b9ee46
+)
+    drop-shadow(3px -3px 3px #b9ee46
+) drop-shadow(-3px -3px 3px #b9ee46
+)
+    drop-shadow(-3px 3px 3px #b9ee46
+);
+}
