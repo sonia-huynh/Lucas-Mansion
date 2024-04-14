@@ -33,6 +33,9 @@ export default function Dinner() {
   const [matchingE, setMatchingE] = useState(false)
   const [lockNum, setLockNum] = useState(false)
 
+  // paper states
+  const [foundPapers, setFoundPapers] = useState([false, false, false])
+
   //clue popups:
   const [clockFace, setClockFace] = useState(false)
   const [clock, setClock] = useState(false)
