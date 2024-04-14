@@ -1,5 +1,5 @@
 [
-  {"point":0,"left":4,"forward":22,"right":null,"back":null,"image":"maze-0"},
+  {"point":0,"left":4,"forward":22,"right":null,"back":91,"image":"maze-0"},
   {"point":1,"left":22,"forward":null,"right":91,"back":4,"image":"maze-1"},
   {"point":2,"left":null,"forward":91,"right":4,"back":22,"image":"maze-2"},
   {"point":3,"left":null,"forward":1,"right":null,"back":6,"image":"maze-3"},
