@@ -1,4 +1,6 @@
 import '../../styles/popup.css'
+import '../../styles/clock.css'
+
 interface Props {
   setClockFace: React.Dispatch<React.SetStateAction<boolean>>
 }
@@ -6,8 +8,15 @@ interface Props {
 export default function ClockFace({ setClockFace }: Props) {
   return (
     <>
-      <h1>Clock Face</h1>
-      <button className="closeButton" onClick={() => setClockFace(false)}>
+      <img
+        className="clockimg"
+        src="../../../public/clock-face.png"
+        alt="inside clock has a lantern and a piece of a puzzle"
+      />
+      <button
+        className="clockFaceCloseButton"
+        onClick={() => setClockFace(false)}
+      >
         x
       </button>
     </>

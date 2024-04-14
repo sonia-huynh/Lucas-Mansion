@@ -14,7 +14,7 @@ export default function Clock({ setClock }: Props) {
         src="../../../public/clock-inside-closeup.png"
         alt="inside clock has a lantern and a piece of a puzzle"
       />
-      <button className="clockcloseButton" onClick={() => setClock(false)}>
+      <button className="clockBodCloseButton" onClick={() => setClock(false)}>
         x
       </button>
     </>

@@ -3,9 +3,22 @@
   height: 100%;
 }
 
-.clockcloseButton {
+.clockBodCloseButton {
   position: absolute;
   right: 32%;
+  top: 8%;
+  padding-top: 0px;
+  border-radius: 5px;
+  margin-right: 6px;
+  margin-top: 6px;
+  background-color: #ffffff;
+  opacity: 1;
+  font-size: 20px;
+}
+
+.clockFaceCloseButton {
+  position: absolute;
+  right: 14%;
   top: 8%;
   padding-top: 0px;
   border-radius: 5px;
