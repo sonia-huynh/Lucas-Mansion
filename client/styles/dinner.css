@@ -313,14 +313,15 @@ body {
 
 .inventory {
   position: absolute;
-  background: none;
+  background: #5b5959;
   border: none;
-  padding: 0px;
-  right:0.1%;
-  top:0.1%;
-  max-width: 190px;
+  padding:11.5px;
+  right:1%;
+  top:1%;
+  max-width: 133px;
   height: auto;
   opacity: 0;
+  border-radius: 10px;
 }
 
 .inventory:hover {
