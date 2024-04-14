@@ -25,8 +25,13 @@ export default function Gnome({
     <>
       <h1>Gnome</h1>
       <p>{`The gnome's two hands make him look in a daze becuase below its two feet appears to be a piece of a maze...`}</p>
-      <img src="puzzle-images/exit.png" alt="puzzle pice" />
-      <button onClick={handleClick}>collect piece</button>
+      {foundPapers[0] === false && (
+        <>
+          <img src="puzzle-images/exit.png" alt="puzzle pice" />
+          <button onClick={handleClick}>collect piece</button>
+        </>
+      )}
+
       <button className="clueCloseButton" onClick={() => setGnome(false)}>
         x
       </button>

@@ -4,7 +4,6 @@ import Matching from './GamePopups/Matching'
 import MatchingExample from './GamePopups/MatchingExample'
 import Clock from './GamePopups/Clock'
 import CombinationLock from './GamePopups/CombinationLock'
-import '/lucas-no-map.png'
 
 //clues:
 import ClockFace from './CluePopups/ClockFace'
