@@ -20,19 +20,27 @@ export default function Clock({
   }
   return (
     <>
-      {win && foundPapers[2] === false ? (
-        <>
+      {win ? (
+        foundPapers[2] === false ? (
+          <>
+            <img
+              className="clockimg"
+              src="/clock-inside-closeup.png"
+              alt="inside clock has a lantern and a piece of a puzzle"
+            />
+            <button onClick={collect}>collect</button>
+          </>
+        ) : (
           <img
             className="clockimg"
-            src="/clock-inside-closeup.png"
-            alt="inside clock has a lantern and a piece of a puzzle"
+            src="/clock-inside-empty.png"
+            alt="insid of clock is empty"
           />
-          <button onClick={collect}>collect</button>
-        </>
+        )
       ) : (
         <img
           className="clockimg"
-          src="/clock-inside-empty.png"
+          src="/clock-inside-locked.png"
           alt="insid of clock is empty"
         />
       )}
