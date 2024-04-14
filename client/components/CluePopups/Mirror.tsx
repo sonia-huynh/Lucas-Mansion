@@ -2,7 +2,7 @@ import '../../styles/popup.css'
 interface Props {
   setMirror: React.Dispatch<React.SetStateAction<boolean>>
   setFoundPaper: React.Dispatch<React.SetStateAction<boolean[]>>
-  foundPapers: boolean
+  foundPapers: boolean[]
 }
 
 export default function Mirror({
@@ -10,7 +10,6 @@ export default function Mirror({
   setFoundPaper,
   foundPapers,
 }: Props) {
-  // setFoundPaper(false)
   function collect() {
     const newArr = [...foundPapers]
     newArr[1] = true
@@ -19,7 +18,7 @@ export default function Mirror({
   return (
     <>
       <h1>Mirror</h1>
-      {foundPapers ? (
+      {foundPapers[1] === true ? (
         <p>
           The mirror is dusty but you see your own reflection, are the clues
           taking you in the right direction?
