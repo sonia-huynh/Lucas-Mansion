@@ -36,10 +36,10 @@ export default function Mirror({
             style={{ height: '150px' }}
           />
           <br></br>
-          <button onClick={collect}>collect</button>
+          <button onClick={collect}>Collect piece</button>
         </>
       )}
-      <button className="mapCloseButton" onClick={() => setMirror(false)}>
+      <button className="pieceCloseButton" onClick={() => setMirror(false)}>
         x
       </button>
     </>

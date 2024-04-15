@@ -206,7 +206,7 @@ export default function Dinner() {
 
       {gnome && (
         <div className="popup-overlay">
-          <div className="clue-popup">
+          <div className="piece-clue-popup">
             <Gnome
               setGnome={setGnome}
               foundPapers={foundPapers}
@@ -268,7 +268,7 @@ export default function Dinner() {
       </button>
       {mirror && (
         <div className="popup-overlay">
-          <div className="map-clue-popup">
+          <div className="piece-clue-popup">
             <Mirror
               setMirror={setMirror}
               foundPapers={foundPapers}
