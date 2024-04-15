@@ -1,4 +1,9 @@
 import { useEffect, useState } from 'react'
+
+//intro:
+import Intro from './GamePopups/Intro'
+
+//games:
 import Jigsaw from './GamePopups/Jigsaw'
 import Matching from './GamePopups/Matching'
 import MatchingExample from './GamePopups/MatchingExample'
@@ -31,6 +36,7 @@ export default function Dinner() {
   const [matchingWin, setMatchingWin] = useState(false)
   const [matchingE, setMatchingE] = useState(false)
   const [lockNum, setLockNum] = useState(false)
+  const [intro, setIntro] = useState(true)
 
   // paper states
   const [foundPapers, setFoundPapers] = useState([false, false, false])
@@ -95,6 +101,13 @@ export default function Dinner() {
 
   return (
     <div className="dinner">
+      {intro && (
+        <div className="popup-overlay">
+          <div className="map-popup">
+            <Intro />
+          </div>
+        </div>
+      )}
       {jigsaw && (
         <div className="popup-overlay">
           <div className="map-popup">
