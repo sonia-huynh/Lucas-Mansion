@@ -32,6 +32,9 @@ export default function Dinner() {
   const [matchingE, setMatchingE] = useState(false)
   const [lockNum, setLockNum] = useState(false)
 
+  // paper states
+  const [foundPapers, setFoundPapers] = useState([false, false, false])
+
   //clue popups:
   const [clockFace, setClockFace] = useState(false)
   const [clock, setClock] = useState(false)
@@ -45,12 +48,15 @@ export default function Dinner() {
   const [inventory, setInventory] = useState(false)
 
   useEffect(() => {
-    document.body.style.backgroundImage = "url('/highangle-paper.png')"
+    if (jigsawWin) {
+      document.body.style.backgroundImage = "url('/highangle.png')"
+    } else {
+      document.body.style.backgroundImage = "url('/highangle-paper.png')"
+    }
     if (
       !jigsaw &&
       !matchingE &&
       !matching &&
-      !matchingWin &&
       !clock &&
       !lockNum &&
       !clockFace &&
@@ -69,6 +75,7 @@ export default function Dinner() {
     }
   }, [
     jigsaw,
+    jigsawWin,
     matching,
     matchingE,
     clock,
@@ -92,6 +99,7 @@ export default function Dinner() {
         <div className="popup-overlay">
           <div className="map-popup">
             <Jigsaw
+              foundPapers={foundPapers}
               setJigsaw={setJigsaw}
               win={jigsawWin}
               setWin={setJigsawWin}
@@ -99,11 +107,14 @@ export default function Dinner() {
           </div>
         </div>
       )}
+
       <div className="jigdiv">
         <button className="frame" onClick={() => setJigsaw(true)}>
           <img
+            src={
+              jigsawWin ? '/lucas-no-map.png' : '/dinner-images/lucas-map2.png'
+            }
             className={block ? 'block' : 'frame'}
-            src="/dinner-images/lucas-map2.png"
             alt="frame with map"
           />
         </button>
@@ -119,29 +130,31 @@ export default function Dinner() {
       <div className="lockdiv">
         <button className="lock" onClick={() => setLockNum(true)}>
           <img
-            className={block ? 'block' : 'lock'}
+            className={block ? 'block' : 'lock noMap'}
             src="/dinner-images/door-handle.png"
             alt="frame with map"
           />
         </button>
       </div>
 
-      {matching && (
+      {clock && (
         <div className="popup-overlay">
-          <div className="game-popup">
-            <Matching
-              setMatching={setMatching}
+          <div className="clockbod-popup">
+            <Clock
+              setClock={setClock}
               win={matchingWin}
-              setWin={setMatchingWin}
+              foundPapers={foundPapers}
+              setFoundPapers={setFoundPapers}
             />
           </div>
         </div>
       )}
-      <div className="platediv">
-        <button className="plateR" onClick={() => setMatching(true)}>
+
+      <div className="clockdiv">
+        <button className="clockbod" onClick={() => setClock(true)}>
           <img
-            className={block ? 'block' : 'plateR'}
-            src="/dinner-images/plate-right.png"
+            className={block ? 'block' : 'clockbod'}
+            src="/dinner-images/clock-body.png"
             alt="frame with map"
           />
         </button>
@@ -165,22 +178,24 @@ export default function Dinner() {
         </button>
       </div>
 
-      {clock && (
+      {matching && (
         <div className="popup-overlay">
-          <div className="clockbod-popup">
-            <Clock setClock={setClock} />
+          <div className="game-popup">
+            <Matching
+              setMatching={setMatching}
+              win={matchingWin}
+              setWin={setMatchingWin}
+            />
           </div>
         </div>
       )}
-      <div className="clockdiv">
-        <button className="clockbod" onClick={() => setClock(true)}>
-          <img
-            className={block ? 'block' : 'clockbod'}
-            src="/dinner-images/clock-body.png"
-            alt="frame with map"
-          />
-        </button>
-      </div>
+      <button className="plateR" onClick={() => setMatching(true)}>
+        <img
+          className={block ? 'block' : 'plateR'}
+          src="/dinner-images/plate-right.png"
+          alt="frame with map"
+        />
+      </button>
 
       {clockFace && (
         <div className="popup-overlay">
@@ -201,8 +216,12 @@ export default function Dinner() {
 
       {gnome && (
         <div className="popup-overlay">
-          <div className="game-popup">
-            <Gnome setGnome={setGnome} />
+          <div className="clue-popup">
+            <Gnome
+              setGnome={setGnome}
+              foundPapers={foundPapers}
+              setFoundPapers={setFoundPapers}
+            />
           </div>
         </div>
       )}
@@ -218,7 +237,7 @@ export default function Dinner() {
 
       {stool && (
         <div className="popup-overlay">
-          <div className="game-popup">
+          <div className="clue-popup">
             <Stool setStool={setStool} />
           </div>
         </div>
@@ -235,7 +254,7 @@ export default function Dinner() {
 
       {chest && (
         <div className="popup-overlay">
-          <div className="game-popup">
+          <div className="clue-popup">
             <Chest setChest={setChest} />
           </div>
         </div>
@@ -251,7 +270,7 @@ export default function Dinner() {
       </div>
       {duck && (
         <div className="popup-overlay">
-          <div className="duck-popup">
+          <div className="clue-popup">
             <Duck setDuck={setDuck} />
           </div>
         </div>
@@ -267,8 +286,12 @@ export default function Dinner() {
       </div>
       {mirror && (
         <div className="popup-overlay">
-          <div className="game-popup">
-            <Mirror setMirror={setMirror} />
+          <div className="map-clue-popup">
+            <Mirror
+              setMirror={setMirror}
+              foundPapers={foundPapers}
+              setFoundPapers={setFoundPapers}
+            />
           </div>
         </div>
       )}
@@ -283,7 +306,7 @@ export default function Dinner() {
       </div>
       {pumpkin && (
         <div className="popup-overlay">
-          <div className="duck-popup">
+          <div className="clue-popup">
             <Pumpkin setPumpkin={setPumpkin} />
           </div>
         </div>
@@ -300,7 +323,7 @@ export default function Dinner() {
 
       {chandelier && (
         <div className="popup-overlay">
-          <div className="duck-popup">
+          <div className="clue-popup">
             <Chandelier setChandelier={setChandelier} />
           </div>
         </div>
