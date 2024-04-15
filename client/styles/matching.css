@@ -17,7 +17,6 @@
 }
 
 .cutlery-items {
-  /* border: 1px solid red; */
   display: flex;
   flex-direction: row;
   align-items: flex-end;
@@ -31,7 +30,6 @@
 .item {
   display: flex;
   flex-direction: column;
-  /* border: 2px dotted blue; */
   padding: 0.3em;
 }
 
@@ -42,8 +40,6 @@
 }
 
 #bell:hover {
-  /* filter: drop-shadow(2px 2px 0 white) drop-shadow(-2px -2px 0 white)
-    drop-shadow(2px -2px 0 white) drop-shadow(-2px 2px 0 white); */
   filter: drop-shadow(8px 8px 5px rgb(249, 245, 223));
 }
 

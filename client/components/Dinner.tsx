@@ -105,7 +105,7 @@ export default function Dinner() {
     <div className="dinner">
       {intro && (
         <div className="popup-overlay">
-          <div className="clue-popup">
+          <div className="clue-popup popup">
             <Intro setIntro={setIntro}/>
           </div>
         </div>
