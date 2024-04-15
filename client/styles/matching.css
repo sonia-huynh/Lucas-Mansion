@@ -1,3 +1,7 @@
+#plate-example {
+  background-image: url('match-up/plate-example.png');
+}
+
 .plate-game {
   height: 45rem;
   width: 90rem;

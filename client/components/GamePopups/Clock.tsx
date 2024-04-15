@@ -73,7 +73,7 @@ export default function Clock({
         />
       )}
 
-      <button className="clockBodCloseButton" onClick={() => setClock(false)}>
+      <button className="clockBodCloseButton close" onClick={() => setClock(false)}>
         x
       </button>
     </>

@@ -129,7 +129,7 @@ export default function CombinationLock({ setLockNum }: Props) {
           </button>
         </div>
       </div>
-      <button className="gameCloseButton" onClick={() => setLockNum(false)}>
+      <button className="gameCloseButton close" onClick={() => setLockNum(false)}>
         x
       </button>
     </>

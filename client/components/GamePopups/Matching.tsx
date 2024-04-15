@@ -66,7 +66,7 @@ export default function Matching({ setMatching, win, setWin }: Props) {
       <div className="plate-game">
         <div>
           <button
-            className="gameCloseButton"
+            className="gameCloseButton close"
             onClick={() => setMatching(false)}
           >
             x
