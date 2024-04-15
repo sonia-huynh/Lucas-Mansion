@@ -8,7 +8,7 @@ export default function Stool({ setStool }: Props) {
     <>
       <h1>Stool</h1>
       <p>A fallen stool with four legs askew, in the quiet room, it lies, subdued...</p>
-      <button className="clueCloseButton" onClick={() => setStool(false)}>
+      <button className="clueCloseButton close" onClick={() => setStool(false)}>
         x
       </button>
     </>

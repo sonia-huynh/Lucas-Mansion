@@ -1,6 +1,5 @@
 import React from 'react'
 import Puzzle from './Puzzle'
-import '../../styles/jigsaw.css'
 import JigsawPuzzle from './JigsawPuzzle'
 import JigsawFrame from './JigsawFrame'
 
@@ -22,7 +21,7 @@ const Jigsaw: React.FC<Props> = ({ setJigsaw, setWin, foundPapers, win }) => {
     <>
       <div>
         <div>
-          <button className="closeButton" onClick={() => setJigsaw(false)}>
+          <button className="gameCloseButton close" onClick={() => setJigsaw(false)}>
             x
           </button>
           {!allPiecesFound ? (

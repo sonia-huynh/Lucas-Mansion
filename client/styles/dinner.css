@@ -1,17 +1,4 @@
-/* .dinner {
-  background-image: url('/highangle-paper.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: 1068px;
-  width: 1905px;
-  padding: none;
-  margin: none;
-  overflow: hidden;
-} */
-
 body {
-  background-image: url('/highangle-paper.png');
   background-repeat: no-repeat;
   overflow: hidden;
   z-index: 10;
@@ -21,28 +8,17 @@ body {
   display: none;
 }
 
-.block img {
-  display: none;
-}
-
-.button {
-  background-color: transparent;
-  border-color: transparent;
-  color: transparent;
-}
-
-.jigdiv {
-  position: relative;
+.clue {
+  opacity: 0;
+  background: none;
+  border: none;
+  padding: 0;
 }
 
 .frame {
   position: absolute;
-  opacity: 0;
-  background: none;
-  border: none;
-  height: 254px;
-  padding: 0;
-  margin: 50px 0px 0px 38px;
+  height: 259px;
+  margin: 49px 0px 0px 36px;
 }
 
 .frame:hover {
@@ -58,19 +34,10 @@ body {
   z-index: 11;
 }
 
-.lockdiv {
-  position: relative;
-}
-
 .lock {
-  position: absolute;
-  background: none;
-  border: none;
   height: 0px;
   width: 0px;
-  padding: 0px;
   margin: 210px 0px 0px 530px;
-  opacity: 0%;
 }
 
 .lock img {
@@ -85,17 +52,9 @@ body {
   opacity: 1;
 }
 
-.platediv {
-  position: relative;
-}
-
 .plateR {
   position: absolute;
-  background: none;
-  border: none;
-  padding: 0px;
-  margin: 353px 0px 0px 556px;
-  opacity: 0px;
+  margin: 353px 0px 0px 292px;
 }
 
 .plateR img {
@@ -111,11 +70,7 @@ body {
 
 .plateL {
   position: absolute;
-  background: none;
-  border: none;
-  padding: 0px;
-  margin: 356px 0px 0px 322px;
-  opacity: 0%;
+  margin: 356px 0px 0px 58px;
 }
 
 .plateL img {
@@ -129,26 +84,9 @@ body {
   opacity: 1;
 }
 
-.clockdiv {
-  position: relative;
-}
-
 .clockbod {
   position: absolute;
-  background: none;
-  border: none;
-  padding: 0px;
-  margin: 152px 0px 0px 282px;
-  opacity: 0%;
-}
-
-.clock-empty {
-  position: absolute;
-  background: none;
-  border: none;
-  padding: 0px;
-  margin: 152px 0px 0px 282px;
-  opacity: 0%;
+  margin: 152px 0px 0px 17px;
 }
 
 .clockbod img {
@@ -162,17 +100,18 @@ body {
   opacity: 1;
 }
 
-.clockfacediv {
-  position: relative;
-}
-
-.clockface {
+.clock-empty {
   position: absolute;
   background: none;
   border: none;
   padding: 0px;
-  margin: 118px 0px 0px 283px;
+  margin: 152px 0px 0px 282px;
   opacity: 0%;
+}
+
+.clockface {
+  position: absolute;
+  margin: 118px 0px 0px 18px;
 }
 
 .clockface:hover {
@@ -182,16 +121,9 @@ body {
   opacity: 1;
 }
 
-.gnomediv {
-  position: relative;
-}
-
 .gnome {
   position: absolute;
-  background: none;
-  border: none;
-  padding: 0px;
-  margin: 238px 0px 0px 160px;
+  margin: 238px 0px 0px -106px;
 }
 
 .gnome:hover {
@@ -202,16 +134,8 @@ body {
 }
 
 .stool {
-  position: relative;
-}
-
-.stool {
   position: absolute;
-  background: none;
-  border: none;
-  padding: 0px;
-  margin: 254px 0px 0px 279px;
-  opacity: 0%;
+  margin: 254px 0px 0px 12px;
 }
 
 .stool:hover {
@@ -220,17 +144,9 @@ body {
   opacity: 1;
 }
 
-.chestdiv {
-  position: relative;
-}
-
 .chest {
   position: absolute;
-  background: none;
-  border: none;
-  padding: 0px;
-  margin: 275px 0px 0px 655px;
-  opacity: 0%;
+  margin: 275px 0px 0px 390px;
 }
 
 .chest:hover {
@@ -240,18 +156,10 @@ body {
   opacity: 1;
 }
 
-.duckdiv {
-  position: relative;
-}
-
 .duck {
   position: absolute;
-  background: none;
-  border: none;
-  padding: 0px;
-  height: 30px;
-  margin: 85px 0px 0px 595px;
-  opacity: 0;
+  height: 32px;
+  margin: 83px 0px 0px 330px;
 }
 
 .duck:hover {
@@ -262,17 +170,9 @@ body {
 }
 
 .mirror {
-  position: relative;
-}
-
-.mirror {
   position: absolute;
-  background: none;
-  border: none;
-  padding: 0px;
   height: 80px;
-  margin: 123px 0px 0px 616px;
-  opacity: 0;
+  margin: 123px 0px 0px 350px;
 }
 
 .mirror:hover {
@@ -282,18 +182,10 @@ body {
   opacity: 1;
 }
 
-.pumpkindiv {
-  position: relative;
-}
-
 .pumpkin {
   position: absolute;
-  background: none;
-  border: none;
-  padding: 0px;
   height: 62px;
-  margin: 228px 0px 0px 600px;
-  opacity: 0;
+  margin: 228px 0px 0px 335px;
 }
 
 .pumpkin:hover {
@@ -303,18 +195,10 @@ body {
   opacity: 1;
 }
 
-.chandelierdiv {
-  position: relative;
-}
-
 .chandelier {
   position: absolute;
-  background: none;
-  border: none;
-  padding: 0px;
-  height: 360px;
-  margin: -94px 0px 0px 402px;
-  opacity: 0;
+  height: 362px;
+  margin: -95px 0px 0px 137px;
 }
 
 .chandelier:hover {
@@ -324,20 +208,15 @@ body {
   opacity: 1;
 }
 
-.inventorydiv {
-  position: relative;
-}
-
 .inventory {
   position: absolute;
-  background: none;
-  border: none;
-  padding: 0px;
-  right:0.1%;
-  top:0.1%;
-  max-width: 190px;
+  background: #5b5959;
+  padding:11.5px;
+  right:5px;
+  top:4px;
+  max-width: 133px;
   height: auto;
-  opacity: 0;
+  border-radius: 10px;
 }
 
 .inventory:hover {

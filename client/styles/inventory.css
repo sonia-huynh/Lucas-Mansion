@@ -1,17 +1,18 @@
+.holderdiv {
+  display: flex;
+  flex-direction: row;
+}
+
 .inventoryimg {
-  width: 100%;
-  height: 100%;
+  width: auto;
+  max-height: 200px;
+}
+
+.spacing {
+  margin: 0px 20px 0px 20px;
 }
 
 .inventoryCloseButton {
-  position: absolute;
   right: 32%;
   top: 8%;
-  padding-top: 0px;
-  border-radius: 5px;
-  margin-right: 6px;
-  margin-top: 6px;
-  background-color: #ffffff;
-  opacity: 1;
-  font-size: 20px;
 }

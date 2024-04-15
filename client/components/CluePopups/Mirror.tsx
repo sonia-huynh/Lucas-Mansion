@@ -19,15 +19,11 @@ export default function Mirror({
     <>
       <h1>Mirror</h1>
       {foundPapers[1] === true ? (
-        <p>
-          The mirror is dusty but you see your own reflection, are the clues
-          taking you in the right direction?
-        </p>
+        <p>Through the looking glass, this map piece will help you to pass.</p>
       ) : (
         <>
           <p>
-            The mirror is dusty but you see your own reflection, are the clues
-            taking you in the right direction?
+            Through the looking glass, this map piece will help you to pass.
           </p>
 
           <img
@@ -36,10 +32,13 @@ export default function Mirror({
             style={{ height: '150px' }}
           />
           <br></br>
-          <button onClick={collect}>collect</button>
+          <button onClick={collect}>Collect piece</button>
         </>
       )}
-      <button className="mapCloseButton" onClick={() => setMirror(false)}>
+      <button
+        className={foundPapers[1] ? 'clueCloseButton close' : 'pieceCloseButton close'}
+        onClick={() => setMirror(false)}
+      >
         x
       </button>
     </>

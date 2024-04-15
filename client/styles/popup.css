@@ -11,117 +11,41 @@
 }
 
 .game-popup {
-  background-color: white;
   width: 75%;
   height: 80%;
-  text-align: center;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  position: relative;
-}
-
-.closeButton {
-  position: absolute;
-  right: 1%;
-  top: 2%;
-  padding-top: 0px;
-  border-radius: 5px;
-  margin-right: 6px;
-  margin-top: 6px;
-  background-color: #ffffff;
-  opacity: 1;
-  font-size: 20px;
 }
 
 .clockbod-popup {
-  background-color: white;
   width: 35%;
   height: 80%;
-  text-align: center;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
 .clockface-popup {
-  background-color: white;
   width: 70%;
   height: 80%;
-  text-align: center;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
 .clue-popup {
-  background-color: rgb(219, 208, 193);
   width: 20%;
   height: 15%;
-  text-align: center;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-}
-
-.clueCloseButton {
-  position: absolute;
-  right: 39%;
-  top: 41%;
-  padding-top: 0px;
-  border-radius: 5px;
-  margin-right: 6px;
-  margin-top: 6px;
-  background-color: #ffffff;
-  opacity: 1;
-  font-size: 20px;
 }
 
 .map-popup {
-  background-color: rgb(219, 208, 193);
   width: 75%;
   height: 80%;
-  text-align: center;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  position: relative;
 }
 
-.map-clue-popup {
-  background-color: rgb(219, 208, 193);
+.piece-clue-popup {
   width: 20%;
   height: 35%;
-  text-align: center;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-}
-
-.mapCloseButton {
-  position: absolute;
-  right: 39%;
-  top: 31%;
-  padding-top: 0px;
-  border-radius: 5px;
-  margin-right: 6px;
-  margin-top: 6px;
-  background-color: #ffffff;
-  opacity: 1;
-  font-size: 20px;
 }
 
 #gnome-popup {
-  background-color: rgb(219, 208, 193);
   width: 20%;
   height: 35%;
-  text-align: center;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
-#gnome-close {
-  right: 39%;
-  top: 30.5%;
+#inventory-popup {
+  width: 760px;
+  height: 210px;
 }
