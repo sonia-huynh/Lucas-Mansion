@@ -101,6 +101,11 @@ export default function Dinner() {
     intro,
   ])
 
+  let allPiecesFound = true
+  for (let i = 0; i < foundPapers.length; i++) {
+    if (foundPapers[i] === false) allPiecesFound = false
+  }
+
   return (
     <div className="dinner">
       {intro && (
@@ -112,7 +117,11 @@ export default function Dinner() {
       )}
       {jigsaw && (
         <div className="popup-overlay">
-          <div className="map-popup popup">
+          <div
+            className={
+              allPiecesFound ? 'map-popup popup' : 'lucas-map-popup popup'
+            }
+          >
             <Jigsaw
               foundPapers={foundPapers}
               setJigsaw={setJigsaw}

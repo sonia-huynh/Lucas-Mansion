@@ -35,6 +35,11 @@
   height: 750px;
 }
 
+.lucas-map-popup {
+  width: 700px;
+  height: 550px;
+}
+
 .piece-clue-popup {
   width: 400px;
   height: 350px;
