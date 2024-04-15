@@ -34,7 +34,7 @@ export default function Gnome({
       )}
 
       <button
-        className={foundPapers[0] ? 'clueCloseButton ' : 'pieceCloseButton'}
+        className={foundPapers[0] ? 'clueCloseButton close' : 'pieceCloseButton close'}
         onClick={() => setGnome(false)}
       >
         x

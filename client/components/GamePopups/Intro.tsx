@@ -9,7 +9,7 @@ export default function Intro({setIntro}:Props) {
     {`You've entered Lucas' mansion and now it's a game, the room has been locked and you'll race the clock. 
     Hidden inside are some puzzles and clues, look for a way out or else you'll lose!" `}
   </p>
-  <button className="clueCloseButton" onClick={() => setIntro(false)}>
+  <button className="clueCloseButton close" onClick={() => setIntro(false)}>
         x
       </button>
   </>)

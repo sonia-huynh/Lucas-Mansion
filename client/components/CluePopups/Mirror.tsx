@@ -36,7 +36,7 @@ export default function Mirror({
         </>
       )}
       <button
-        className={foundPapers[1] ? 'clueCloseButton ' : 'pieceCloseButton'}
+        className={foundPapers[1] ? 'clueCloseButton close' : 'pieceCloseButton close'}
         onClick={() => setMirror(false)}
       >
         x

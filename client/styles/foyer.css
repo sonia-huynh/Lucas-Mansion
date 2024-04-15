@@ -1,12 +1,22 @@
 .foyer img {
   margin: 0;
   padding: 0;
-  width: 100%;
+  width:520%;
   height: 100%;
 }
 
-/* body {
-  background-image: url('match-up/plate-game.png');
-  background-size: cover;
-  background-position: center;
-} */
+.foyerdoordiv{
+  position: relative;
+}
+
+.foyerdoor{
+  position: absolute;
+  margin-top:230px;
+  left:15.7%;
+  background: none;
+  border: none;
+}
+
+.foyerdoor:hover {
+  filter:drop-shadow(-5px -5px 5px #aca5a5)
+}
