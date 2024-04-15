@@ -17,7 +17,7 @@ export default function CombinationLock({ setLockNum }: Props) {
   const [pin4, setPin4] = useState(0)
 
   function handleSubmit() {
-    if (pin1 === 1 && pin2 === 1 && pin3 === 1 && pin4 === 1) {
+    if (pin1 === 3 && pin2 === 5 && pin3 === 9 && pin4 === 0) {
       const sound = new Audio(unlock)
       sound.play()
       navigate('/Foyer')
