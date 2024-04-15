@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import '../../styles/lock.css'
 import '../../styles/popup.css'
-import '/lock-closeup.png'
 import unlock from '/audio/combination-lock.mp3'
 
 interface Props {

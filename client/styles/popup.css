@@ -110,3 +110,18 @@
   opacity: 1;
   font-size: 20px;
 }
+
+#gnome-popup {
+  background-color: rgb(219, 208, 193);
+  width: 20%;
+  height: 35%;
+  text-align: center;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+#gnome-close {
+  right: 39%;
+  top: 30.5%;
+}
