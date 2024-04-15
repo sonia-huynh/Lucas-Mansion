@@ -23,7 +23,6 @@ import Inventory from './CluePopups/Inventory'
 
 //style:
 import '../styles/popup.css'
-import '../styles/main.css'
 import '../styles/dinner.css'
 
 export default function Dinner() {

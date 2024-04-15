@@ -1,10 +1,12 @@
 import '../../styles/popup.css'
+// import
 interface Props {
   setIntro: React.Dispatch<React.SetStateAction<boolean>>
 }
 export default function Intro({ setIntro }: Props) {
   return (
     <>
+      {/* <img src="/intro.png" /> */}
       <h2>Welcome!</h2>
       <p>
         {`You've entered Lucas' mansion and now it's a game, the room has been locked and you'll race the clock. 
