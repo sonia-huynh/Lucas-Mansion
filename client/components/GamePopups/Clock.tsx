@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import '../../styles/clock.css'
 
 interface Props {
@@ -18,6 +19,17 @@ export default function Clock({
     newArr[2] = true
     setFoundPapers(newArr)
   }
+
+  const [isHovered, setIsHovered] = useState(false)
+
+  const handleMouseEnter = () => {
+    setIsHovered(true)
+  }
+
+  const handleMouseLeave = () => {
+    setIsHovered(false)
+  }
+
   return (
     <>
       {win ? (
@@ -28,20 +40,36 @@ export default function Clock({
               src="/clock-inside-closeup.png"
               alt="inside clock has a lantern and a piece of a puzzle"
             />
-            <button onClick={collect}>collect</button>
+            {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
+            <img
+              src="/collect-items.png"
+              alt="button to collect items"
+              onClick={collect}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+              style={{
+                height: '70px',
+                position: 'absolute',
+                bottom: '150px',
+                left: '640px',
+                filter: isHovered
+                  ? 'drop-shadow(1px 1px 0 white) drop-shadow(-2px -2px 0 white) drop-shadow(2px -2px 0 white) drop-shadow(-2px 2px 0 white)'
+                  : 'none',
+              }}
+            />
           </>
         ) : (
           <img
             className="clockimg"
             src="/clock-inside-empty.png"
-            alt="insid of clock is empty"
+            alt="inside of clock is empty"
           />
         )
       ) : (
         <img
           className="clockimg"
           src="/clock-inside-locked.png"
-          alt="insid of clock is empty"
+          alt="clock is locked with items inside"
         />
       )}
 
