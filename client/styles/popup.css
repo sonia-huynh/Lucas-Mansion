@@ -11,7 +11,7 @@
 }
 
 .game-popup {
-  background-color: white;
+  background-color: rgb(219, 208, 193);
   width: 75%;
   height: 80%;
   text-align: center;
@@ -21,7 +21,7 @@
   position: relative;
 }
 
-.closeButton {
+.gameCloseButton {
   position: absolute;
   right: 1%;
   top: 2%;
@@ -35,7 +35,7 @@
 }
 
 .clockbod-popup {
-  background-color: white;
+  background-color: rgb(219, 208, 193);
   width: 35%;
   height: 80%;
   text-align: center;
@@ -45,7 +45,7 @@
 }
 
 .clockface-popup {
-  background-color: white;
+  background-color: rgb(219, 208, 193);
   width: 70%;
   height: 80%;
   text-align: center;
