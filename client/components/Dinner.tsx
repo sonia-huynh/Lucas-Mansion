@@ -98,7 +98,7 @@ export default function Dinner() {
     pumpkin,
     chandelier,
     inventory,
-    intro
+    intro,
   ])
 
   return (
@@ -106,7 +106,7 @@ export default function Dinner() {
       {intro && (
         <div className="popup-overlay">
           <div className="clue-popup popup">
-            <Intro setIntro={setIntro}/>
+            <Intro setIntro={setIntro} />
           </div>
         </div>
       )}
@@ -221,7 +221,11 @@ export default function Dinner() {
 
       {gnome && (
         <div className="popup-overlay">
-          <div className={foundPapers[0] ? 'clue-popup popup' : 'piece-clue-popup popup'}>
+          <div
+            className={
+              foundPapers[0] ? 'clue-popup popup' : 'piece-clue-popup popup'
+            }
+          >
             <Gnome
               setGnome={setGnome}
               foundPapers={foundPapers}
@@ -283,7 +287,11 @@ export default function Dinner() {
       </button>
       {mirror && (
         <div className="popup-overlay">
-          <div className={foundPapers[1] ? 'clue-popup popup' : 'piece-clue-popup popup'}>
+          <div
+            className={
+              foundPapers[1] ? 'clue-popup popup' : 'piece-clue-popup popup'
+            }
+          >
             <Mirror
               setMirror={setMirror}
               foundPapers={foundPapers}
@@ -333,7 +341,11 @@ export default function Dinner() {
       {inventory && (
         <div className="popup-overlay">
           <div className="clue-popup popup" id="inventory-popup popup">
-            <Inventory setInventory={setInventory} map={jigsawWin} rips={foundPapers} />
+            <Inventory
+              setInventory={setInventory}
+              map={jigsawWin}
+              rips={foundPapers}
+            />
           </div>
         </div>
       )}
