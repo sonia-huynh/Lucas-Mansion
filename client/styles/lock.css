@@ -36,7 +36,7 @@
 }
 
 .bg {
-  background-image: url(../../public/lock-closeup.png);
+  background-image: url('/lock-closeup.png');
   /* width: 90rem;
   height: 45rem; */
   width: 100%;
