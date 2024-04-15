@@ -15,6 +15,7 @@ import Mirror from './CluePopups/Mirror'
 import Pumpkin from './CluePopups/Pumpkin'
 import Chandelier from './CluePopups/Chandelier'
 import Inventory from './CluePopups/Inventory'
+import Leaderboard from './CluePopups/Leaderboard'
 
 //style:
 import '../styles/popup.css'
@@ -43,6 +44,7 @@ export default function Dinner() {
   const [pumpkin, setPumpkin] = useState(false)
   const [chandelier, setChandelier] = useState(false)
   const [inventory, setInventory] = useState(false)
+  const [leaderboard, setLeaderboard] = useState(false)
 
   useEffect(() => {
     document.body.style.backgroundImage = "url('/highangle-paper.png')"
@@ -327,6 +329,23 @@ export default function Dinner() {
           <img
             className={block ? 'block' : 'inventory'}
             src="/dinner-images/backpack.png"
+            alt="frame with map"
+          />
+        </button>
+      </div>
+
+      {leaderboard && (
+        <div className="popup-overlay">
+          <div className="duck-popup">
+            <Leaderboard setLeaderboard={setLeaderboard} />
+          </div>
+        </div>
+      )}
+      <div className="leaderboarddiv">
+        <button className="leaderboard" onClick={() => setLeaderboard(true)}>
+          <img
+            className={block ? 'block' : 'leaderboard'}
+            src="/dinner-images/leaderboard.png"
             alt="frame with map"
           />
         </button>
