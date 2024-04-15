@@ -5,6 +5,7 @@ import Dinner from './components/Dinner.tsx'
 import Foyer from './components/Foyer.tsx'
 import Maze from './components/Maze.tsx'
 import StartPage from './components/StartPage.tsx'
+import EndPage from './components/EndPage.tsx'
 
 export default createRoutesFromElements(
   <Route path="/" element={<App />}>
@@ -13,5 +14,6 @@ export default createRoutesFromElements(
     <Route path="congrats" element={<Congrats />} />
     <Route path="foyer" element={<Foyer />} />
     <Route path="maze" element={<Maze />} />
+    <Route path="end-page" element={<EndPage />} />
   </Route>,
 )
