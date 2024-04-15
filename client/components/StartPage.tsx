@@ -24,15 +24,15 @@ export default function StartPage() {
   return (
     // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
     <img
-      src="/start-game/start-game-thin.png"
+      src="/start-game/start-game-brush.png"
       alt="start game button"
       style={{
         height: '100px',
         position: 'absolute',
-        left: '650px',
+        left: '700px',
         top: '750px',
         filter: isHovered
-          ? 'drop-shadow(1px 1px 0  rgb(217, 189, 243)) drop-shadow(-1px -1px 0  rgb(217, 189, 243)) drop-shadow(1px -1px 0  rgb(217, 189, 243)) drop-shadow(-1px 1px 0  rgb(217, 189, 243))'
+          ? 'drop-shadow(1px 1px 0  #fff9b8) drop-shadow(-1px -1px 0  #fff9b8) drop-shadow(1px -1px 0  #fff9b8) drop-shadow(-1px 1px 0  #fff9b8)'
           : 'none',
       }}
       onMouseEnter={handleMouseEnter}
