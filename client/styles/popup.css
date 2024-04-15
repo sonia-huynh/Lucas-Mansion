@@ -12,8 +12,6 @@
 
 .game-popup {
   background-color: white;
-  /* width: 90em;
-  height: 45em; */
   width: 75%;
   height: 80%;
   text-align: center;
@@ -81,8 +79,6 @@
 
 .map-popup {
   background-color: rgb(219, 208, 193);
-  /* width: 90em;
-  height: 45em; */
   width: 75%;
   height: 80%;
   text-align: center;
