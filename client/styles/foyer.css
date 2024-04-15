@@ -1,7 +1,7 @@
 .foyer img {
   margin: 0;
   padding: 0;
-  width: 100%;
+  width:520%;
   height: 100%;
 }
 
@@ -18,11 +18,11 @@
 }
 
 .foyerdoor:hover {
-  filter: drop-shadow(3px 3px 3px #b9ee46
+  filter: drop-shadow(0.1px 0.1px 50% #aca5a5
 )
-    drop-shadow(3px -3px 3px #b9ee46
-) drop-shadow(-3px -3px 3px #b9ee46
+    drop-shadow(0.1px -0.1px 50% #aca5a5
+) drop-shadow(-0.1px -0.1px 50% #aca5a5
 )
-    drop-shadow(-3px 3px 3px #b9ee46
+    drop-shadow(-0.1px 0.1px 50% #aca5a5
 );
 }

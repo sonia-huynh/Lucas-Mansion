@@ -7,11 +7,7 @@ interface Props {
 export default function Inventory({ setInventory }: Props) {
   return (
     <>
-      <img
-        className="inventoryimg"
-        src="/clock-inside-closeup.png"
-        alt="inventory"
-      />
+      
       <button className="inventoryCloseButton" onClick={() => setInventory(false)}>
         x
       </button>
