@@ -6,7 +6,11 @@ interface Props {
 export default function Intro({ setIntro }: Props) {
   return (
     <>
-      {/* <img src="/intro.png" /> */}
+      <img
+        src="/intro.png"
+        style={{ height: '200px' }}
+        alt="invitation frame"
+      />
       <h2>Welcome!</h2>
       <p>
         {`You've entered Lucas' mansion and now it's a game, the room has been locked and you'll race the clock. 
