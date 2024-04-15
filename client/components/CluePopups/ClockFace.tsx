@@ -14,7 +14,7 @@ export default function ClockFace({ setClockFace }: Props) {
         alt="inside clock has a lantern and a piece of a puzzle"
       />
       <button
-        className="clockFaceCloseButton"
+        className="clockFaceCloseButton close"
         onClick={() => setClockFace(false)}
       >
         x

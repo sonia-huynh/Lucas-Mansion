@@ -1,5 +1,4 @@
 import { useEffect } from 'react'
-import '../../public/foyer-images/foyer.png'
 import '../styles/foyer.css'
 import { Navigate, useNavigate } from 'react-router-dom'
 
