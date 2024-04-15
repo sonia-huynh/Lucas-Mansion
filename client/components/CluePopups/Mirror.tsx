@@ -19,15 +19,11 @@ export default function Mirror({
     <>
       <h1>Mirror</h1>
       {foundPapers[1] === true ? (
-        <p>
-          The mirror is dusty but you see your own reflection, are the clues
-          taking you in the right direction?
-        </p>
+        <p>Through the looking glass, this map piece will help you to pass.</p>
       ) : (
         <>
           <p>
-            The mirror is dusty but you see your own reflection, are the clues
-            taking you in the right direction?
+            Through the looking glass, this map piece will help you to pass.
           </p>
 
           <img
