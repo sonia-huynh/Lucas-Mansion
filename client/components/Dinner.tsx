@@ -73,7 +73,8 @@ export default function Dinner() {
       !mirror &&
       !pumpkin &&
       !chandelier &&
-      !inventory
+      !inventory &&
+      !intro
     ) {
       setBlock(false)
     } else {
@@ -97,14 +98,15 @@ export default function Dinner() {
     pumpkin,
     chandelier,
     inventory,
+    intro
   ])
 
   return (
     <div className="dinner">
       {intro && (
         <div className="popup-overlay">
-          <div className="map-popup">
-            <Intro />
+          <div className="clue-popup">
+            <Intro setIntro={setIntro}/>
           </div>
         </div>
       )}
