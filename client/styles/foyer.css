@@ -18,11 +18,9 @@
 }
 
 .foyerdoor:hover {
-  filter: drop-shadow(0.1px 0.1px 50% #aca5a5
-)
-    drop-shadow(0.1px -0.1px 50% #aca5a5
-) drop-shadow(-0.1px -0.1px 50% #aca5a5
-)
-    drop-shadow(-0.1px 0.1px 50% #aca5a5
-);
+  filter: 
+  /* drop-shadow(2px 2px 2px #aca5a5)
+    drop-shadow(2px -2px 2px #aca5a5)  */
+    drop-shadow(-5px -5px 5px #aca5a5)
+    /* drop-shadow(-2px 2px 2px #aca5a5); */
 }

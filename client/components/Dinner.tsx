@@ -341,7 +341,7 @@ export default function Dinner() {
       {inventory && (
         <div className="popup-overlay">
           <div className="duck-popup">
-            <Inventory setInventory={setInventory} />
+            <Inventory setInventory={setInventory} map={jigsawWin} rips={foundPapers} />
           </div>
         </div>
       )}
