@@ -1,4 +1,4 @@
-.holderdiv{
+.holderdiv {
   display: flex;
   flex-direction: row;
 }
@@ -8,7 +8,7 @@
   max-height: 200px;
 }
 
-.spacing{
+.spacing {
   margin: 0px 20px 0px 20px;
 }
 
