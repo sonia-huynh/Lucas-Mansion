@@ -39,7 +39,10 @@ export default function Mirror({
           <button onClick={collect}>Collect piece</button>
         </>
       )}
-      <button className="pieceCloseButton" onClick={() => setMirror(false)}>
+      <button
+        className={foundPapers[1] ? 'clueCloseButton ' : 'pieceCloseButton'}
+        onClick={() => setMirror(false)}
+      >
         x
       </button>
     </>

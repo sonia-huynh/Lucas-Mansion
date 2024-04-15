@@ -268,7 +268,7 @@ export default function Dinner() {
       </button>
       {mirror && (
         <div className="popup-overlay">
-          <div className="piece-clue-popup">
+          <div className={foundPapers[1] ? 'clue-popup' : 'piece-clue-popup'}>
             <Mirror
               setMirror={setMirror}
               foundPapers={foundPapers}
