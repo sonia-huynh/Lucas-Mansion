@@ -1,6 +1,5 @@
 import React from 'react'
 import Puzzle from './Puzzle'
-import '../../styles/jigsaw.css'
 import JigsawPuzzle from './JigsawPuzzle'
 import JigsawFrame from './JigsawFrame'
 
