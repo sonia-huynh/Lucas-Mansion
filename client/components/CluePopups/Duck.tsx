@@ -3,6 +3,8 @@ interface Props {
   setDuck: React.Dispatch<React.SetStateAction<boolean>>
 }
 
+
+
 export default function Duck({ setDuck }: Props) {
   return (
     <>

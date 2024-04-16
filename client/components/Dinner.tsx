@@ -3,6 +3,11 @@ import { useEffect, useState } from 'react'
 //intro:
 import Intro from './GamePopups/Intro'
 
+//audio:
+import quack from '/audio/quack.mp3'
+import jingle from '/audio/chandelier.mp3'
+
+
 //games:
 import Jigsaw from './GamePopups/Jigsaw'
 import Matching from './GamePopups/Matching'
@@ -100,6 +105,13 @@ export default function Dinner() {
     inventory,
     intro
   ])
+
+  //audio setup:
+ 
+  const duckSound = new Audio(quack)
+  const chandeleierSound = new Audio(jingle)
+
+
 
   return (
     <div className="dinner">
@@ -274,7 +286,7 @@ export default function Dinner() {
           </div>
         </div>
       )}
-      <button className="clue duck" onClick={() => setDuck(true)}>
+      <button className="clue duck" onClick={() => { duckSound.play(); setDuck(true) }}>
         <img
           className={block ? 'block' : 'duck'}
           src="/dinner-images/duck.png"
@@ -292,7 +304,7 @@ export default function Dinner() {
           </div>
         </div>
       )}
-      <button className="clue mirror" onClick={() => setMirror(true)}>
+      <button className="clue mirror" onClick={() => setMirror(true) }>
         <img
           className={block ? 'block' : 'mirror'}
           src="/dinner-images/mirror.png"
@@ -322,7 +334,7 @@ export default function Dinner() {
         </div>
       )}
 
-      <button className="clue chandelier" onClick={() => setChandelier(true)}>
+      <button className="clue chandelier" onClick={() => {chandeleierSound.play(); setChandelier(true)}}>
         <img
           className={block ? 'block' : 'chandelier'}
           src="/dinner-images/chandelier.png"
