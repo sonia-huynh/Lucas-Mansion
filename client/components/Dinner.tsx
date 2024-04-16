@@ -37,6 +37,7 @@ export default function Dinner() {
   const [matchingE, setMatchingE] = useState(false)
   const [lockNum, setLockNum] = useState(false)
   const [intro, setIntro] = useState(true)
+  const [timer, setTimer] = useState(0)
 
   // paper states
   const [foundPapers, setFoundPapers] = useState([false, false, false])
@@ -56,6 +57,12 @@ export default function Dinner() {
 
   //audio
   const [volume, setVolume] = useState(100)
+
+  //timer
+  setTimeout(() => {
+    setTimer(1 + timer)
+    console.log(timer)
+  }, 1000)
 
   useEffect(() => {
     if (jigsawWin) {
@@ -174,7 +181,11 @@ export default function Dinner() {
       {lockNum && (
         <div className="popup-overlay">
           <div className="game-popup popup">
-            <CombinationLock setLockNum={setLockNum} setVolume={setVolume} />
+            <CombinationLock
+              setLockNum={setLockNum}
+              setVolume={setVolume}
+              timer={timer}
+            />
           </div>
         </div>
       )}

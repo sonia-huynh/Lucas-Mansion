@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/media-has-caption */
 import { useEffect, useState } from 'react'
 import '../styles/foyer.css'
-import { Navigate, useNavigate } from 'react-router-dom'
+import { Navigate, useNavigate, useParams } from 'react-router-dom'
 
 export default function Foyer() {
   const navigate = useNavigate()
@@ -11,6 +11,14 @@ export default function Foyer() {
   useEffect(() => {
     document.body.style.backgroundImage = "url('/foyer-images/foyer.png')"
   })
+  const { time } = useParams()
+  const [timer, setTimer] = useState(Number(time))
+
+  setInterval(() => {
+    setTimer(1 + timer)
+    console.log(timer)
+  }, 1000)
+
   return (
     <>
       <div className="foyerdoordiv">
@@ -26,7 +34,7 @@ export default function Foyer() {
           className="foyerdoor"
           onClick={() => {
             setVolume(0)
-            navigate('../maze')
+            navigate(`../maze/${timer}`)
           }}
         >
           <img
