@@ -12,8 +12,8 @@ export default createRoutesFromElements(
     <Route index element={<StartPage />} />
     <Route path="dining-room" element={<Dinner />} />
     <Route path="congrats" element={<Congrats />} />
-    <Route path="foyer/:time" element={<Foyer />} />
-    <Route path="maze/:time" element={<Maze />} />
+    <Route path="foyer" element={<Foyer />} />
+    <Route path="maze" element={<Maze />} />
     <Route path="end-page" element={<EndPage />} />
   </Route>,
 )

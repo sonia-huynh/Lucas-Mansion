@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/media-has-caption */
 import { useEffect, useState } from 'react'
 import pathing from '../data/Maze.json'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import '../styles/maze.css'
 
 export default function Maze() {
@@ -9,20 +9,12 @@ export default function Maze() {
   //audio
   const [volume, setVolume] = useState(100)
 
-  const { time } = useParams()
-  const [timer, setTimer] = useState(Number(time))
-
-  setInterval(() => {
-    setTimer(1 + timer)
-    console.log(timer)
-  }, 1000)
   const navigate = useNavigate()
   useEffect(() => {
     document.body.style.backgroundImage = `url('/maze/routes/${pathing[position].image}.png')`
     if (position === 100) {
       setVolume(0)
-
-      navigate(`../end-page/${timer}`)
+      navigate(`../end-page`)
     }
   }, [position])
 
