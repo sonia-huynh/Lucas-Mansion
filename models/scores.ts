@@ -6,3 +6,7 @@ export interface ScoreDraft {
 export interface Scores extends ScoreDraft {
   id: number
 }
+
+export interface Scores extends ScoreDraft {
+  id: number
+}

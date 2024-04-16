@@ -1,12 +1,7 @@
 // hook for useQuery for lb data
 
-import {
-  useQuery,
-  useMutation,
-  useQueryClient,
-  MutationFunction,
-} from '@tanstack/react-query'
-import { getLeaderboard } from '../apis/leaderboard.ts'
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
+import { addScores, getLeaderboard } from '../apis/leaderboard.ts'
 
 export function useLeaderboard() {
   const query = useQuery({ queryKey: ['leaderboard'], queryFn: getLeaderboard })
@@ -17,12 +12,10 @@ export function useLeaderboard() {
 
 // hook for useMutation to post score
 
-export function useLeaderboardMutation<TData = unknown, TVariables = unknown>(
-  mutationFn: MutationFunction<TData, TVariables>,
-) {
+export function useLeaderboardMutation() {
   const queryClient = useQueryClient()
   const mutation = useMutation({
-    mutationFn,
+    mutationFn: addScores,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['leaderboard'] })
     },

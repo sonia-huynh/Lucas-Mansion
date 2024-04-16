@@ -1,5 +1,5 @@
 import request from 'superagent'
-import { Scores } from '../../models/scores'
+import { ScoreDraft } from '../../models/scores'
 
 const rootUrl = '/api/v1'
 
@@ -11,6 +11,12 @@ export function getLeaderboard(): Promise<string[]> {
 
 // post reqeust send player and time
 
-export async function addScores(score: Scores) {
-  return request.post(rootUrl + '/scores').send(score)
+export async function addScores(score: ScoreDraft) {
+  try {
+    const res = await request.post(rootUrl + '/scores').send(score)
+    return res.body
+  } catch (e) {
+    console.error(e)
+    // 'you are encountering an error'
+  }
 }
