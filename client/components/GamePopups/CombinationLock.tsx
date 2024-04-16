@@ -8,27 +8,47 @@ interface Props {
   setLockNum: React.Dispatch<React.SetStateAction<boolean>>
   setVolume: React.Dispatch<React.SetStateAction<number>>
   timer: number
+  jigsawWin: boolean
+  setExit:React.Dispatch<React.SetStateAction<boolean>>
+  setStopper:React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export default function CombinationLock({
   setLockNum,
   setVolume,
-  timer,
+  jigsawWin,
+  setExit,
+  setStopper
 }: Props) {
   const navigate = useNavigate()
   const [pin1, setPin1] = useState(0)
   const [pin2, setPin2] = useState(0)
   const [pin3, setPin3] = useState(0)
   const [pin4, setPin4] = useState(0)
+  const sound = new Audio(unlock)
+
+  function foyerMove(){
+    sound.play()
+    setVolume(0)
+    navigate(`/Foyer`)
+  }
+
+  function stopLock(){
+    setExit(true)
+    setLockNum(false)
+    setStopper(true)
+  }
 
   function handleSubmit() {
     if (pin1 === 3 && pin2 === 5 && pin3 === 9 && pin4 === 0) {
-      const sound = new Audio(unlock)
-      sound.play()
-      setVolume(0)
-      navigate(`/Foyer/${timer}`)
+      jigsawWin ? (
+        foyerMove()
+     ) : (
+      stopLock()
+      )
     } else {
       console.log('Try Again')
+      setExit(false)
     }
   }
 
@@ -36,7 +56,7 @@ export default function CombinationLock({
     <>
       <div className="bg">
         <div className="box">
-          <div className="pin">
+          <div id="pin">
             <button
               onClick={() => {
                 setPin1(pin1 + 1)
@@ -47,7 +67,7 @@ export default function CombinationLock({
             >
               ▲
             </button>
-            <p>{pin1}</p>
+            <p id="number">{pin1}</p>
             <button
               onClick={() => {
                 setPin1(pin1 - 1)
@@ -59,7 +79,7 @@ export default function CombinationLock({
               ▼
             </button>
           </div>
-          <div className="pin">
+          <div id="pin">
             <button
               onClick={() => {
                 setPin2(pin2 + 1)
@@ -70,7 +90,7 @@ export default function CombinationLock({
             >
               ▲
             </button>
-            <p>{pin2}</p>
+            <p id="number">{pin2}</p>
             <button
               onClick={() => {
                 setPin2(pin2 - 1)
@@ -82,7 +102,7 @@ export default function CombinationLock({
               ▼
             </button>
           </div>
-          <div className="pin">
+          <div id="pin">
             <button
               onClick={() => {
                 setPin3(pin3 + 1)
@@ -93,7 +113,7 @@ export default function CombinationLock({
             >
               ▲
             </button>
-            <p>{pin3}</p>
+            <p id="number">{pin3}</p>
             <button
               onClick={() => {
                 setPin3(pin3 - 1)
@@ -105,7 +125,7 @@ export default function CombinationLock({
               ▼
             </button>
           </div>
-          <div className="pin">
+          <div id="pin">
             <button
               onClick={() => {
                 setPin4(pin4 + 1)
@@ -116,7 +136,7 @@ export default function CombinationLock({
             >
               ▲
             </button>
-            <p>{pin4}</p>
+            <p id="number">{pin4}</p>
             <button
               onClick={() => {
                 setPin4(pin4 - 1)

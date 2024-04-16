@@ -2,7 +2,11 @@ import { useNavigate } from 'react-router-dom'
 import Congrats from './Congrats'
 import { useEffect } from 'react'
 
-export default function EndPage() {
+interface Props {
+  timer: number
+}
+
+export default function EndPage({ timer }: Props) {
   const navigate = useNavigate()
 
   useEffect(() => {

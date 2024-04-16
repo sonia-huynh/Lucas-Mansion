@@ -4,6 +4,11 @@ import { useEffect, useState } from 'react'
 //intro:
 import Intro from './GamePopups/Intro'
 
+//audio:
+import quack from '/audio/quack.mp3'
+import jingle from '/audio/chandelier.mp3'
+import gnomed from '/audio/gnome.mp3'
+
 //games:
 import Jigsaw from './GamePopups/Jigsaw'
 import Matching from './GamePopups/Matching'
@@ -25,6 +30,8 @@ import Inventory from './CluePopups/Inventory'
 //style:
 import '../styles/popup.css'
 import '../styles/dinner.css'
+import { useNavigate } from 'react-router-dom'
+import Stopper from './CluePopups/Stopper'
 
 export default function Dinner() {
   const [block, setBlock] = useState(true)
@@ -38,6 +45,8 @@ export default function Dinner() {
   const [lockNum, setLockNum] = useState(false)
   const [intro, setIntro] = useState(true)
   const [timer, setTimer] = useState(0)
+  const [exit, setExit] = useState(false)
+  const navigate = useNavigate()
 
   // paper states
   const [foundPapers, setFoundPapers] = useState([false, false, false])
@@ -54,15 +63,10 @@ export default function Dinner() {
   const [chandelier, setChandelier] = useState(false)
   const [inventory, setInventory] = useState(false)
   const [mapShow, setMapShow] = useState(false)
+  const [stopper, setStopper] = useState(false)
 
   //audio
   const [volume, setVolume] = useState(100)
-
-  //timer
-  setTimeout(() => {
-    setTimer(1 + timer)
-    console.log(timer)
-  }, 1000)
 
   useEffect(() => {
     if (jigsawWin) {
@@ -85,7 +89,8 @@ export default function Dinner() {
       !pumpkin &&
       !chandelier &&
       !inventory &&
-      !intro
+      !intro &&
+      !stopper
     ) {
       setBlock(false)
     } else {
@@ -110,6 +115,7 @@ export default function Dinner() {
     chandelier,
     inventory,
     intro,
+    stopper
   ])
 
   function inventoryW() {
@@ -137,6 +143,12 @@ export default function Dinner() {
   for (let i = 0; i < foundPapers.length; i++) {
     if (foundPapers[i] === false) allPiecesFound = false
   }
+
+  //audio setup:
+
+  const duckSound = new Audio(quack)
+  const chandeleierSound = new Audio(jingle)
+  const gnomeSound = new Audio(gnomed)
 
   return (
     <div className="dinner">
@@ -190,11 +202,24 @@ export default function Dinner() {
               setLockNum={setLockNum}
               setVolume={setVolume}
               timer={timer}
+              jigsawWin={jigsawWin}
+              setExit={setExit}
+              setStopper={setStopper}
             />
           </div>
         </div>
       )}
-      <button className="clue lock" onClick={() => setLockNum(true)}>
+       {stopper && (
+        <div className="popup-overlay">
+          <div className="clue-popup popup">
+            <Stopper
+              setStopper={setStopper}
+              foundPapers={foundPapers[2]}
+            />
+          </div>
+        </div>
+      )}
+      <button className="clue lock" onClick={() => exit ? jigsawWin ? navigate(`/Foyer`) : setStopper(true) : setLockNum(true)}>
         <img
           className={block ? 'block' : 'lock noMap'}
           src="/dinner-images/door-handle.png"
@@ -288,7 +313,13 @@ export default function Dinner() {
           </div>
         </div>
       )}
-      <button className="clue gnome" onClick={() => setGnome(true)}>
+      <button
+        className="clue gnome"
+        onClick={() => {
+          gnomeSound.play()
+          setGnome(true)
+        }}
+      >
         <img
           className={block ? 'block' : 'gnome'}
           src="/dinner-images/gnome.png"
@@ -332,7 +363,13 @@ export default function Dinner() {
           </div>
         </div>
       )}
-      <button className="clue duck" onClick={() => setDuck(true)}>
+      <button
+        className="clue duck"
+        onClick={() => {
+          duckSound.play()
+          setDuck(true)
+        }}
+      >
         <img
           className={block ? 'block' : 'duck'}
           src="/dinner-images/duck.png"
@@ -384,7 +421,13 @@ export default function Dinner() {
         </div>
       )}
 
-      <button className="clue chandelier" onClick={() => setChandelier(true)}>
+      <button
+        className="clue chandelier"
+        onClick={() => {
+          chandeleierSound.play()
+          setChandelier(true)
+        }}
+      >
         <img
           className={block ? 'block' : 'chandelier'}
           src="/dinner-images/chandelier.png"

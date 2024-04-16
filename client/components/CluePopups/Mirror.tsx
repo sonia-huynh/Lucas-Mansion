@@ -1,5 +1,10 @@
 import { useState } from 'react'
 import '../../styles/popup.css'
+
+//audio:
+import paper from '/audio/paper.mp3'
+const paperSound = new Audio(paper)
+
 interface Props {
   setMirror: React.Dispatch<React.SetStateAction<boolean>>
   setFoundPapers: React.Dispatch<React.SetStateAction<boolean[]>>
@@ -15,6 +20,7 @@ export default function Mirror({
     const newArr = [...foundPapers]
     newArr[1] = true
     setFoundPapers(newArr)
+    console.log("called")
   }
 
   const [isHovered, setIsHovered] = useState(false)
@@ -41,12 +47,15 @@ export default function Mirror({
           <img
             src="puzzle-images/corner1.png"
             alt="piece 1 of a map"
-            style={{ height: '150px' }}
+            style={{ height: '150px', marginBottom: '10px' }}
           />
           <br></br>
           {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
           <img
-            onClick={collect}
+            onClick={() => {
+              paperSound.play()
+              collect()
+            }}
             style={{
               height: '30px',
               filter: isHovered

@@ -5,6 +5,7 @@ import { Outlet, useLocation } from 'react-router-dom'
 import dinner from '/audio/dinner.mp3'
 import foyer from '/audio/foyer.mp3'
 import mazeSing from '/audio/maze-sing.mp3'
+import Timer from './Timer'
 
 function App() {
   const location = useLocation()
@@ -26,7 +27,8 @@ function App() {
   return (
     <>
       <div className="app">
-        <Outlet />
+        {location.pathname !== '/end-page' && <Outlet />}
+        <Timer />
       </div>
     </>
   )
