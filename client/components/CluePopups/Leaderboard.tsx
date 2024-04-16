@@ -18,15 +18,29 @@ export default function Leaderboard({ setLeaderboard, setBlock }: Props) {
     console.log(scores)
     return (
       <>
-        <h1 style={{ left: '600px', zIndex: '1100', position: 'absolute' }}>
+        <h1
+          style={{
+            left: '600px',
+            zIndex: '1100',
+            position: 'absolute',
+            color: 'wheat',
+            filter:
+              'drop-shadow(1px 1px 0px black) drop-shadow(-1px -1px 0px black) drop-shadow(1px -1px 0px black) drop-shadow(-1px 1px 0px black)',
+          }}
+        >
           Leaderboard
         </h1>
         <div
           style={{
-            left: '350px',
-            top: '200px',
+            left: '150px',
+            top: '120px',
             zIndex: '1100',
             position: 'absolute',
+            color: 'yellow',
+            textAlign: 'left',
+            fontSize: '20px',
+            filter:
+              'drop-shadow(1px 1px 0px black) drop-shadow(-1px -1px 0px black) drop-shadow(1px -1px 0px black) drop-shadow(-1px 1px 0px black)',
           }}
         >
           {scores.map((score: Scores, i: number) => (
