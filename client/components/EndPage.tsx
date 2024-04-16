@@ -5,6 +5,7 @@ import '../styles/popup.css'
 export default function EndPage() {
   const [leaderboard, setLeaderboard] = useState(false)
   const [block, setBlock] = useState(false)
+  const [name, setName] = useState('')
 
   useEffect(() => {
     document.body.style.backgroundImage = "url('/end-page/end-page.png')"
@@ -24,6 +25,8 @@ export default function EndPage() {
     setLeaderboard(true)
     setBlock(true)
   }
+
+  function handleSubmit() {}
 
   return (
     <>
@@ -55,8 +58,6 @@ export default function EndPage() {
           />
           <div
             style={{
-              // left: '450px',
-              // top: '650px',
               display: 'flex',
               flexDirection: 'column',
               marginLeft: '70px',
@@ -66,14 +67,32 @@ export default function EndPage() {
               style={{
                 marginBlockStart: '0px',
                 marginBlockEnd: '0px',
-                marginTop: '10px',
+                margin: '10px 0px',
               }}
             >
-              Your score is below
+              Your score:
             </h1>
-            <p style={{ marginBlockStart: '0px', marginBlockEnd: '0px' }}>
-              2 minutes and 27 seconds
+            <p
+              style={{
+                marginBlockStart: '0px',
+                marginBlockEnd: '0px',
+              }}
+            >
+              2 minutes and 27 seconds.
             </p>
+            <p>Add your score to the leaderboard.</p>
+            <form onSubmit={handleSubmit}>
+              <input
+                required
+                onChange={(e) => setName(e.target.value)}
+                type="text"
+                name="name"
+                id="name"
+                value={name}
+                placeholder="Your name"
+              ></input>
+              <button type="submit">Submit</button>
+            </form>
           </div>
         </div>
         {leaderboard && (
