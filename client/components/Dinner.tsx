@@ -23,7 +23,6 @@ import Inventory from './CluePopups/Inventory'
 
 //style:
 import '../styles/popup.css'
-import '../styles/main.css'
 import '../styles/dinner.css'
 
 export default function Dinner() {
@@ -52,6 +51,7 @@ export default function Dinner() {
   const [pumpkin, setPumpkin] = useState(false)
   const [chandelier, setChandelier] = useState(false)
   const [inventory, setInventory] = useState(false)
+  const [mapShow, setMapShow] = useState(false)
 
   useEffect(() => {
     if (jigsawWin) {
@@ -98,21 +98,47 @@ export default function Dinner() {
     pumpkin,
     chandelier,
     inventory,
-    intro
+    intro,
   ])
+
+  function inventoryW(){
+    const sizes = [283.562,185.125,379.812]
+    let size = 0
+    foundPapers.map((check, i)=> {
+      check && (size = size + sizes[i])
+    })
+    jigsawWin && (mapShow ? (size = 1250) : (size = 588.078))
+    size == 0 && (size = 210)
+    return size
+  }
+
+  function inventoryH(){
+    const size = mapShow ? 710 : 210
+    return size
+
+  }
+  
+  let allPiecesFound = true
+  for (let i = 0; i < foundPapers.length; i++) {
+    if (foundPapers[i] === false) allPiecesFound = false
+  }
 
   return (
     <div className="dinner">
       {intro && (
         <div className="popup-overlay">
           <div className="clue-popup popup">
-            <Intro setIntro={setIntro}/>
+            <Intro setIntro={setIntro} />
           </div>
         </div>
       )}
       {jigsaw && (
         <div className="popup-overlay">
-          <div className="map-popup popup">
+          <div
+            className={
+              allPiecesFound ? 'map-popup popup' : 'lucas-map-popup popup'
+            }
+          >
             <Jigsaw
               foundPapers={foundPapers}
               setJigsaw={setJigsaw}
@@ -221,7 +247,11 @@ export default function Dinner() {
 
       {gnome && (
         <div className="popup-overlay">
-          <div className={foundPapers[0] ? 'clue-popup popup' : 'piece-clue-popup popup'}>
+          <div
+            className={
+              foundPapers[0] ? 'clue-popup popup' : 'piece-clue-popup popup'
+            }
+          >
             <Gnome
               setGnome={setGnome}
               foundPapers={foundPapers}
@@ -283,7 +313,11 @@ export default function Dinner() {
       </button>
       {mirror && (
         <div className="popup-overlay">
-          <div className={foundPapers[1] ? 'clue-popup popup' : 'piece-clue-popup popup'}>
+          <div
+            className={
+              foundPapers[1] ? 'clue-popup popup' : 'piece-clue-popup popup'
+            }
+          >
             <Mirror
               setMirror={setMirror}
               foundPapers={foundPapers}
@@ -330,14 +364,16 @@ export default function Dinner() {
         />
       </button>
 
-      {inventory && (
+      {inventory && 
+      
+      (
         <div className="popup-overlay">
-          <div className="clue-popup popup" id="inventory-popup popup">
-            <Inventory setInventory={setInventory} map={jigsawWin} rips={foundPapers} />
+          <div className="popup" id="inventory-popup" style={{width:`${inventoryW()}px`, height:`${inventoryH()}px`}}>
+            <Inventory setInventory={setInventory} map={jigsawWin} rips={foundPapers} mapShow={mapShow} setMapShow={setMapShow}/>
           </div>
         </div>
       )}
-      <button className="clue inventory" onClick={() => setInventory(true)}>
+      <button className="clue inventory"  id="mapbutt" onClick={() => setInventory(true)}>
         <img
           className={block ? 'block' : 'inventory'}
           src="/dinner-images/backpack.png"

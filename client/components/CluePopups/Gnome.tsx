@@ -29,14 +29,13 @@ export default function Gnome({
             style={{ height: '150px' }}
           />
           <br />
+          <br />
+
           <button onClick={handleClick}>collect</button>
         </>
       )}
 
-      <button
-        className={foundPapers[0] ? 'clueCloseButton close' : 'pieceCloseButton close'}
-        onClick={() => setGnome(false)}
-      >
+      <button className="close" onClick={() => setGnome(false)}>
         x
       </button>
     </>
