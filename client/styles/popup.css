@@ -10,6 +10,15 @@
   background-color: rgba(0, 0, 0, 0.6);
 }
 
+.intro-popup {
+  background-image: url('/intro.png');
+  background-size: cover;
+  width: 299px;
+  height: 300px;
+  color: rgb(119, 76, 12);
+  font-size: large;
+}
+
 .game-popup {
   width: 1435px;
   height: 720px;

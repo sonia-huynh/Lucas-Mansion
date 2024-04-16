@@ -101,10 +101,10 @@ export default function Dinner() {
     intro,
   ])
 
-  function inventoryW(){
-    const sizes = [283.562,185.125,379.812]
+  function inventoryW() {
+    const sizes = [283.562, 185.125, 379.812]
     let size = 0
-    foundPapers.map((check, i)=> {
+    foundPapers.map((check, i) => {
       check && (size = size + sizes[i])
     })
     jigsawWin && (mapShow ? (size = 1250) : (size = 588.078))
@@ -112,12 +112,11 @@ export default function Dinner() {
     return size
   }
 
-  function inventoryH(){
+  function inventoryH() {
     const size = mapShow ? 710 : 210
     return size
-
   }
-  
+
   let allPiecesFound = true
   for (let i = 0; i < foundPapers.length; i++) {
     if (foundPapers[i] === false) allPiecesFound = false
@@ -127,7 +126,7 @@ export default function Dinner() {
     <div className="dinner">
       {intro && (
         <div className="popup-overlay">
-          <div className="clue-popup popup">
+          <div className="intro-popup popup">
             <Intro setIntro={setIntro} />
           </div>
         </div>
@@ -364,16 +363,28 @@ export default function Dinner() {
         />
       </button>
 
-      {inventory && 
-      
-      (
+      {inventory && (
         <div className="popup-overlay">
-          <div className="popup" id="inventory-popup" style={{width:`${inventoryW()}px`, height:`${inventoryH()}px`}}>
-            <Inventory setInventory={setInventory} map={jigsawWin} rips={foundPapers} mapShow={mapShow} setMapShow={setMapShow}/>
+          <div
+            className="popup"
+            id="inventory-popup"
+            style={{ width: `${inventoryW()}px`, height: `${inventoryH()}px` }}
+          >
+            <Inventory
+              setInventory={setInventory}
+              map={jigsawWin}
+              rips={foundPapers}
+              mapShow={mapShow}
+              setMapShow={setMapShow}
+            />
           </div>
         </div>
       )}
-      <button className="clue inventory"  id="mapbutt" onClick={() => setInventory(true)}>
+      <button
+        className="clue inventory"
+        id="mapbutt"
+        onClick={() => setInventory(true)}
+      >
         <img
           className={block ? 'block' : 'inventory'}
           src="/dinner-images/backpack.png"
