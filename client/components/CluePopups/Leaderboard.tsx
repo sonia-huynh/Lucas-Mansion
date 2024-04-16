@@ -1,29 +1,33 @@
 import '../../styles/popup.css'
 interface Props {
   setLeaderboard: React.Dispatch<React.SetStateAction<boolean>>
+  setBlock: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export default function Leaderboard({ setLeaderboard }: Props) {
+export default function Leaderboard({ setLeaderboard, setBlock }: Props) {
+  function handleClick() {
+    setLeaderboard(false)
+    setBlock(false)
+  }
+
   return (
     <>
       <h1>Leaderboard</h1>
-      <button
-        className="close"
-        onClick={() => setLeaderboard(false)}
-        // style={
-        //   {
-        //     // position: 'absolute',
-        //     // paddingTop: '0px',
-        //     // borderRadius: '5px',
-        //     // marginRight: '6px',
-        //     // marginTop: '6px',
-        //     // backgroundColor: '#ffffff',
-        //     // opacity: '1',
-        //     // fontSize: '20px',
-        //     // right: '5px',
-        //     // top: '5px',
-        //   }}
-      >
+      <img
+        src="/end-page/leaderboard-background.png"
+        alt=""
+        style={{
+          // height: '700px',
+          margin: '0px',
+          padding: '0px',
+          top: '10px',
+          right: '12px',
+          position: 'absolute',
+          height: '98%',
+          width: '98%',
+        }}
+      />
+      <button className="close" onClick={handleClick}>
         x
       </button>
     </>
