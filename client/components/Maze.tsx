@@ -1,27 +1,84 @@
-import { useEffect, useState } from "react"
-import pathing from "../data/Maze.json"
-import {useNavigate} from "react-router-dom"
-import "../styles/maze.css"
+/* eslint-disable jsx-a11y/media-has-caption */
+import { useEffect, useState } from 'react'
+import pathing from '../data/Maze.json'
+import { useNavigate, useParams } from 'react-router-dom'
+import '../styles/maze.css'
 
 export default function Maze() {
   const [position, setPosition] = useState(0)
-  const navigate = useNavigate()
-  useEffect(()=>{
-    document.body.style.backgroundImage = `url('/maze/routes/${pathing[position].image}.png')`
-    if (position === 100){
-      navigate("/congrats")
-    }
-  },[position])
+  //audio
+  const [volume, setVolume] = useState(100)
 
-  if (pathing){
-    return (<>
-    {/* <img src={`/maze/routes/${pathing[position].image}.png`} alt={`maze orientation ${pathing[position].point}`}/> */}
-    {pathing[position].left && <button className="left direction" onClick={()=>setPosition(pathing[position].left as number)}><img src="/maze/directions/left.png" alt="left"/></button>}
-    {pathing[position].forward &&<button className="forward direction" onClick={()=>setPosition(pathing[position].forward as number)}><img src="/maze/directions/forward.png" alt="forward"/></button>}
-    {pathing[position].right &&<button className="right direction" onClick={()=>setPosition(pathing[position].right as number)}><img src="/maze/directions/right.png" alt="right"/></button>}
-    {pathing[position].back 
-    ? <button className="back direction" onClick={()=>setPosition(pathing[position].back as number)}><img src="/maze/directions/back.png" alt="back"/></button> 
-    : pathing[position].back === 0 && <button className="back direction" onClick={()=>setPosition(pathing[position].back as number)}><img src="/maze/directions/back.png" alt="back"/></button>}
-  </>)
+  const { time } = useParams()
+  const [timer, setTimer] = useState(Number(time))
+
+  setInterval(() => {
+    setTimer(1 + timer)
+    console.log(timer)
+  }, 1000)
+  const navigate = useNavigate()
+  useEffect(() => {
+    document.body.style.backgroundImage = `url('/maze/routes/${pathing[position].image}.png')`
+    if (position === 100) {
+      setVolume(0)
+
+      navigate(`../end-page/${timer}`)
     }
+  }, [position])
+
+  if (pathing) {
+    return (
+      <>
+        <audio
+          id="dinnerAudio"
+          src={'/audio/night-ambience.mp3'}
+          autoPlay={true}
+          // eslint-disable-next-line react/no-unknown-property
+          volume={volume}
+          loop={true}
+        />
+        {pathing[position].left && (
+          <button
+            className="left direction"
+            onClick={() => setPosition(pathing[position].left as number)}
+          >
+            <img src="/maze/directions/left.png" alt="left" />
+          </button>
+        )}
+        {pathing[position].forward && (
+          <button
+            className="forward direction"
+            onClick={() => setPosition(pathing[position].forward as number)}
+          >
+            <img src="/maze/directions/forward.png" alt="forward" />
+          </button>
+        )}
+        {pathing[position].right && (
+          <button
+            className="right direction"
+            onClick={() => setPosition(pathing[position].right as number)}
+          >
+            <img src="/maze/directions/right.png" alt="right" />
+          </button>
+        )}
+        {pathing[position].back ? (
+          <button
+            className="back direction"
+            onClick={() => setPosition(pathing[position].back as number)}
+          >
+            <img src="/maze/directions/back.png" alt="back" />
+          </button>
+        ) : (
+          pathing[position].back === 0 && (
+            <button
+              className="back direction"
+              onClick={() => setPosition(pathing[position].back as number)}
+            >
+              <img src="/maze/directions/back.png" alt="back" />
+            </button>
+          )
+        )}
+      </>
+    )
+  }
 }

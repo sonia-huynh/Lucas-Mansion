@@ -1,17 +1,4 @@
-/* .dinner {
-  background-image: url('/highangle-paper.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: 1068px;
-  width: 1905px;
-  padding: none;
-  margin: none;
-  overflow: hidden;
-} */
-
 body {
-  background-image: url('/highangle-paper.png');
   background-repeat: no-repeat;
   overflow: hidden;
   z-index: 10;
@@ -19,20 +6,6 @@ body {
 
 .block {
   display: none;
-}
-
-.block img {
-  display: none;
-}
-
-.button {
-  background-color: transparent;
-  border-color: transparent;
-  color: transparent;
-}
-
-.div {
-  position: relative;
 }
 
 .clue {
@@ -237,10 +210,13 @@ body {
 
 .inventory {
   position: absolute;
-  right: 0.1%;
-  top: 0.1%;
-  max-width: 190px;
+  background: #5b5959;
+  padding: 11.5px;
+  right: 5px;
+  top: 4px;
+  max-width: 133px;
   height: auto;
+  border-radius: 10px;
 }
 
 .inventory:hover {

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/media-has-caption */
 import { useEffect, useState } from 'react'
 
 //intro:
@@ -28,7 +29,6 @@ import Inventory from './CluePopups/Inventory'
 
 //style:
 import '../styles/popup.css'
-import '../styles/main.css'
 import '../styles/dinner.css'
 
 export default function Dinner() {
@@ -42,6 +42,7 @@ export default function Dinner() {
   const [matchingE, setMatchingE] = useState(false)
   const [lockNum, setLockNum] = useState(false)
   const [intro, setIntro] = useState(true)
+  const [timer, setTimer] = useState(0)
 
   // paper states
   const [foundPapers, setFoundPapers] = useState([false, false, false])
@@ -57,6 +58,16 @@ export default function Dinner() {
   const [pumpkin, setPumpkin] = useState(false)
   const [chandelier, setChandelier] = useState(false)
   const [inventory, setInventory] = useState(false)
+  const [mapShow, setMapShow] = useState(false)
+
+  //audio
+  const [volume, setVolume] = useState(100)
+
+  //timer
+  setTimeout(() => {
+    setTimer(1 + timer)
+    console.log(timer)
+  }, 1000)
 
   useEffect(() => {
     if (jigsawWin) {
@@ -103,8 +114,34 @@ export default function Dinner() {
     pumpkin,
     chandelier,
     inventory,
-    intro
+    intro,
   ])
+
+  function inventoryW() {
+    const sizes = [283.562, 185.125, 379.812]
+    let size = 0
+    foundPapers.map((check, i) => {
+      check && (size = size + sizes[i])
+    })
+    jigsawWin && (mapShow ? (size = 1250) : (size = 588.078))
+    size == 0 && (size = 210)
+    return size
+  }
+
+  function inventoryH() {
+    let size = mapShow ? 710 : 280
+    !foundPapers[0] &&
+      !foundPapers[1] &&
+      !foundPapers[2] &&
+      !jigsawWin &&
+      (size = 110)
+    return size
+  }
+
+  let allPiecesFound = true
+  for (let i = 0; i < foundPapers.length; i++) {
+    if (foundPapers[i] === false) allPiecesFound = false
+  }
 
   //audio setup:
  
@@ -115,16 +152,27 @@ export default function Dinner() {
 
   return (
     <div className="dinner">
+      <audio
+        id="dinnerAudio"
+        src={'/audio/dinner.mp3'}
+        autoPlay={true}
+        // eslint-disable-next-line react/no-unknown-property
+        volume={volume}
+      />
       {intro && (
         <div className="popup-overlay">
-          <div className="clue-popup">
-            <Intro setIntro={setIntro}/>
+          <div className="intro-popup popup">
+            <Intro setIntro={setIntro} />
           </div>
         </div>
       )}
       {jigsaw && (
         <div className="popup-overlay">
-          <div className="map-popup">
+          <div
+            className={
+              allPiecesFound ? 'map-popup popup' : 'lucas-map-popup popup'
+            }
+          >
             <Jigsaw
               foundPapers={foundPapers}
               setJigsaw={setJigsaw}
@@ -134,21 +182,27 @@ export default function Dinner() {
           </div>
         </div>
       )}
-
-      <button className="clue frame" onClick={() => setJigsaw(true)}>
+      <button
+        className="clue frame"
+        onClick={() => !jigsawWin && setJigsaw(true)}
+      >
         <img
           src={
             jigsawWin ? '/lucas-no-map.png' : '/dinner-images/lucas-map2.png'
           }
-          className={block ? 'block' : 'frame'}
+          className={block ? 'block' : jigsawWin ? 'block' : 'frame'}
           alt="frame with map"
         />
       </button>
 
       {lockNum && (
         <div className="popup-overlay">
-          <div className="game-popup">
-            <CombinationLock setLockNum={setLockNum} />
+          <div className="game-popup popup">
+            <CombinationLock
+              setLockNum={setLockNum}
+              setVolume={setVolume}
+              timer={timer}
+            />
           </div>
         </div>
       )}
@@ -162,7 +216,7 @@ export default function Dinner() {
 
       {clock && (
         <div className="popup-overlay">
-          <div className="clockbod-popup">
+          <div className="clockbod-popup popup">
             <Clock
               setClock={setClock}
               win={matchingWin}
@@ -183,7 +237,7 @@ export default function Dinner() {
 
       {matchingE && (
         <div className="popup-overlay">
-          <div className="game-popup">
+          <div className="game-popup popup">
             <MatchingExample setMatchingE={setMatchingE} />
           </div>
         </div>
@@ -199,7 +253,7 @@ export default function Dinner() {
 
       {matching && (
         <div className="popup-overlay">
-          <div className="game-popup">
+          <div className="game-popup popup">
             <Matching
               setMatching={setMatching}
               win={matchingWin}
@@ -218,7 +272,7 @@ export default function Dinner() {
 
       {clockFace && (
         <div className="popup-overlay">
-          <div className="clockface-popup">
+          <div className="clockface-popup popup">
             <ClockFace setClockFace={setClockFace} />
           </div>
         </div>
@@ -233,7 +287,11 @@ export default function Dinner() {
 
       {gnome && (
         <div className="popup-overlay">
-          <div className={foundPapers[0] ? 'clue-popup' : 'piece-clue-popup'}>
+          <div
+            className={
+              foundPapers[0] ? 'clue-popup popup' : 'piece-clue-popup popup'
+            }
+          >
             <Gnome
               setGnome={setGnome}
               foundPapers={foundPapers}
@@ -252,7 +310,7 @@ export default function Dinner() {
 
       {stool && (
         <div className="popup-overlay">
-          <div className="clue-popup">
+          <div className="clue-popup popup">
             <Stool setStool={setStool} />
           </div>
         </div>
@@ -267,7 +325,7 @@ export default function Dinner() {
 
       {chest && (
         <div className="popup-overlay">
-          <div className="clue-popup">
+          <div className="clue-popup popup">
             <Chest setChest={setChest} />
           </div>
         </div>
@@ -281,7 +339,7 @@ export default function Dinner() {
       </button>
       {duck && (
         <div className="popup-overlay">
-          <div className="clue-popup">
+          <div className="clue-popup popup">
             <Duck setDuck={setDuck} />
           </div>
         </div>
@@ -295,7 +353,11 @@ export default function Dinner() {
       </button>
       {mirror && (
         <div className="popup-overlay">
-          <div className={foundPapers[1] ? 'clue-popup' : 'piece-clue-popup'}>
+          <div
+            className={
+              foundPapers[1] ? 'clue-popup popup' : 'piece-clue-popup popup'
+            }
+          >
             <Mirror
               setMirror={setMirror}
               foundPapers={foundPapers}
@@ -313,7 +375,7 @@ export default function Dinner() {
       </button>
       {pumpkin && (
         <div className="popup-overlay">
-          <div className="clue-popup">
+          <div className="clue-popup popup">
             <Pumpkin setPumpkin={setPumpkin} />
           </div>
         </div>
@@ -328,7 +390,7 @@ export default function Dinner() {
 
       {chandelier && (
         <div className="popup-overlay">
-          <div className="clue-popup">
+          <div className="clue-popup popup">
             <Chandelier setChandelier={setChandelier} />
           </div>
         </div>
@@ -344,12 +406,26 @@ export default function Dinner() {
 
       {inventory && (
         <div className="popup-overlay">
-          <div className="duck-popup">
-            <Inventory setInventory={setInventory} />
+          <div
+            className="popup"
+            id="inventory-popup"
+            style={{ width: `${inventoryW()}px`, height: `${inventoryH()}px` }}
+          >
+            <Inventory
+              setInventory={setInventory}
+              map={jigsawWin}
+              rips={foundPapers}
+              mapShow={mapShow}
+              setMapShow={setMapShow}
+            />
           </div>
         </div>
       )}
-      <button className="clue inventory" onClick={() => setInventory(true)}>
+      <button
+        className="clue inventory"
+        id="mapbutt"
+        onClick={() => setInventory(true)}
+      >
         <img
           className={block ? 'block' : 'inventory'}
           src="/dinner-images/backpack.png"

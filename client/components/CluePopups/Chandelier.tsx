@@ -8,8 +8,11 @@ export default function Chandelier({ setChandelier }: Props) {
   return (
     <>
       <h1>Chandelier</h1>
-      <p>The fancy chandelier twinkles and shines. The lights so bright they look dressed to the nines.</p>
-      <button className="clueCloseButton" onClick={() => setChandelier(false)}>
+      <p>
+        The fancy chandelier twinkles and shines. The lights so bright they look
+        dressed to the nines.
+      </p>
+      <button className="close" onClick={() => setChandelier(false)}>
         x
       </button>
     </>
