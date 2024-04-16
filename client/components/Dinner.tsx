@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/media-has-caption */
 import { useEffect, useState } from 'react'
 
 //intro:
@@ -52,6 +53,9 @@ export default function Dinner() {
   const [chandelier, setChandelier] = useState(false)
   const [inventory, setInventory] = useState(false)
   const [mapShow, setMapShow] = useState(false)
+
+  //audio
+  const [volume, setVolume] = useState(100)
 
   useEffect(() => {
     if (jigsawWin) {
@@ -124,6 +128,13 @@ export default function Dinner() {
 
   return (
     <div className="dinner">
+      <audio
+        id="dinnerAudio"
+        src={'/audio/dinner.mp3'}
+        autoPlay={true}
+        // eslint-disable-next-line react/no-unknown-property
+        volume={volume}
+      />
       {intro && (
         <div className="popup-overlay">
           <div className="intro-popup popup">
@@ -147,13 +158,15 @@ export default function Dinner() {
           </div>
         </div>
       )}
-
-      <button className="clue frame" onClick={() => setJigsaw(true)}>
+      <button
+        className="clue frame"
+        onClick={() => !jigsawWin && setJigsaw(true)}
+      >
         <img
           src={
             jigsawWin ? '/lucas-no-map.png' : '/dinner-images/lucas-map2.png'
           }
-          className={block ? 'block' : 'frame'}
+          className={block ? 'block' : jigsawWin ? 'block' : 'frame'}
           alt="frame with map"
         />
       </button>
@@ -161,7 +174,7 @@ export default function Dinner() {
       {lockNum && (
         <div className="popup-overlay">
           <div className="game-popup popup">
-            <CombinationLock setLockNum={setLockNum} />
+            <CombinationLock setLockNum={setLockNum} setVolume={setVolume} />
           </div>
         </div>
       )}
