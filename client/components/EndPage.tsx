@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react'
 import Leaderboard from './CluePopups/Leaderboard'
 import '../styles/popup.css'
+import { useLeaderboard, useLeaderboardMutation } from '../hooks/useLeaderboard'
 
 export default function EndPage() {
   const [leaderboard, setLeaderboard] = useState(false)
   const [block, setBlock] = useState(false)
   const [score, setScore] = useState({ name: '', time: '' })
+  const mutation = useLeaderboardMutation()
 
   useEffect(() => {
     document.body.style.backgroundImage = "url('/end-page/end-page.png')"
@@ -87,7 +89,9 @@ export default function EndPage() {
             <form onSubmit={handleSubmit}>
               <input
                 required
-                onChange={(e) => setScore({ ...score, name: e.target.value })}
+                onChange={(e) =>
+                  setScore({ name: e.target.value, time: '1hr 22min 30sec' })
+                }
                 type="text"
                 name="name"
                 id="name"

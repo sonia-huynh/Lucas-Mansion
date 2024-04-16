@@ -13,7 +13,7 @@ export function getLeaderboard(): Promise<string[]> {
 
 export async function addScores(score: ScoreDraft) {
   try {
-    const res = await request.post(rootUrl + '/scores').send(score)
+    const res = await request.post(rootUrl + '/leaderboard/add').send(score)
     return res.body
   } catch (e) {
     console.error(e)

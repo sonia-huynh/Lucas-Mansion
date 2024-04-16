@@ -1,10 +1,6 @@
 export interface ScoreDraft {
   name: string
-  time: number
-}
-
-export interface Scores extends ScoreDraft {
-  id: number
+  time: string
 }
 
 export interface Scores extends ScoreDraft {
