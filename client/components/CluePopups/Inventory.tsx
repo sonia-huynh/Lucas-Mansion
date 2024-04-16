@@ -26,7 +26,7 @@ export default function Inventory({
         {!rips[0] && !rips[1] && !rips[2] && !mapShow ? (
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             <h2 style={{ marginTop: '0px' }}>Inventory Items</h2>
-            <p style={{ marginTop: '90px' }}>Look for items around the room.</p>
+            <p style={{ marginTop: '10px' }}>Look for items around the room.</p>
           </div>
         ) : mapShow ? (
           <div className="popup-overlay">
