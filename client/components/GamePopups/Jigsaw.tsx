@@ -1,23 +1,36 @@
 import React from 'react'
 import Puzzle from './Puzzle'
-import '../../styles/jigsaw.css'
 import JigsawPuzzle from './JigsawPuzzle'
+import JigsawFrame from './JigsawFrame'
 
 interface Props {
   setJigsaw: React.Dispatch<React.SetStateAction<boolean>>
   setWin: React.Dispatch<React.SetStateAction<boolean>>
+  foundPapers: boolean[]
   win: boolean
 }
 
-const Jigsaw: React.FC<Props> = ({ setJigsaw, setWin, win }) => {
+const Jigsaw: React.FC<Props> = ({ setJigsaw, setWin, foundPapers, win }) => {
+  let allPiecesFound = true
+
+  for (let i = 0; i < foundPapers.length; i++) {
+    if (foundPapers[i] === false) allPiecesFound = false
+  }
+
   return (
     <>
       <div>
         <div>
-          <button className="closeButton" onClick={() => setJigsaw(false)}>
+          <button className="close" onClick={() => setJigsaw(false)}>
             x
           </button>
-          {!win ? <JigsawPuzzle win={win} setWin={setWin} /> : <Puzzle />}
+          {!allPiecesFound ? (
+            <JigsawFrame />
+          ) : !win ? (
+            <JigsawPuzzle win={win} setWin={setWin} />
+          ) : (
+            <Puzzle />
+          )}
         </div>
       </div>
     </>

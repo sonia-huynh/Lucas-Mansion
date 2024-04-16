@@ -11,7 +11,7 @@ export default function Duck({ setDuck }: Props) {
         The duck reminds you of some method where you talk to a rubber ducky to
         explain something step by step...
       </p>
-      <button className="duckCloseButton" onClick={() => setDuck(false)}>
+      <button className="close" onClick={() => setDuck(false)}>
         x
       </button>
     </>
