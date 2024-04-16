@@ -25,6 +25,7 @@ import Inventory from './CluePopups/Inventory'
 //style:
 import '../styles/popup.css'
 import '../styles/dinner.css'
+import { useNavigate } from 'react-router-dom'
 
 export default function Dinner() {
   const [block, setBlock] = useState(true)
@@ -38,6 +39,8 @@ export default function Dinner() {
   const [lockNum, setLockNum] = useState(false)
   const [intro, setIntro] = useState(true)
   const [timer, setTimer] = useState(0)
+  const [exit, setExit] = useState(false)
+  const navigate = useNavigate()
 
   // paper states
   const [foundPapers, setFoundPapers] = useState([false, false, false])
@@ -190,11 +193,13 @@ export default function Dinner() {
               setLockNum={setLockNum}
               setVolume={setVolume}
               timer={timer}
+              jigsawWin={jigsawWin}
+              setExit={setExit}
             />
           </div>
         </div>
       )}
-      <button className="clue lock" onClick={() => setLockNum(true)}>
+      <button className="clue lock" onClick={() => exit ? navigate(`/Foyer/${timer}`) : setLockNum(true)}>
         <img
           className={block ? 'block' : 'lock noMap'}
           src="/dinner-images/door-handle.png"
