@@ -6,9 +6,15 @@ import unlock from '/audio/combination-lock.mp3'
 
 interface Props {
   setLockNum: React.Dispatch<React.SetStateAction<boolean>>
+  setVolume: React.Dispatch<React.SetStateAction<number>>
+  timer: number
 }
 
-export default function CombinationLock({ setLockNum }: Props) {
+export default function CombinationLock({
+  setLockNum,
+  setVolume,
+  timer,
+}: Props) {
   const navigate = useNavigate()
   const [pin1, setPin1] = useState(0)
   const [pin2, setPin2] = useState(0)
@@ -19,7 +25,8 @@ export default function CombinationLock({ setLockNum }: Props) {
     if (pin1 === 3 && pin2 === 5 && pin3 === 9 && pin4 === 0) {
       const sound = new Audio(unlock)
       sound.play()
-      navigate('/Foyer')
+      setVolume(0)
+      navigate(`/Foyer/${timer}`)
     } else {
       console.log('Try Again')
     }
@@ -27,7 +34,6 @@ export default function CombinationLock({ setLockNum }: Props) {
 
   return (
     <>
-      {/* <h1>Combination Lock</h1> */}
       <div className="bg">
         <div className="box">
           <div className="pin">

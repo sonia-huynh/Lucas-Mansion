@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/media-has-caption */
 import { useEffect, useState } from 'react'
 
 //intro:
@@ -36,6 +37,7 @@ export default function Dinner() {
   const [matchingE, setMatchingE] = useState(false)
   const [lockNum, setLockNum] = useState(false)
   const [intro, setIntro] = useState(true)
+  const [timer, setTimer] = useState(0)
 
   // paper states
   const [foundPapers, setFoundPapers] = useState([false, false, false])
@@ -52,6 +54,15 @@ export default function Dinner() {
   const [chandelier, setChandelier] = useState(false)
   const [inventory, setInventory] = useState(false)
   const [mapShow, setMapShow] = useState(false)
+
+  //audio
+  const [volume, setVolume] = useState(100)
+
+  //timer
+  setTimeout(() => {
+    setTimer(1 + timer)
+    console.log(timer)
+  }, 1000)
 
   useEffect(() => {
     if (jigsawWin) {
@@ -129,9 +140,16 @@ export default function Dinner() {
 
   return (
     <div className="dinner">
+      <audio
+        id="dinnerAudio"
+        src={'/audio/dinner.mp3'}
+        autoPlay={true}
+        // eslint-disable-next-line react/no-unknown-property
+        volume={volume}
+      />
       {intro && (
         <div className="popup-overlay">
-          <div className="clue-popup popup">
+          <div className="intro-popup popup">
             <Intro setIntro={setIntro} />
           </div>
         </div>
@@ -152,13 +170,15 @@ export default function Dinner() {
           </div>
         </div>
       )}
-
-      <button className="clue frame" onClick={() => setJigsaw(true)}>
+      <button
+        className="clue frame"
+        onClick={() => !jigsawWin && setJigsaw(true)}
+      >
         <img
           src={
             jigsawWin ? '/lucas-no-map.png' : '/dinner-images/lucas-map2.png'
           }
-          className={block ? 'block' : 'frame'}
+          className={block ? 'block' : jigsawWin ? 'block' : 'frame'}
           alt="frame with map"
         />
       </button>
@@ -166,7 +186,11 @@ export default function Dinner() {
       {lockNum && (
         <div className="popup-overlay">
           <div className="game-popup popup">
-            <CombinationLock setLockNum={setLockNum} />
+            <CombinationLock
+              setLockNum={setLockNum}
+              setVolume={setVolume}
+              timer={timer}
+            />
           </div>
         </div>
       )}

@@ -1,22 +1,42 @@
+/* eslint-disable jsx-a11y/media-has-caption */
 import { useEffect, useState } from 'react'
 import pathing from '../data/Maze.json'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import '../styles/maze.css'
 
 export default function Maze() {
   const [position, setPosition] = useState(0)
+  //audio
+  const [volume, setVolume] = useState(100)
+
+  const { time } = useParams()
+  const [timer, setTimer] = useState(Number(time))
+
+  setInterval(() => {
+    setTimer(1 + timer)
+    console.log(timer)
+  }, 1000)
   const navigate = useNavigate()
   useEffect(() => {
     document.body.style.backgroundImage = `url('/maze/routes/${pathing[position].image}.png')`
     if (position === 100) {
-      navigate('/end-page')
+      setVolume(0)
+
+      navigate(`../end-page/${timer}`)
     }
   }, [position])
 
   if (pathing) {
     return (
       <>
-        {/* <img src={`/maze/routes/${pathing[position].image}.png`} alt={`maze orientation ${pathing[position].point}`}/> */}
+        <audio
+          id="dinnerAudio"
+          src={'/audio/night-ambience.mp3'}
+          autoPlay={true}
+          // eslint-disable-next-line react/no-unknown-property
+          volume={volume}
+          loop={true}
+        />
         {pathing[position].left && (
           <button
             className="left direction"
