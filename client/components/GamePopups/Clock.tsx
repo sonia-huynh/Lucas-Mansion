@@ -50,8 +50,8 @@ export default function Clock({
               style={{
                 height: '70px',
                 position: 'absolute',
-                bottom: '150px',
-                left: '640px',
+                bottom: '75px',
+                left: '200px',
                 filter: isHovered
                   ? 'drop-shadow(1px 1px 0 white) drop-shadow(-2px -2px 0 white) drop-shadow(2px -2px 0 white) drop-shadow(-2px 2px 0 white)'
                   : 'none',
@@ -73,7 +73,7 @@ export default function Clock({
         />
       )}
 
-      <button className="clockBodCloseButton close" onClick={() => setClock(false)}>
+      <button className="close" onClick={() => setClock(false)}>
         x
       </button>
     </>

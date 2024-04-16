@@ -211,9 +211,9 @@ body {
 .inventory {
   position: absolute;
   background: #5b5959;
-  padding:11.5px;
-  right:5px;
-  top:4px;
+  padding: 11.5px;
+  right: 5px;
+  top: 4px;
   max-width: 133px;
   height: auto;
   border-radius: 10px;

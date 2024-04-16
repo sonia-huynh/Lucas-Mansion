@@ -11,38 +11,38 @@
 }
 
 .game-popup {
-  width: 75%;
-  height: 80%;
+  width: 1435px;
+  height: 720px;
 }
 
 .clockbod-popup {
-  width: 35%;
-  height: 80%;
+  width: 600px;
+  height: 700px;
 }
 
 .clockface-popup {
-  width: 70%;
-  height: 80%;
+  width: 1325px;
+  height: 740px;
 }
 
 .clue-popup {
-  width: 20%;
-  height: 15%;
+  width: 400px;
+  height: 160px;
 }
 
 .map-popup {
-  width: 75%;
-  height: 80%;
+  width: 1500px;
+  height: 750px;
+}
+
+.lucas-map-popup {
+  width: 700px;
+  height: 550px;
 }
 
 .piece-clue-popup {
-  width: 20%;
-  height: 35%;
-}
-
-#gnome-popup {
-  width: 20%;
-  height: 35%;
+  width: 400px;
+  height: 350px;
 }
 
 #inventory-popup {

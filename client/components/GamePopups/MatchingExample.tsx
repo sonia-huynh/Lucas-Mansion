@@ -10,10 +10,7 @@ export default function MatchingE({ setMatchingE }: Props) {
     <div className="match-up-game">
       <div className="plate-game" id="plate-example">
         <div>
-          <button
-            className="gameCloseButton close"
-            onClick={() => setMatchingE(false)}
-          >
+          <button className="close" onClick={() => setMatchingE(false)}>
             x
           </button>
         </div>

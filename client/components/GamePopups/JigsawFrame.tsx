@@ -1,6 +1,6 @@
 export default function JigsawFrame() {
   return (
-    <div style={{ margin: '115px' }}>
+    <div>
       <img
         src="/lucas-paper-closeup.png"
         alt="maze-map"

@@ -98,7 +98,7 @@ export default function Dinner() {
     pumpkin,
     chandelier,
     inventory,
-    intro
+    intro,
   ])
 
   function inventoryW(){
@@ -115,6 +115,12 @@ export default function Dinner() {
   function inventoryH(){
     const size = mapShow ? 710 : 210
     return size
+
+  }
+  
+  let allPiecesFound = true
+  for (let i = 0; i < foundPapers.length; i++) {
+    if (foundPapers[i] === false) allPiecesFound = false
   }
 
   return (
@@ -122,13 +128,17 @@ export default function Dinner() {
       {intro && (
         <div className="popup-overlay">
           <div className="clue-popup popup">
-            <Intro setIntro={setIntro}/>
+            <Intro setIntro={setIntro} />
           </div>
         </div>
       )}
       {jigsaw && (
         <div className="popup-overlay">
-          <div className="map-popup popup">
+          <div
+            className={
+              allPiecesFound ? 'map-popup popup' : 'lucas-map-popup popup'
+            }
+          >
             <Jigsaw
               foundPapers={foundPapers}
               setJigsaw={setJigsaw}
@@ -237,7 +247,11 @@ export default function Dinner() {
 
       {gnome && (
         <div className="popup-overlay">
-          <div className={foundPapers[0] ? 'clue-popup popup' : 'piece-clue-popup popup'}>
+          <div
+            className={
+              foundPapers[0] ? 'clue-popup popup' : 'piece-clue-popup popup'
+            }
+          >
             <Gnome
               setGnome={setGnome}
               foundPapers={foundPapers}
@@ -299,7 +313,11 @@ export default function Dinner() {
       </button>
       {mirror && (
         <div className="popup-overlay">
-          <div className={foundPapers[1] ? 'clue-popup popup' : 'piece-clue-popup popup'}>
+          <div
+            className={
+              foundPapers[1] ? 'clue-popup popup' : 'piece-clue-popup popup'
+            }
+          >
             <Mirror
               setMirror={setMirror}
               foundPapers={foundPapers}
