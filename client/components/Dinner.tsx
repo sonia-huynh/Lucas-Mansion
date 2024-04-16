@@ -113,7 +113,12 @@ export default function Dinner() {
   }
 
   function inventoryH() {
-    const size = mapShow ? 710 : 210
+    let size = mapShow ? 710 : 280
+    !foundPapers[0] &&
+      !foundPapers[1] &&
+      !foundPapers[2] &&
+      !jigsawWin &&
+      (size = 110)
     return size
   }
 

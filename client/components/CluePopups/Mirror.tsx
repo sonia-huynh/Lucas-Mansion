@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import '../../styles/popup.css'
 interface Props {
   setMirror: React.Dispatch<React.SetStateAction<boolean>>
@@ -15,6 +16,17 @@ export default function Mirror({
     newArr[1] = true
     setFoundPapers(newArr)
   }
+
+  const [isHovered, setIsHovered] = useState(false)
+
+  const handleMouseEnter = () => {
+    setIsHovered(true)
+  }
+
+  const handleMouseLeave = () => {
+    setIsHovered(false)
+  }
+
   return (
     <>
       <h1>Mirror</h1>
@@ -32,7 +44,20 @@ export default function Mirror({
             style={{ height: '150px' }}
           />
           <br></br>
-          <button onClick={collect}>Collect piece</button>
+          {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
+          <img
+            onClick={collect}
+            style={{
+              height: '30px',
+              filter: isHovered
+                ? 'drop-shadow(1px 1px 0 white) drop-shadow(-2px -2px 0 white) drop-shadow(2px -2px 0 white) drop-shadow(-2px 2px 0 white)'
+                : 'none',
+            }}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            src="/collect.png"
+            alt="collect button"
+          />
         </>
       )}
       <button className="close" onClick={() => setMirror(false)}>
