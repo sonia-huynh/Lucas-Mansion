@@ -1,6 +1,5 @@
 import { Router } from 'express'
 import { addScores, getAllScores } from '../db/leaderboard'
-import { ScoreDraft, Scores } from '../../models/scores'
 
 // backend call for get request
 
@@ -20,7 +19,13 @@ router.get('/', async (req, res) => {
 router.post('/add', async (req, res) => {
   try {
     const input = req.body
-    const scores = await addScores(input)
+    console.log(input)
+    const time = input.time
+    const newMin = Math.floor(time / 60)
+    const newSec = time % 60
+    const newTime = `${newMin}min ${newSec}sec`
+    const newScore = { ...input, time: newTime }
+    const scores = await addScores(newScore)
     res.json(scores)
   } catch (error) {
     res.status(500).json({ message: 'Error adding scores' })

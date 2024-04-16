@@ -53,7 +53,7 @@ export default function Mirror({
           <img
             onClick={() => {
               paperSound.play()
-              collect
+              collect()
             }}
             style={{
               height: '30px',
