@@ -7,6 +7,7 @@ import Intro from './GamePopups/Intro'
 //audio:
 import quack from '/audio/quack.mp3'
 import jingle from '/audio/chandelier.mp3'
+import pumpkins from '/audio/pumpkin.mp3'
 import gnomed from '/audio/gnome.mp3'
 
 //games:
@@ -137,10 +138,10 @@ export default function Dinner() {
   }
 
   //audio setup:
-
   const duckSound = new Audio(quack)
   const chandeleierSound = new Audio(jingle)
   const gnomeSound = new Audio(gnomed)
+  const pumpkinSound = new Audio(pumpkins)
 
   return (
     <div className="dinner">
@@ -390,7 +391,12 @@ export default function Dinner() {
           </div>
         </div>
       )}
-      <button className="clue pumpkin" onClick={() => setPumpkin(true)}>
+      <button
+        className="clue pumpkin"
+        onClick={() => {
+          pumpkinSound.play(), setPumpkin(true)
+        }}
+      >
         <img
           className={block ? 'block' : 'pumpkin'}
           src="/dinner-images/pumpkins.png"

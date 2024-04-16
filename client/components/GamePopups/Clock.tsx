@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import '../../styles/clock.css'
+import chime from '/audio/chime.mp3'
 
 interface Props {
   setClock: React.Dispatch<React.SetStateAction<boolean>>
@@ -7,6 +8,8 @@ interface Props {
   setFoundPapers: React.Dispatch<React.SetStateAction<boolean[]>>
   foundPapers: boolean[]
 }
+
+const chimeSound = new Audio(chime)
 
 export default function Clock({
   setClock,
@@ -18,6 +21,7 @@ export default function Clock({
     const newArr = [...foundPapers]
     newArr[2] = true
     setFoundPapers(newArr)
+    chimeSound.play()
   }
 
   const [isHovered, setIsHovered] = useState(false)
