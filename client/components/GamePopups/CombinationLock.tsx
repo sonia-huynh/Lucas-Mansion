@@ -7,14 +7,9 @@ import unlock from '/audio/combination-lock.mp3'
 interface Props {
   setLockNum: React.Dispatch<React.SetStateAction<boolean>>
   setVolume: React.Dispatch<React.SetStateAction<number>>
-  timer: number
 }
 
-export default function CombinationLock({
-  setLockNum,
-  setVolume,
-  timer,
-}: Props) {
+export default function CombinationLock({ setLockNum, setVolume }: Props) {
   const navigate = useNavigate()
   const [pin1, setPin1] = useState(0)
   const [pin2, setPin2] = useState(0)
@@ -26,7 +21,7 @@ export default function CombinationLock({
       const sound = new Audio(unlock)
       sound.play()
       setVolume(0)
-      navigate(`/Foyer/${timer}`)
+      navigate(`/Foyer`)
     } else {
       console.log('Try Again')
     }

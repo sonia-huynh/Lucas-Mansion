@@ -7,7 +7,7 @@ import Intro from './GamePopups/Intro'
 //audio:
 import quack from '/audio/quack.mp3'
 import jingle from '/audio/chandelier.mp3'
-
+import gnomed from '/audio/gnome.mp3'
 
 //games:
 import Jigsaw from './GamePopups/Jigsaw'
@@ -42,7 +42,6 @@ export default function Dinner() {
   const [matchingE, setMatchingE] = useState(false)
   const [lockNum, setLockNum] = useState(false)
   const [intro, setIntro] = useState(true)
-  const [timer, setTimer] = useState(0)
 
   // paper states
   const [foundPapers, setFoundPapers] = useState([false, false, false])
@@ -62,12 +61,6 @@ export default function Dinner() {
 
   //audio
   const [volume, setVolume] = useState(100)
-
-  //timer
-  setTimeout(() => {
-    setTimer(1 + timer)
-    console.log(timer)
-  }, 1000)
 
   useEffect(() => {
     if (jigsawWin) {
@@ -144,11 +137,10 @@ export default function Dinner() {
   }
 
   //audio setup:
- 
+
   const duckSound = new Audio(quack)
   const chandeleierSound = new Audio(jingle)
-
-
+  const gnomeSound = new Audio(gnomed)
 
   return (
     <div className="dinner">
@@ -198,11 +190,7 @@ export default function Dinner() {
       {lockNum && (
         <div className="popup-overlay">
           <div className="game-popup popup">
-            <CombinationLock
-              setLockNum={setLockNum}
-              setVolume={setVolume}
-              timer={timer}
-            />
+            <CombinationLock setLockNum={setLockNum} setVolume={setVolume} />
           </div>
         </div>
       )}
@@ -300,7 +288,13 @@ export default function Dinner() {
           </div>
         </div>
       )}
-      <button className="clue gnome" onClick={() => setGnome(true)}>
+      <button
+        className="clue gnome"
+        onClick={() => {
+          gnomeSound.play()
+          setGnome(true)
+        }}
+      >
         <img
           className={block ? 'block' : 'gnome'}
           src="/dinner-images/gnome.png"
@@ -344,7 +338,13 @@ export default function Dinner() {
           </div>
         </div>
       )}
-      <button className="clue duck" onClick={() => { duckSound.play(); setDuck(true) }}>
+      <button
+        className="clue duck"
+        onClick={() => {
+          duckSound.play()
+          setDuck(true)
+        }}
+      >
         <img
           className={block ? 'block' : 'duck'}
           src="/dinner-images/duck.png"
@@ -366,7 +366,7 @@ export default function Dinner() {
           </div>
         </div>
       )}
-      <button className="clue mirror" onClick={() => setMirror(true) }>
+      <button className="clue mirror" onClick={() => setMirror(true)}>
         <img
           className={block ? 'block' : 'mirror'}
           src="/dinner-images/mirror.png"
@@ -396,7 +396,13 @@ export default function Dinner() {
         </div>
       )}
 
-      <button className="clue chandelier" onClick={() => {chandeleierSound.play(); setChandelier(true)}}>
+      <button
+        className="clue chandelier"
+        onClick={() => {
+          chandeleierSound.play()
+          setChandelier(true)
+        }}
+      >
         <img
           className={block ? 'block' : 'chandelier'}
           src="/dinner-images/chandelier.png"

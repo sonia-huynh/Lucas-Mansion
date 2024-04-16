@@ -11,13 +11,6 @@ export default function Foyer() {
   useEffect(() => {
     document.body.style.backgroundImage = "url('/foyer-images/foyer.png')"
   })
-  const { time } = useParams()
-  const [timer, setTimer] = useState(Number(time))
-
-  setInterval(() => {
-    setTimer(1 + timer)
-    console.log(timer)
-  }, 1000)
 
   return (
     <>
@@ -34,7 +27,7 @@ export default function Foyer() {
           className="foyerdoor"
           onClick={() => {
             setVolume(0)
-            navigate(`../maze/${timer}`)
+            navigate(`../maze`)
           }}
         >
           <img

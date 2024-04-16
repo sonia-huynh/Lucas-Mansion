@@ -1,5 +1,10 @@
 import { useState } from 'react'
 import '../../styles/popup.css'
+
+//audio:
+import paper from '/audio/paper.mp3'
+const paperSound = new Audio(paper)
+
 interface Props {
   setMirror: React.Dispatch<React.SetStateAction<boolean>>
   setFoundPapers: React.Dispatch<React.SetStateAction<boolean[]>>
@@ -46,7 +51,10 @@ export default function Mirror({
           <br></br>
           {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
           <img
-            onClick={collect}
+            onClick={() => {
+              paperSound.play()
+              collect
+            }}
             style={{
               height: '30px',
               filter: isHovered
