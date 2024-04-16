@@ -21,7 +21,7 @@ const Jigsaw: React.FC<Props> = ({ setJigsaw, setWin, foundPapers, win }) => {
     <>
       <div>
         <div>
-          <button className="gameCloseButton close" onClick={() => setJigsaw(false)}>
+          <button className="close" onClick={() => setJigsaw(false)}>
             x
           </button>
           {!allPiecesFound ? (

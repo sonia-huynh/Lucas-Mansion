@@ -24,7 +24,6 @@ import Leaderboard from './CluePopups/Leaderboard'
 
 //style:
 import '../styles/popup.css'
-import '../styles/main.css'
 import '../styles/dinner.css'
 
 export default function Dinner() {
@@ -53,6 +52,7 @@ export default function Dinner() {
   const [pumpkin, setPumpkin] = useState(false)
   const [chandelier, setChandelier] = useState(false)
   const [inventory, setInventory] = useState(false)
+  const [mapShow, setMapShow] = useState(false)
   const [leaderboard, setLeaderboard] = useState(false)
 
   useEffect(() => {
@@ -103,6 +103,27 @@ export default function Dinner() {
     intro,
   ])
 
+  function inventoryW() {
+    const sizes = [283.562, 185.125, 379.812]
+    let size = 0
+    foundPapers.map((check, i) => {
+      check && (size = size + sizes[i])
+    })
+    jigsawWin && (mapShow ? (size = 1250) : (size = 588.078))
+    size == 0 && (size = 210)
+    return size
+  }
+
+  function inventoryH() {
+    const size = mapShow ? 710 : 210
+    return size
+  }
+
+  let allPiecesFound = true
+  for (let i = 0; i < foundPapers.length; i++) {
+    if (foundPapers[i] === false) allPiecesFound = false
+  }
+
   return (
     <div className="dinner">
       {intro && (
@@ -114,7 +135,11 @@ export default function Dinner() {
       )}
       {jigsaw && (
         <div className="popup-overlay">
-          <div className="map-popup popup">
+          <div
+            className={
+              allPiecesFound ? 'map-popup popup' : 'lucas-map-popup popup'
+            }
+          >
             <Jigsaw
               foundPapers={foundPapers}
               setJigsaw={setJigsaw}
@@ -342,16 +367,26 @@ export default function Dinner() {
 
       {inventory && (
         <div className="popup-overlay">
-          <div className="clue-popup popup" id="inventory-popup popup">
+          <div
+            className="popup"
+            id="inventory-popup"
+            style={{ width: `${inventoryW()}px`, height: `${inventoryH()}px` }}
+          >
             <Inventory
               setInventory={setInventory}
               map={jigsawWin}
               rips={foundPapers}
+              mapShow={mapShow}
+              setMapShow={setMapShow}
             />
           </div>
         </div>
       )}
-      <button className="clue inventory" onClick={() => setInventory(true)}>
+      <button
+        className="clue inventory"
+        id="mapbutt"
+        onClick={() => setInventory(true)}
+      >
         <img
           className={block ? 'block' : 'inventory'}
           src="/dinner-images/backpack.png"

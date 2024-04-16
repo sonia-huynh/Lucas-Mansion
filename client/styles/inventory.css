@@ -1,18 +1,21 @@
-.holderdiv{
+.holderdiv {
   display: flex;
   flex-direction: row;
 }
 
 .inventoryimg {
+  padding:11.5px;
+  border-radius: 10px;
   width: auto;
   max-height: 200px;
 }
 
-.spacing{
-  margin: 0px 20px 0px 20px;
+#mapbutt{
+  background: none;
+  border: none;
+  padding: 0px;
 }
 
-.inventoryCloseButton {
-  right: 32%;
-  top: 8%;
+.spacing{
+  margin: 0px 20px 0px 20px;
 }

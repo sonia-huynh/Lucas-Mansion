@@ -13,7 +13,7 @@ function App() {
       return ele.charAt(0).toUpperCase() + ele.slice(1)
     })
     .join(' ')
-    document.title = newTitle ? `Lucas' Mansion - ${newTitle}` : "Lucas' Mansion - Dinner"
+    document.title = newTitle ? `Lucas' Mansion - ${newTitle}` : "Lucas' Mansion"
   }, [location])
 
   return (
