@@ -4,15 +4,21 @@
 }
 
 .inventoryimg {
+  padding:11.5px;
+  border-radius: 10px;
   width: auto;
   max-height: 200px;
 }
 
-.spacing {
-  margin: 0px 20px 0px 20px;
+<<<<<<< HEAD
+.mapbutt{
+  background: none;
+  border: none
 }
 
-.inventoryCloseButton {
-  right: 32%;
-  top: 8%;
+.spacing{
+=======
+.spacing {
+>>>>>>> 119a77e9789cc34568c4be8312fc5322a1ede20a
+  margin: 0px 20px 0px 20px;
 }
