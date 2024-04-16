@@ -31,6 +31,7 @@ export default function EndPage() {
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     mutation.mutate(score)
+    setScore({ name: '', time: '' })
   }
 
   return (
