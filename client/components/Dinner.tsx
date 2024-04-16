@@ -215,7 +215,12 @@ export default function Dinner() {
         </div>
       )}
 
-      <button className="clue clockbod" onClick={() => setClock(true)}>
+      <button
+        className="clue clockbod"
+        onClick={() => {
+          setClock(true)
+        }}
+      >
         <img
           className={block ? 'block' : 'clockbod'}
           src="/dinner-images/clock-body.png"
@@ -261,11 +266,16 @@ export default function Dinner() {
       {clockFace && (
         <div className="popup-overlay">
           <div className="clockface-popup popup">
-            <ClockFace setClockFace={setClockFace} />
+            <ClockFace setClockFace={setClockFace} clockFace={clockFace} />
           </div>
         </div>
       )}
-      <button className="clue clockface" onClick={() => setClockFace(true)}>
+      <button
+        className="clue clockface"
+        onClick={() => {
+          setClockFace(true)
+        }}
+      >
         <img
           className={block ? 'block' : 'clockface'}
           src="/dinner-images/clock-face.png"
