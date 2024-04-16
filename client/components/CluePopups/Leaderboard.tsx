@@ -17,7 +17,6 @@ export default function Leaderboard({ setLeaderboard, setBlock }: Props) {
         src="/end-page/leaderboard-background.png"
         alt=""
         style={{
-          // height: '700px',
           margin: '0px',
           padding: '0px',
           top: '10px',

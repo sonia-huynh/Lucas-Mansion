@@ -38,16 +38,18 @@ export default function EndPage() {
             top: '350px',
           }}
         />
-        <img
-          src="/end-page/lucas-face.png"
-          alt="lucas' face"
-          style={{
-            height: '150px',
-            position: 'absolute',
-            left: '850px',
-            top: '550px',
-          }}
-        />
+        <div>
+          <img
+            src="/end-page/lucas-face.png"
+            alt="lucas' face"
+            style={{
+              height: '150px',
+              position: 'absolute',
+              left: '850px',
+              top: '550px',
+            }}
+          />
+        </div>
         {leaderboard && (
           <div className="popup-overlay">
             <div className="clockface-popup popup">
@@ -68,14 +70,14 @@ export default function EndPage() {
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
               style={{
-                height: '250px',
-                width: '250px',
+                height: '340px',
+                width: '340px',
                 filter: isHovered
-                  ? 'drop-shadow(1px 1px 0 white) drop-shadow(-2px -2px 0 white) drop-shadow(2px -2px 0 white) drop-shadow(-2px 2px 0 white)'
+                  ? 'drop-shadow(1px 1px 10px white) drop-shadow(-2px -2px 10px white) drop-shadow(2px -2px 10px white) drop-shadow(-2px 2px 10px white)'
                   : 'none',
                 position: 'absolute',
-                left: '800px',
-                top: '50px',
+                right: '82px',
+                top: '65px',
               }}
               onClick={handleOpenLeaderboard}
             />
