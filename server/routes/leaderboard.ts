@@ -19,7 +19,6 @@ router.get('/', async (req, res) => {
 router.post('/add', async (req, res) => {
   try {
     const input = req.body
-    console.log(input)
     const time = input.time
     const newMin = Math.floor(time / 60)
     const newSec = time % 60
