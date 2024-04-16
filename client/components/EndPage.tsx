@@ -5,7 +5,7 @@ import '../styles/popup.css'
 export default function EndPage() {
   const [leaderboard, setLeaderboard] = useState(false)
   const [block, setBlock] = useState(false)
-  const [name, setName] = useState('')
+  const [score, setScore] = useState({ name: '', time: '' })
 
   useEffect(() => {
     document.body.style.backgroundImage = "url('/end-page/end-page.png')"
@@ -26,7 +26,10 @@ export default function EndPage() {
     setBlock(true)
   }
 
-  function handleSubmit() {}
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    mutation.mutate(score)
+  }
 
   return (
     <>
@@ -84,11 +87,11 @@ export default function EndPage() {
             <form onSubmit={handleSubmit}>
               <input
                 required
-                onChange={(e) => setName(e.target.value)}
+                onChange={(e) => setScore({ ...score, name: e.target.value })}
                 type="text"
                 name="name"
                 id="name"
-                value={name}
+                value={score.name}
                 placeholder="Your name"
               ></input>
               <button type="submit">Submit</button>
