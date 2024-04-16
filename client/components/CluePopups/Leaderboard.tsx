@@ -44,7 +44,66 @@ export default function Leaderboard({ setLeaderboard, setBlock }: Props) {
           }}
         >
           {scores.map((score: Scores, i: number) => (
-            <h2 key={i}>{score.name}</h2>
+            <div key={i} style={{ display: 'flex' }}>
+              <>
+                <h2
+                  style={{
+                    marginBottom: '0px',
+                    marginBlockStart: '0px',
+                    marginBlockEnd: '0px',
+                  }}
+                >
+                  {score.name}
+                </h2>
+              </>
+              {/* <>
+                <h2
+                  style={{
+                    marginBottom: '0px',
+                    marginBlockStart: '0px',
+                    marginBlockEnd: '0px',
+                  }}
+                >
+                  {score.time}
+                </h2>
+              </> */}
+            </div>
+          ))}
+        </div>
+        <div
+          style={{
+            left: '350px',
+            top: '120px',
+            zIndex: '1100',
+            position: 'absolute',
+            color: 'yellow',
+            textAlign: 'left',
+            fontSize: '20px',
+            filter:
+              'drop-shadow(1px 1px 0px black) drop-shadow(-1px -1px 0px black) drop-shadow(1px -1px 0px black) drop-shadow(-1px 1px 0px black)',
+          }}
+        >
+          {scores.map((score: Scores, i: number) => (
+            <div key={i} style={{ display: 'flex' }}>
+              {/* <h3
+                style={{
+                  marginBottom: '0px',
+                  marginBlockStart: '5px',
+                  marginBlockEnd: '2px',
+                }}
+              >
+                {score.time}
+              </h3> */}
+              <h2
+                style={{
+                  marginBottom: '0px',
+                  marginBlockStart: '0px',
+                  marginBlockEnd: '0px',
+                }}
+              >
+                {score.time}
+              </h2>
+            </div>
           ))}
         </div>
         <img

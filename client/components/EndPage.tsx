@@ -2,8 +2,11 @@ import { useEffect, useState } from 'react'
 import Leaderboard from './CluePopups/Leaderboard'
 import '../styles/popup.css'
 import { useLeaderboard, useLeaderboardMutation } from '../hooks/useLeaderboard'
+interface Props {
+  timer: number
+}
 
-export default function EndPage() {
+export default function EndPage({ timer }: Props) {
   const [leaderboard, setLeaderboard] = useState(false)
   const [block, setBlock] = useState(false)
   const [score, setScore] = useState({ name: '', time: '' })
@@ -91,7 +94,7 @@ export default function EndPage() {
               <input
                 required
                 onChange={(e) =>
-                  setScore({ name: e.target.value, time: '1hr 22min 30sec' })
+                  setScore({ name: e.target.value, time: String(timer) })
                 }
                 type="text"
                 name="name"

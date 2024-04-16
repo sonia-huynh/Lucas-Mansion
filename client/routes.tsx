@@ -14,6 +14,6 @@ export default createRoutesFromElements(
     <Route path="congrats" element={<Congrats />} />
     <Route path="foyer" element={<Foyer />} />
     <Route path="maze" element={<Maze />} />
-    <Route path="end-page" element={<EndPage />} />
+    <Route path="end-page" />
   </Route>,
 )
