@@ -5,7 +5,7 @@ export async function up(knex) {
   return knex.schema.createTable('leaderboard', (table) => {
     table.integer('id')
     table.string('name')
-    table.integer('time')
+    table.string('time')
   })
 }
 
