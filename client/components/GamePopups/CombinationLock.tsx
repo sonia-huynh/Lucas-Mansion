@@ -49,7 +49,7 @@ export default function CombinationLock({
     <>
       <div className="bg">
         <div className="box">
-          <div className="pin">
+          <div id="pin">
             <button
               onClick={() => {
                 setPin1(pin1 + 1)
@@ -60,7 +60,7 @@ export default function CombinationLock({
             >
               ▲
             </button>
-            <p>{pin1}</p>
+            <p id="number">{pin1}</p>
             <button
               onClick={() => {
                 setPin1(pin1 - 1)
@@ -72,7 +72,7 @@ export default function CombinationLock({
               ▼
             </button>
           </div>
-          <div className="pin">
+          <div id="pin">
             <button
               onClick={() => {
                 setPin2(pin2 + 1)
@@ -83,7 +83,7 @@ export default function CombinationLock({
             >
               ▲
             </button>
-            <p>{pin2}</p>
+            <p id="number">{pin2}</p>
             <button
               onClick={() => {
                 setPin2(pin2 - 1)
@@ -95,7 +95,7 @@ export default function CombinationLock({
               ▼
             </button>
           </div>
-          <div className="pin">
+          <div id="pin">
             <button
               onClick={() => {
                 setPin3(pin3 + 1)
@@ -106,7 +106,7 @@ export default function CombinationLock({
             >
               ▲
             </button>
-            <p>{pin3}</p>
+            <p id="number">{pin3}</p>
             <button
               onClick={() => {
                 setPin3(pin3 - 1)
@@ -118,7 +118,7 @@ export default function CombinationLock({
               ▼
             </button>
           </div>
-          <div className="pin">
+          <div id="pin">
             <button
               onClick={() => {
                 setPin4(pin4 + 1)
@@ -129,7 +129,7 @@ export default function CombinationLock({
             >
               ▲
             </button>
-            <p>{pin4}</p>
+            <p id="number">{pin4}</p>
             <button
               onClick={() => {
                 setPin4(pin4 - 1)
