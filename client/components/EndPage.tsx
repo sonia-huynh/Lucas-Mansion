@@ -38,17 +38,43 @@ export default function EndPage() {
             top: '350px',
           }}
         />
-        <div>
+        <div
+          style={{
+            position: 'absolute',
+            left: '550px',
+            top: '600px',
+            display: 'flex',
+          }}
+        >
           <img
             src="/end-page/lucas-face.png"
             alt="lucas' face"
             style={{
-              height: '150px',
-              position: 'absolute',
-              left: '850px',
-              top: '550px',
+              height: '170px',
             }}
           />
+          <div
+            style={{
+              // left: '450px',
+              // top: '650px',
+              display: 'flex',
+              flexDirection: 'column',
+              marginLeft: '70px',
+            }}
+          >
+            <h1
+              style={{
+                marginBlockStart: '0px',
+                marginBlockEnd: '0px',
+                marginTop: '10px',
+              }}
+            >
+              Your score is below
+            </h1>
+            <p style={{ marginBlockStart: '0px', marginBlockEnd: '0px' }}>
+              2 minutes and 27 seconds
+            </p>
+          </div>
         </div>
         {leaderboard && (
           <div className="popup-overlay">
