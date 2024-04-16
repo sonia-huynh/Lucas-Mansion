@@ -148,7 +148,7 @@ export default function CombinationLock({
           </button>
         </div>
       </div>
-      <p></p>
+      <p>You feel like you're missing something, check the room for more items</p>
       <button className="close" onClick={() => setLockNum(false)}>
         x
       </button>

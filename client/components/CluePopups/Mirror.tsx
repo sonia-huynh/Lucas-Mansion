@@ -20,6 +20,7 @@ export default function Mirror({
     const newArr = [...foundPapers]
     newArr[1] = true
     setFoundPapers(newArr)
+    console.log("called")
   }
 
   const [isHovered, setIsHovered] = useState(false)
@@ -53,7 +54,7 @@ export default function Mirror({
           <img
             onClick={() => {
               paperSound.play()
-              collect
+              collect()
             }}
             style={{
               height: '30px',
