@@ -373,7 +373,7 @@ export default function Dinner() {
           </div>
         </div>
       )}
-      <button className="clue inventory mapbutt" onClick={() => setInventory(true)}>
+      <button className="clue inventory"  id="mapbutt" onClick={() => setInventory(true)}>
         <img
           className={block ? 'block' : 'inventory'}
           src="/dinner-images/backpack.png"

@@ -10,15 +10,12 @@
   max-height: 200px;
 }
 
-<<<<<<< HEAD
-.mapbutt{
+#mapbutt{
   background: none;
-  border: none
+  border: none;
+  padding: 0px;
 }
 
 .spacing{
-=======
-.spacing {
->>>>>>> 119a77e9789cc34568c4be8312fc5322a1ede20a
   margin: 0px 20px 0px 20px;
 }

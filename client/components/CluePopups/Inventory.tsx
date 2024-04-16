@@ -29,7 +29,7 @@ export default function Inventory({ setInventory, map, rips, mapShow, setMapShow
         
       : map 
       ? <>
-          <button className='spacing mapbutt' onClick={()=>setMapShow(true)}>
+          <button className='spacing' id='mapbutt' onClick={()=>setMapShow(true)}>
             <img className='inventoryimg'src={"puzzle-images/full_map.png"} alt={`full map image`}/>
           </button>
           <img  className='inventoryimg spacing'src={"puzzle-images/lantern.png"} alt={`lantern image`}/>
