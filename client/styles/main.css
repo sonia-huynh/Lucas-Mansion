@@ -3,6 +3,19 @@ html body {
   width: 100vw;
   padding: none;
   margin: none;
+  font-family: 'Copse';
+}
+
+h2 {
+  font-variant: small-caps;
+}
+
+h1 {
+  font-variant: small-caps;
+}
+
+p {
+  font-size: large;
 }
 
 .close {
@@ -14,8 +27,8 @@ html body {
   background-color: #ffffff;
   opacity: 1;
   font-size: 20px;
-  right:5px;
-  top:5px;
+  right: 5px;
+  top: 5px;
 }
 
 .popup {
