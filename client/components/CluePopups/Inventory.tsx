@@ -21,7 +21,7 @@ export default function Inventory({ setInventory, map, rips, mapShow, setMapShow
       ?
         (
           <div className="popup-overlay">
-            <div className="map-popup popup">
+            <div className="map-inv-popup popup">
               <Map setMap={setMapShow} />
             </div>
           </div>

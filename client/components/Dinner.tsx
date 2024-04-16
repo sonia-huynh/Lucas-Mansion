@@ -107,7 +107,7 @@ export default function Dinner() {
     foundPapers.map((check, i)=> {
       check && (size = size + sizes[i])
     })
-    jigsawWin && mapShow ? (size = 1250) : (size = 588.078)
+    jigsawWin && (mapShow ? (size = 1250) : (size = 588.078))
     size == 0 && (size = 210)
     return size
   }
@@ -373,7 +373,7 @@ export default function Dinner() {
           </div>
         </div>
       )}
-      <button className="clue inventory" onClick={() => setInventory(true)}>
+      <button className="clue inventory mapbutt" onClick={() => setInventory(true)}>
         <img
           className={block ? 'block' : 'inventory'}
           src="/dinner-images/backpack.png"

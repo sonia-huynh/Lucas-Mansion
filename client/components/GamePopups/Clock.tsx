@@ -50,8 +50,8 @@ export default function Clock({
               style={{
                 height: '70px',
                 position: 'absolute',
-                bottom: '75px',
-                left: '200px',
+                bottom: '60px',
+                left: '207px',
                 filter: isHovered
                   ? 'drop-shadow(1px 1px 0 white) drop-shadow(-2px -2px 0 white) drop-shadow(2px -2px 0 white) drop-shadow(-2px 2px 0 white)'
                   : 'none',

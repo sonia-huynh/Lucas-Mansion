@@ -35,6 +35,11 @@
   height: 750px;
 }
 
+.map-inv-popup {
+  width: 920px;
+  height: 600px;
+}
+
 .lucas-map-popup {
   width: 700px;
   height: 550px;
