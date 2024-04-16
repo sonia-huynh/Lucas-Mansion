@@ -1,9 +1,12 @@
 import { useNavigate } from 'react-router-dom'
 import Congrats from './Congrats'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
+import Leaderboard from './CluePopups/Leaderboard'
+import '../styles/popup.css'
 
 export default function EndPage() {
   const navigate = useNavigate()
+  const [leaderboard, setLeaderboard] = useState(false)
 
   useEffect(() => {
     document.body.style.backgroundImage = "url('/end-page/end-page.png')"
@@ -44,6 +47,19 @@ export default function EndPage() {
           }}
         >
           go to congrats
+        </button>
+        {leaderboard && (
+          <div className="popup-overlay">
+            <div className="clockface-popup popup">
+              <Leaderboard setLeaderboard={setLeaderboard} />
+            </div>
+          </div>
+        )}
+        <button
+          className="leaderboard-popup"
+          onClick={() => setLeaderboard(true)}
+        >
+          Leaderboard
         </button>
       </div>
     </>

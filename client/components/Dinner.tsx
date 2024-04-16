@@ -20,7 +20,6 @@ import Mirror from './CluePopups/Mirror'
 import Pumpkin from './CluePopups/Pumpkin'
 import Chandelier from './CluePopups/Chandelier'
 import Inventory from './CluePopups/Inventory'
-import Leaderboard from './CluePopups/Leaderboard'
 
 //style:
 import '../styles/popup.css'
@@ -53,7 +52,6 @@ export default function Dinner() {
   const [chandelier, setChandelier] = useState(false)
   const [inventory, setInventory] = useState(false)
   const [mapShow, setMapShow] = useState(false)
-  const [leaderboard, setLeaderboard] = useState(false)
 
   useEffect(() => {
     if (jigsawWin) {

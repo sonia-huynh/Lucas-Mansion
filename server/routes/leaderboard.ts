@@ -1,5 +1,6 @@
 import { Router } from 'express'
 import { addScores, getAllScores } from '../db/leaderboard'
+import { Scores } from '../../models/scores'
 
 // backend call for get request
 
@@ -18,14 +19,12 @@ router.get('/', async (req, res) => {
 
 router.post('/add', async (req, res) => {
   try {
-    const input: number = req.body.score
+    const input: Scores = req.body.score
     const scores = await addScores(input)
     res.json(scores)
   } catch (error) {
     res.status(500).json({ message: 'Error' })
   }
 })
-
-// calculations for time
 
 export default router

@@ -53,3 +53,9 @@
 #inventory-popup {
   height: 233px;
 }
+
+.leaderboard-popup {
+  width: 150px;
+  height: 50px;
+  align-items: center;
+}
