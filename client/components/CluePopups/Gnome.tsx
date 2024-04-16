@@ -37,9 +37,8 @@ export default function Gnome({
           <img
             src="puzzle-images/exit.png"
             alt="a puzzle pice"
-            style={{ height: '150px' }}
+            style={{ height: '130px', marginBottom: '15px' }}
           />
-          <br />
           <br />
 
           {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}

@@ -41,7 +41,7 @@ export default function Mirror({
           <img
             src="puzzle-images/corner1.png"
             alt="piece 1 of a map"
-            style={{ height: '150px' }}
+            style={{ height: '150px', marginBottom: '10px' }}
           />
           <br></br>
           {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
