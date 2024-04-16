@@ -23,7 +23,6 @@ import Inventory from './CluePopups/Inventory'
 
 //style:
 import '../styles/popup.css'
-import '../styles/main.css'
 import '../styles/dinner.css'
 
 export default function Dinner() {
@@ -52,6 +51,7 @@ export default function Dinner() {
   const [pumpkin, setPumpkin] = useState(false)
   const [chandelier, setChandelier] = useState(false)
   const [inventory, setInventory] = useState(false)
+  const [mapShow, setMapShow] = useState(false)
 
   useEffect(() => {
     if (jigsawWin) {
@@ -100,6 +100,22 @@ export default function Dinner() {
     inventory,
     intro
   ])
+
+  function inventoryW(){
+    const sizes = [283.562,185.125,379.812]
+    let size = 0
+    foundPapers.map((check, i)=> {
+      check && (size = size + sizes[i])
+    })
+    jigsawWin && mapShow ? (size = 1250) : (size = 588.078)
+    size == 0 && (size = 210)
+    return size
+  }
+
+  function inventoryH(){
+    const size = mapShow ? 710 : 210
+    return size
+  }
 
   return (
     <div className="dinner">
@@ -330,10 +346,12 @@ export default function Dinner() {
         />
       </button>
 
-      {inventory && (
+      {inventory && 
+      
+      (
         <div className="popup-overlay">
-          <div className="clue-popup popup" id="inventory-popup popup">
-            <Inventory setInventory={setInventory} map={jigsawWin} rips={foundPapers} />
+          <div className="popup" id="inventory-popup" style={{width:`${inventoryW()}px`, height:`${inventoryH()}px`}}>
+            <Inventory setInventory={setInventory} map={jigsawWin} rips={foundPapers} mapShow={mapShow} setMapShow={setMapShow}/>
           </div>
         </div>
       )}
