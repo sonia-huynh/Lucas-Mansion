@@ -3,10 +3,14 @@ import { ScoreDraft } from '../../models/scores'
 
 const rootUrl = '/api/v1'
 
-export function getLeaderboard(): Promise<string[]> {
-  return request.get(rootUrl + '/leaderboard').then((res) => {
-    return res.body.leaderboard
-  })
+export function getLeaderboard() {
+  try {
+    return request.get(rootUrl + '/leaderboard').then((res) => {
+      return res.body
+    })
+  } catch (e) {
+    console.error(e)
+  }
 }
 
 // post reqeust send player and time
