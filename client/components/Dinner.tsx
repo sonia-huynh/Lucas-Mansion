@@ -31,6 +31,7 @@ import Inventory from './CluePopups/Inventory'
 import '../styles/popup.css'
 import '../styles/dinner.css'
 import { useNavigate } from 'react-router-dom'
+import Stopper from './CluePopups/Stopper'
 
 export default function Dinner() {
   const [block, setBlock] = useState(true)
@@ -62,6 +63,7 @@ export default function Dinner() {
   const [chandelier, setChandelier] = useState(false)
   const [inventory, setInventory] = useState(false)
   const [mapShow, setMapShow] = useState(false)
+  const [stopper, setStopper] = useState(false)
 
   //audio
   const [volume, setVolume] = useState(100)
@@ -87,7 +89,8 @@ export default function Dinner() {
       !pumpkin &&
       !chandelier &&
       !inventory &&
-      !intro
+      !intro &&
+      !stopper
     ) {
       setBlock(false)
     } else {
@@ -112,6 +115,7 @@ export default function Dinner() {
     chandelier,
     inventory,
     intro,
+    stopper
   ])
 
   function inventoryW() {
@@ -200,11 +204,22 @@ export default function Dinner() {
               timer={timer}
               jigsawWin={jigsawWin}
               setExit={setExit}
+              setStopper={setStopper}
             />
           </div>
         </div>
       )}
-      <button className="clue lock" onClick={() => exit ? navigate(`/Foyer/${timer}`) : setLockNum(true)}>
+       {stopper && (
+        <div className="popup-overlay">
+          <div className="clue-popup popup">
+            <Stopper
+              setStopper={setStopper}
+              foundPapers={foundPapers[2]}
+            />
+          </div>
+        </div>
+      )}
+      <button className="clue lock" onClick={() => exit ? jigsawWin ? navigate(`/Foyer`) : setStopper(true) : setLockNum(true)}>
         <img
           className={block ? 'block' : 'lock noMap'}
           src="/dinner-images/door-handle.png"

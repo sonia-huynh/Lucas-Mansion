@@ -10,14 +10,15 @@ interface Props {
   timer: number
   jigsawWin: boolean
   setExit:React.Dispatch<React.SetStateAction<boolean>>
+  setStopper:React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export default function CombinationLock({
   setLockNum,
   setVolume,
-  timer,
   jigsawWin,
-  setExit
+  setExit,
+  setStopper
 }: Props) {
   const navigate = useNavigate()
   const [pin1, setPin1] = useState(0)
@@ -29,7 +30,13 @@ export default function CombinationLock({
   function foyerMove(){
     sound.play()
     setVolume(0)
-    navigate(`/Foyer/${timer}`)
+    navigate(`/Foyer`)
+  }
+
+  function stopLock(){
+    setExit(true)
+    setLockNum(false)
+    setStopper(true)
   }
 
   function handleSubmit() {
@@ -37,7 +44,7 @@ export default function CombinationLock({
       jigsawWin ? (
         foyerMove()
      ) : (
-        setExit(true)
+      stopLock()
       )
     } else {
       console.log('Try Again')
@@ -148,7 +155,6 @@ export default function CombinationLock({
           </button>
         </div>
       </div>
-      <p>You feel like you're missing something, check the room for more items</p>
       <button className="close" onClick={() => setLockNum(false)}>
         x
       </button>
