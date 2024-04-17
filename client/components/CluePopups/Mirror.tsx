@@ -20,6 +20,7 @@ export default function Mirror({
     const newArr = [...foundPapers]
     newArr[1] = true
     setFoundPapers(newArr)
+    console.log("called")
   }
 
   const [isHovered, setIsHovered] = useState(false)

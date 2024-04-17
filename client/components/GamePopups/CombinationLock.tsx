@@ -10,23 +10,48 @@ import shuffle from '/audio/shuffle.mp3'
 interface Props {
   setLockNum: React.Dispatch<React.SetStateAction<boolean>>
   setVolume: React.Dispatch<React.SetStateAction<number>>
+  timer: number
+  jigsawWin: boolean
+  setExit:React.Dispatch<React.SetStateAction<boolean>>
+  setStopper:React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export default function CombinationLock({ setLockNum, setVolume }: Props) {
+export default function CombinationLock({
+  setLockNum,
+  setVolume,
+  jigsawWin,
+  setExit,
+  setStopper
+}: Props) {
   const navigate = useNavigate()
   const [pin1, setPin1] = useState(0)
   const [pin2, setPin2] = useState(0)
   const [pin3, setPin3] = useState(0)
   const [pin4, setPin4] = useState(0)
+  const sound = new Audio(unlock)
+
+  function foyerMove(){
+    sound.play()
+    setVolume(0)
+    navigate(`/Foyer`)
+  }
+
+  function stopLock(){
+    setExit(true)
+    setLockNum(false)
+    setStopper(true)
+  }
 
   function handleSubmit() {
     if (pin1 === 3 && pin2 === 5 && pin3 === 9 && pin4 === 0) {
-      const sound = new Audio(unlock)
-      sound.play()
-      setVolume(0)
-      navigate(`/Foyer`)
+      jigsawWin ? (
+        foyerMove()
+     ) : (
+      stopLock()
+      )
     } else {
       console.log('Try Again')
+      setExit(false)
     }
   }
 
