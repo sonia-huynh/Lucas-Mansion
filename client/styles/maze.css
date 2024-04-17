@@ -16,21 +16,21 @@
 
 .left{
   position: absolute;
-  top: 44%;
-  left: 2%;
+  top: 400px;
+  left: 20px;
 }
 .right{
   position: absolute;
-  top: 44%;
-  right: 2%;
+  top: 400px;
+  right: 20px;
 }
 .forward{
   position: absolute;
-  top: 2%;
-  left:33%
+  top: 10px;
+  left: 742px;
 }
 .back{
   position: absolute;
-  bottom: 2%;
-  left:40%
+  bottom: 10px;
+  left: 630px;
 }

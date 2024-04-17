@@ -1,7 +1,11 @@
+/* eslint-disable react/no-unknown-property */
 /* eslint-disable jsx-a11y/media-has-caption */
 import { useEffect, useState } from 'react'
 import '../styles/foyer.css'
-import { Navigate, useNavigate, useParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+
+//audio
+import door from '/audio/foyerDoor.mp3'
 
 export default function Foyer() {
   const navigate = useNavigate()
@@ -11,6 +15,8 @@ export default function Foyer() {
   useEffect(() => {
     document.body.style.backgroundImage = "url('/foyer-images/foyer.png')"
   })
+
+  const foyerSound = new Audio(door)
 
   return (
     <>
@@ -26,6 +32,7 @@ export default function Foyer() {
         <button
           className="foyerdoor"
           onClick={() => {
+            foyerSound.play()
             setVolume(0)
             navigate(`../maze`)
           }}

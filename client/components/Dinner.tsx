@@ -7,7 +7,11 @@ import Intro from './GamePopups/Intro'
 //audio:
 import quack from '/audio/quack.mp3'
 import jingle from '/audio/chandelier.mp3'
+import pumpkins from '/audio/pumpkin.mp3'
 import gnomed from '/audio/gnome.mp3'
+import treasure from '/audio/chest.mp3'
+import chair from '/audio/chair.mp3'
+import dish from '/audio/dish.mp3'
 
 //games:
 import Jigsaw from './GamePopups/Jigsaw'
@@ -115,7 +119,7 @@ export default function Dinner() {
     chandelier,
     inventory,
     intro,
-    stopper
+    stopper,
   ])
 
   function inventoryW() {
@@ -145,10 +149,13 @@ export default function Dinner() {
   }
 
   //audio setup:
-
   const duckSound = new Audio(quack)
   const chandeleierSound = new Audio(jingle)
   const gnomeSound = new Audio(gnomed)
+  const pumpkinSound = new Audio(pumpkins)
+  const chestSound = new Audio(treasure)
+  const chairSound = new Audio(chair)
+  const dishSound = new Audio(dish)
 
   return (
     <div className="dinner">
@@ -209,17 +216,23 @@ export default function Dinner() {
           </div>
         </div>
       )}
-       {stopper && (
+      {stopper && (
         <div className="popup-overlay">
           <div className="clue-popup popup">
-            <Stopper
-              setStopper={setStopper}
-              foundPapers={foundPapers[2]}
-            />
+            <Stopper setStopper={setStopper} foundPapers={foundPapers[2]} />
           </div>
         </div>
       )}
-      <button className="clue lock" onClick={() => exit ? jigsawWin ? navigate(`/Foyer`) : setStopper(true) : setLockNum(true)}>
+      <button
+        className="clue lock"
+        onClick={() =>
+          exit
+            ? jigsawWin
+              ? navigate(`/Foyer`)
+              : setStopper(true)
+            : setLockNum(true)
+        }
+      >
         <img
           className={block ? 'block' : 'lock noMap'}
           src="/dinner-images/door-handle.png"
@@ -240,7 +253,12 @@ export default function Dinner() {
         </div>
       )}
 
-      <button className="clue clockbod" onClick={() => setClock(true)}>
+      <button
+        className="clue clockbod"
+        onClick={() => {
+          setClock(true)
+        }}
+      >
         <img
           className={block ? 'block' : 'clockbod'}
           src="/dinner-images/clock-body.png"
@@ -256,7 +274,12 @@ export default function Dinner() {
         </div>
       )}
 
-      <button className="clue plateL" onClick={() => setMatchingE(true)}>
+      <button
+        className="clue plateL"
+        onClick={() => {
+          dishSound.play(), setMatchingE(true)
+        }}
+      >
         <img
           className={block ? 'block' : 'plateL'}
           src="/dinner-images/plate-left.png"
@@ -275,7 +298,14 @@ export default function Dinner() {
           </div>
         </div>
       )}
-      <button className="clue plateR" onClick={() => setMatching(true)}>
+      <button
+        className="clue plateR"
+        onClick={() =>
+          matchingWin
+            ? (dishSound.play(), setMatchingE(true))
+            : (dishSound.play(), setMatching(true))
+        }
+      >
         <img
           className={block ? 'block' : 'plateR'}
           src="/dinner-images/plate-right.png"
@@ -286,11 +316,16 @@ export default function Dinner() {
       {clockFace && (
         <div className="popup-overlay">
           <div className="clockface-popup popup">
-            <ClockFace setClockFace={setClockFace} />
+            <ClockFace setClockFace={setClockFace} clockFace={clockFace} />
           </div>
         </div>
       )}
-      <button className="clue clockface" onClick={() => setClockFace(true)}>
+      <button
+        className="clue clockface"
+        onClick={() => {
+          setClockFace(true)
+        }}
+      >
         <img
           className={block ? 'block' : 'clockface'}
           src="/dinner-images/clock-face.png"
@@ -334,7 +369,12 @@ export default function Dinner() {
           </div>
         </div>
       )}
-      <button className="clue stool" onClick={() => setStool(true)}>
+      <button
+        className="clue stool"
+        onClick={() => {
+          chairSound.play(), setStool(true)
+        }}
+      >
         <img
           className={block ? 'block' : 'stool'}
           src="/dinner-images/fallen-stool.png"
@@ -349,7 +389,12 @@ export default function Dinner() {
           </div>
         </div>
       )}
-      <button className="clue chest" onClick={() => setChest(true)}>
+      <button
+        className="clue chest"
+        onClick={() => {
+          chestSound.play(), setChest(true)
+        }}
+      >
         <img
           className={block ? 'block' : 'chest'}
           src="/dinner-images/chest.png"
@@ -405,7 +450,12 @@ export default function Dinner() {
           </div>
         </div>
       )}
-      <button className="clue pumpkin" onClick={() => setPumpkin(true)}>
+      <button
+        className="clue pumpkin"
+        onClick={() => {
+          pumpkinSound.play(), setPumpkin(true)
+        }}
+      >
         <img
           className={block ? 'block' : 'pumpkin'}
           src="/dinner-images/pumpkins.png"

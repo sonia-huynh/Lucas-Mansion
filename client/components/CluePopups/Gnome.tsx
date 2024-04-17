@@ -1,6 +1,10 @@
 import { useState } from 'react'
 import '../../styles/popup.css'
 
+//audio:
+import paper from '/audio/paper.mp3'
+const paperSound = new Audio(paper)
+
 interface Props {
   setGnome: React.Dispatch<React.SetStateAction<boolean>>
   foundPapers: boolean[]
@@ -43,7 +47,9 @@ export default function Gnome({
 
           {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
           <img
-            onClick={handleClick}
+            onClick={() => {
+              paperSound.play(), handleClick()
+            }}
             style={{
               height: '30px',
               filter: isHovered
@@ -58,7 +64,12 @@ export default function Gnome({
         </>
       )}
 
-      <button className="close" onClick={() => setGnome(false)}>
+      <button
+        className="close"
+        onClick={() => {
+          setGnome(false)
+        }}
+      >
         x
       </button>
     </>
