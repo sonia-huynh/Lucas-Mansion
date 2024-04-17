@@ -258,7 +258,7 @@ export default function JigsawPuzzle({ setWin, win }: Props) {
             width: '160px',
             height: 'auto',
           }}
-          src="/puzzle-images/reset.png"
+          src="/puzzle-images/reset-background.png"
           alt="reset button"
         />
       </button>
