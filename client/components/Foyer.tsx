@@ -80,6 +80,20 @@ export default function Foyer() {
             className="minnie"
           />
         </button>
+        <button className="clue piano">
+          <img
+            src="/foyer-images/piano.png"
+            alt="grand piano"
+            className="piano"
+          />
+        </button>
+        <button className="clue pianoChair">
+          <img
+            src="/foyer-images/pianoChair.png"
+            alt="piano stool"
+            className="pianoChair"
+          />
+        </button>
       </div>
     </>
   )

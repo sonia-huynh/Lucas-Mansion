@@ -68,3 +68,35 @@
     drop-shadow(-1px -1px 0.25px black) drop-shadow(1px -1px 0.25px black);
   opacity: 1;
 }
+
+.piano {
+  position: absolute;
+}
+
+.piano img {
+  position: absolute;
+  left: 1210px;
+  top: 460px;
+}
+
+.piano:hover {
+  filter: drop-shadow(1px 1px 0.25px black) drop-shadow(-1px 1px 0.25px black)
+    drop-shadow(-1px -1px 0.25px black) drop-shadow(1px -1px 0.25px black);
+  opacity: 1;
+}
+
+.pianoChair {
+  position: absolute;
+}
+
+.pianoChair img {
+  position: absolute;
+  left: 1142px;
+  top: 726px;
+}
+
+.pianoChair:hover {
+  filter: drop-shadow(1px 1px 0.25px black) drop-shadow(-1px 1px 0.25px black)
+    drop-shadow(-1px -1px 0.25px black) drop-shadow(1px -1px 0.25px black);
+  opacity: 1;
+}
