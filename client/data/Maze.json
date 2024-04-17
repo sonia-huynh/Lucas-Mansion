@@ -34,7 +34,7 @@
   {"point":32,"left":31,"forward":null,"right":null,"back":99,"image":"maze-32"},
   {"point":33,"left":null,"forward":null,"right":99,"back":31,"image":"maze-33"},
   {"point":34,"left":52,"forward":null,"right":null,"back":37,"image":"maze-34"},
-  {"point":35,"left":37,"forward":null,"right":null,"back":52,"image":"maze-35"},
+  {"point":35,"left":null,"forward":null,"right":37,"back":52,"image":"maze-35"},
   {"point":36,"left":null,"forward":null,"right":34,"back":20,"image":"maze-36"},
   {"point":37,"left":20,"forward":null,"right":null,"back":34,"image":"maze-37"},
   {"point":38,"left":41,"forward":null,"right":null,"back":23,"image":"maze-38"},
