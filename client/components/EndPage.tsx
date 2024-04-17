@@ -10,6 +10,7 @@ export default function EndPage({ timer }: Props) {
   const [leaderboard, setLeaderboard] = useState(false)
   const [block, setBlock] = useState(false)
   const [score, setScore] = useState({ name: '', time: '' })
+  const [submition, setSubmition] = useState(false)
   const mutation = useLeaderboardMutation()
 
   useEffect(() => {
@@ -35,6 +36,7 @@ export default function EndPage({ timer }: Props) {
     e.preventDefault()
     mutation.mutate(score)
     setScore({ name: '', time: '' })
+    setSubmition(true)
   }
 
   return (
@@ -77,6 +79,8 @@ export default function EndPage({ timer }: Props) {
                 marginBlockStart: '0px',
                 marginBlockEnd: '0px',
                 margin: '10px 0px',
+                filter:
+                  'drop-shadow(1px 1px 0px wheat) drop-shadow(-1px -1px 0px wheat) drop-shadow(1px -1px 0px wheat) drop-shadow(-1px 1px 0px wheat)',
               }}
             >
               Your score:
@@ -85,25 +89,39 @@ export default function EndPage({ timer }: Props) {
               style={{
                 marginBlockStart: '0px',
                 marginBlockEnd: '0px',
+                filter:
+                  'drop-shadow(1px 1px 0px wheat) drop-shadow(-1px -1px 0px wheat) drop-shadow(1px -1px 0px wheat) drop-shadow(-1px 1px 0px wheat)',
               }}
             >
               2 minutes and 27 seconds.
             </p>
-            <p>Add your score to the leaderboard.</p>
-            <form onSubmit={handleSubmit}>
-              <input
-                required
-                onChange={(e) =>
-                  setScore({ name: e.target.value, time: String(timer) })
-                }
-                type="text"
-                name="name"
-                id="name"
-                value={score.name}
-                placeholder="Your name"
-              ></input>
-              <button type="submit">Submit</button>
-            </form>
+
+            {!submition && (
+              <>
+                <p
+                  style={{
+                    filter:
+                      'drop-shadow(1px 1px 0px wheat) drop-shadow(-1px -1px 0px wheat) drop-shadow(1px -1px 0px wheat) drop-shadow(-1px 1px 0px wheat)',
+                  }}
+                >
+                  Add your score to the leaderboard.
+                </p>
+                <form onSubmit={handleSubmit}>
+                  <input
+                    required
+                    onChange={(e) =>
+                      setScore({ name: e.target.value, time: String(timer) })
+                    }
+                    type="text"
+                    name="name"
+                    id="name"
+                    value={score.name}
+                    placeholder="Your name"
+                  ></input>
+                  <button type="submit">Submit</button>
+                </form>
+              </>
+            )}
           </div>
         </div>
         {leaderboard && (

@@ -85,15 +85,6 @@ export default function Leaderboard({ setLeaderboard, setBlock }: Props) {
         >
           {scores.map((score: Scores, i: number) => (
             <div key={i} style={{ display: 'flex' }}>
-              {/* <h3
-                style={{
-                  marginBottom: '0px',
-                  marginBlockStart: '5px',
-                  marginBlockEnd: '2px',
-                }}
-              >
-                {score.time}
-              </h3> */}
               <h2
                 style={{
                   marginBottom: '0px',
