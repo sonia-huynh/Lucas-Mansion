@@ -34,3 +34,23 @@
   bottom: 10px;
   left: 630px;
 }
+
+.map{
+  background: none;
+  border:none;
+  position: absolute;
+  right:5px;
+  top: 5px;
+}
+
+.mapImage{
+  width:220px;
+  height: auto;
+}
+
+.map:hover{
+  filter: drop-shadow(2px 2px 1px #fafdc4)
+  drop-shadow(-2px -2px 1px #fafdc4)
+  drop-shadow(2px -2px 1px #fafdc4)
+  drop-shadow(-2px 2px 1px #fafdc4);
+}
