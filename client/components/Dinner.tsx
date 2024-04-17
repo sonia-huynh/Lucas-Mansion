@@ -9,6 +9,9 @@ import quack from '/audio/quack.mp3'
 import jingle from '/audio/chandelier.mp3'
 import pumpkins from '/audio/pumpkin.mp3'
 import gnomed from '/audio/gnome.mp3'
+import treasure from '/audio/chest.mp3'
+import chair from '/audio/chair.mp3'
+import dish from '/audio/dish.mp3'
 
 //games:
 import Jigsaw from './GamePopups/Jigsaw'
@@ -142,6 +145,9 @@ export default function Dinner() {
   const chandeleierSound = new Audio(jingle)
   const gnomeSound = new Audio(gnomed)
   const pumpkinSound = new Audio(pumpkins)
+  const chestSound = new Audio(treasure)
+  const chairSound = new Audio(chair)
+  const dishSound = new Audio(dish)
 
   return (
     <div className="dinner">
@@ -237,7 +243,12 @@ export default function Dinner() {
         </div>
       )}
 
-      <button className="clue plateL" onClick={() => setMatchingE(true)}>
+      <button
+        className="clue plateL"
+        onClick={() => {
+          dishSound.play(), setMatchingE(true)
+        }}
+      >
         <img
           className={block ? 'block' : 'plateL'}
           src="/dinner-images/plate-left.png"
@@ -256,7 +267,12 @@ export default function Dinner() {
           </div>
         </div>
       )}
-      <button className="clue plateR" onClick={() => setMatching(true)}>
+      <button
+        className="clue plateR"
+        onClick={() => {
+          dishSound.play(), setMatching(true)
+        }}
+      >
         <img
           className={block ? 'block' : 'plateR'}
           src="/dinner-images/plate-right.png"
@@ -320,7 +336,12 @@ export default function Dinner() {
           </div>
         </div>
       )}
-      <button className="clue stool" onClick={() => setStool(true)}>
+      <button
+        className="clue stool"
+        onClick={() => {
+          chairSound.play(), setStool(true)
+        }}
+      >
         <img
           className={block ? 'block' : 'stool'}
           src="/dinner-images/fallen-stool.png"
@@ -335,7 +356,12 @@ export default function Dinner() {
           </div>
         </div>
       )}
-      <button className="clue chest" onClick={() => setChest(true)}>
+      <button
+        className="clue chest"
+        onClick={() => {
+          chestSound.play(), setChest(true)
+        }}
+      >
         <img
           className={block ? 'block' : 'chest'}
           src="/dinner-images/chest.png"
