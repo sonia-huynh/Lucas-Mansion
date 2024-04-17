@@ -9,8 +9,8 @@ export default function Intro({ setIntro }: Props) {
       <h2>Welcome!</h2>
       <strong>
         <p>
-          {`You've entered Lucas' mansion and now it's a game, the room has been locked and you'll race the clock. 
-      Hidden inside are some puzzles and clues, look for a way out or else you'll lose!" `}
+          {`After coming to Lucas' mansion for dinner, you've trapped inside! The room has been locked and you'll need to ecape while racing the clock. 
+      Hidden inside are puzzles and clues, look for a way out or face your demise!" `}
         </p>
       </strong>
       <button className="close" onClick={() => setIntro(false)}>
