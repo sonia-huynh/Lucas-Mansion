@@ -10,8 +10,17 @@ import door from '/audio/foyerDoor.mp3'
 
 export default function Foyer() {
   const navigate = useNavigate()
+
   //audio
   const [volume, setVolume] = useState(100)
+
+  const [display, setDisplay] = useState(true)
+  const [key, setKey] = useState(false)
+
+  function handleClick() {
+    setDisplay(false)
+    setKey(true)
+  }
 
   useEffect(() => {
     document.body.style.backgroundImage = "url('/foyer-images/foyer.png')"
@@ -30,25 +39,38 @@ export default function Foyer() {
           volume={volume}
           currentTime={10}
         />
-        <button
-          className="foyerdoor"
-          onClick={() => {
-            foyerSound.play()
-            setVolume(0)
-            navigate(`../maze`)
-          }}
-        >
-          <img
+        {key && (
+          <button
             className="foyerdoor"
-            src="/foyer-images/foyer-door.png"
-            alt="foyer door"
-          />
-        </button>
+            onClick={() => {
+              foyerSound.play()
+              setVolume(0)
+              navigate(`../maze`)
+            }}
+          >
+            <img
+              className="foyerdoor"
+              src="/foyer-images/foyer-door.png"
+              alt="foyer door"
+            />
+          </button>
+        )}
         <button className="clue cave">
           <img
             src="/foyer-images/cave.png"
             alt="frame of a dining room"
             className="caveimg"
+          />
+        </button>
+        <button
+          className="clue keyFrame"
+          onClick={handleClick}
+          style={!display ? { display: 'none' } : {}}
+        >
+          <img
+            src="/foyer-images/keypic.png"
+            alt="frame with key"
+            className="keyFrame"
           />
         </button>
         <button className="clue minnie">
