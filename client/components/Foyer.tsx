@@ -107,16 +107,27 @@ export default function Foyer() {
           className="clue keyFrame"
           onClick={() =>
             key
-              ? interact({ text: 'A cute couple', width: 529, height: 391 })
+              ? interact({
+                  text: 'Just a blank frame',
+                  width: 575,
+                  height: 224,
+                })
               : handleClick()
           }
-          style={!display ? { display: 'none' } : {}}
         >
-          <img
-            src="/foyer-images/keypic.png"
-            alt="frame with key"
-            className="keyFrame"
-          />
+          {display ? (
+            <img
+              src="/foyer-images/keypic.png"
+              alt="frame with key"
+              className="keyFrame"
+            />
+          ) : (
+            <img
+              src="/foyer-images/keypicblank.png"
+              alt="frame without key"
+              className="keyFrame"
+            />
+          )}
         </button>
         <button
           className="clue minnie"
