@@ -8,7 +8,7 @@ const router = Router()
 router.get('/', async (req, res) => {
   try {
     const scores = await getAllScores()
-    // make time from number of seconds into 0min 0sec format
+
     const newScores = scores.map((score) => {
       const time = score.time
       const newMin = Math.floor(time / 60)
@@ -27,11 +27,6 @@ router.get('/', async (req, res) => {
 router.post('/add', async (req, res) => {
   try {
     const input = req.body
-    // const time = input.time
-    // const newMin = Math.floor(time / 60)
-    // const newSec = time % 60
-    // const newTime = `${newMin}min ${newSec}sec`
-    // const newScore = { ...input, time: newTime }
     const scores = await addScores(input)
     res.json(scores)
   } catch (error) {
