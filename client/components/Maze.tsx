@@ -4,10 +4,26 @@ import pathing from '../data/Maze.json'
 import { useNavigate } from 'react-router-dom'
 import '../styles/maze.css'
 
+import steps from '/audio/steps.mp3'
+
 export default function Maze() {
   const [position, setPosition] = useState(0)
   //audio
   const [volume, setVolume] = useState(100)
+  const [sound, setSound] = useState('')
+
+  const random = ['running-soundscape', 'running-in-the-woods']
+
+  function getRandomNumber(min, max) {
+    min = Math.ceil(min)
+    max = Math.floor(max)
+    return Math.floor(Math.random() * (max - min + 1)) + min
+  }
+
+  const following = setInterval(() => {
+    const i = getRandomNumber(0, 1)
+    setSound(random[i])
+  }, 30000)
 
   const navigate = useNavigate()
   useEffect(() => {
@@ -18,12 +34,30 @@ export default function Maze() {
     }
   }, [position])
 
+  const step = new Audio(steps)
+
   if (pathing) {
     return (
       <>
         <audio
-          id="dinnerAudio"
+          id="ambience"
           src={'/audio/night-ambience.mp3'}
+          autoPlay={true}
+          // eslint-disable-next-line react/no-unknown-property
+          volume={volume}
+          loop={true}
+        />
+        <audio
+          id="singing"
+          src={'/audio/maze-sing.mp3'}
+          autoPlay={true}
+          // eslint-disable-next-line react/no-unknown-property
+          volume={volume}
+          loop={true}
+        />
+        <audio
+          id="singing"
+          src={`/audio/${sound}.mp3`}
           autoPlay={true}
           // eslint-disable-next-line react/no-unknown-property
           volume={volume}
@@ -32,7 +66,9 @@ export default function Maze() {
         {pathing[position].left && (
           <button
             className="left direction"
-            onClick={() => setPosition(pathing[position].left as number)}
+            onClick={() => {
+              step.play(), setPosition(pathing[position].left as number)
+            }}
           >
             <img src="/maze/directions/left.png" alt="left" />
           </button>
@@ -40,7 +76,9 @@ export default function Maze() {
         {pathing[position].forward && (
           <button
             className="forward direction"
-            onClick={() => setPosition(pathing[position].forward as number)}
+            onClick={() => {
+              step.play(), setPosition(pathing[position].forward as number)
+            }}
           >
             <img src="/maze/directions/forward.png" alt="forward" />
           </button>
@@ -48,7 +86,9 @@ export default function Maze() {
         {pathing[position].right && (
           <button
             className="right direction"
-            onClick={() => setPosition(pathing[position].right as number)}
+            onClick={() => {
+              step.play(), setPosition(pathing[position].right as number)
+            }}
           >
             <img src="/maze/directions/right.png" alt="right" />
           </button>
@@ -56,7 +96,9 @@ export default function Maze() {
         {pathing[position].back ? (
           <button
             className="back direction"
-            onClick={() => setPosition(pathing[position].back as number)}
+            onClick={() => {
+              step.play(), setPosition(pathing[position].back as number)
+            }}
           >
             <img src="/maze/directions/back.png" alt="back" />
           </button>
@@ -64,7 +106,9 @@ export default function Maze() {
           pathing[position].back === 0 && (
             <button
               className="back direction"
-              onClick={() => setPosition(pathing[position].back as number)}
+              onClick={() => {
+                step.play(), setPosition(pathing[position].back as number)
+              }}
             >
               <img src="/maze/directions/back.png" alt="back" />
             </button>
