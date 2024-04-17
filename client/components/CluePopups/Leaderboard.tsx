@@ -43,32 +43,22 @@ export default function Leaderboard({ setLeaderboard, setBlock }: Props) {
               'drop-shadow(1px 1px 0px black) drop-shadow(-1px -1px 0px black) drop-shadow(1px -1px 0px black) drop-shadow(-1px 1px 0px black)',
           }}
         >
-          {scores.map((score: Scores, i: number) => (
-            <div key={i} style={{ display: 'flex' }}>
-              <>
-                <h2
-                  style={{
-                    marginBottom: '0px',
-                    marginBlockStart: '0px',
-                    marginBlockEnd: '0px',
-                  }}
-                >
-                  {score.name}
-                </h2>
-              </>
-              {/* <>
-                <h2
-                  style={{
-                    marginBottom: '0px',
-                    marginBlockStart: '0px',
-                    marginBlockEnd: '0px',
-                  }}
-                >
-                  {score.time}
-                </h2>
-              </> */}
-            </div>
-          ))}
+          {scores.map(
+            (score: Scores, i: number) =>
+              i < 10 && (
+                <div key={i} style={{ display: 'flex' }}>
+                  <h2
+                    style={{
+                      marginBottom: '5px',
+                      marginBlockStart: '0px',
+                      marginBlockEnd: '0px',
+                    }}
+                  >
+                    {score.name}
+                  </h2>
+                </div>
+              ),
+          )}
         </div>
         <div
           style={{
@@ -83,19 +73,22 @@ export default function Leaderboard({ setLeaderboard, setBlock }: Props) {
               'drop-shadow(1px 1px 0px black) drop-shadow(-1px -1px 0px black) drop-shadow(1px -1px 0px black) drop-shadow(-1px 1px 0px black)',
           }}
         >
-          {scores.map((score: Scores, i: number) => (
-            <div key={i} style={{ display: 'flex' }}>
-              <h2
-                style={{
-                  marginBottom: '0px',
-                  marginBlockStart: '0px',
-                  marginBlockEnd: '0px',
-                }}
-              >
-                {score.time}
-              </h2>
-            </div>
-          ))}
+          {scores.map(
+            (score: Scores, i: number) =>
+              i < 10 && (
+                <div key={i} style={{ display: 'flex' }}>
+                  <h2
+                    style={{
+                      marginBottom: '5px',
+                      marginBlockStart: '0px',
+                      marginBlockEnd: '0px',
+                    }}
+                  >
+                    {score.time}
+                  </h2>
+                </div>
+              ),
+          )}
         </div>
         <img
           src="/end-page/leaderboard-background.png"
