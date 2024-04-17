@@ -240,6 +240,28 @@ export default function JigsawPuzzle({ setWin, win }: Props) {
           </div>
         ))}
       </div>
+      <button
+        id="resetbutton"
+        onClick={() => {
+          setPieces([piece3, piece1, piece2]),
+            setRotationStates([0, 0, 0]),
+            setPlacedPieces(['', '', '']),
+            setClickedPiece('')
+        }}
+        style={{ background: 'none', border: 'none' }}
+      >
+        <img
+          style={{
+            position: 'absolute',
+            top: '240px',
+            left: '160px',
+            width: '160px',
+            height: 'auto',
+          }}
+          src="/puzzle-images/reset.png"
+          alt="reset button"
+        />
+      </button>
     </div>
   )
 }
