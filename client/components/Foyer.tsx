@@ -2,6 +2,7 @@
 /* eslint-disable jsx-a11y/media-has-caption */
 import { useEffect, useState } from 'react'
 import '../styles/foyer.css'
+import '../styles/dinner.css'
 import { useNavigate } from 'react-router-dom'
 
 //audio
@@ -43,8 +44,19 @@ export default function Foyer() {
             alt="foyer door"
           />
         </button>
-        <button className="cave">
-          <img src="/foyer-images/cave.png" />
+        <button className="clue cave">
+          <img
+            src="/foyer-images/cave.png"
+            alt="frame of a dining room"
+            className="caveimg"
+          />
+        </button>
+        <button className="clue minnie">
+          <img
+            src="/foyer-images/lucasMinnie.png"
+            alt="frame of a lucas and minnie"
+            className="minnie"
+          />
         </button>
       </div>
     </>
