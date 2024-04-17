@@ -110,7 +110,10 @@ export default function EndPage({ timer }: Props) {
                   <input
                     required
                     onChange={(e) =>
-                      setScore({ name: e.target.value, time: String(timer) })
+                      setScore({
+                        name: e.target.value.toUpperCase(),
+                        time: String(timer),
+                      })
                     }
                     type="text"
                     name="name"
