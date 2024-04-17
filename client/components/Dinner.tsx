@@ -165,6 +165,7 @@ export default function Dinner() {
         id="dinnerAudio"
         src={'/audio/dinner.mp3'}
         autoPlay={true}
+        loop={true}
         // eslint-disable-next-line react/no-unknown-property
         volume={volume}
       />
