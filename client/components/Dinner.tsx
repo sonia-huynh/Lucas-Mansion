@@ -275,7 +275,7 @@ export default function Dinner() {
           </div>
         </div>
       )}
-      <button className="clue plateR" onClick={() => setMatching(true)}>
+      <button className="clue plateR" onClick={() => matchingWin ? setMatchingE(true) : setMatching(true)}>
         <img
           className={block ? 'block' : 'plateR'}
           src="/dinner-images/plate-right.png"
