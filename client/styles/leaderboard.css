@@ -70,3 +70,25 @@
   margin-right: 10px;
   font-size: 20px;
 }
+
+/* .leaderboard-text {
+  z-index: 1100;
+  position: absolute;
+  filter: drop-shadow(1px 1px 0px black) drop-shadow(-1px -1px 0px black)
+    drop-shadow(1px -1px 0px black) drop-shadow(-1px 1px 0px black);
+}
+
+.leaderboard-text h1 {
+  left: 0px;
+  top: 20px;
+  color: wheat;
+  font-size: 60px;
+}
+
+.leaderboard-text #div {
+  left: -400px;
+  top: 120px;
+  color: yellow;
+  text-align: left;
+  font-size: 20px;
+} */
