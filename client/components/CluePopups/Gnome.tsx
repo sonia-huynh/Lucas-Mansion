@@ -35,7 +35,7 @@ export default function Gnome({
   return (
     <>
       <h1>Gnome</h1>
-      <p>{`The gnome's two hands make him look in a daze becuase below its two feet appears to be a piece of a maze...`}</p>
+      <p>{`The gnome's two hands make him look in a daze because below its two feet appears to be a piece of a maze...`}</p>
       {foundPapers[0] === false && (
         <>
           <img
