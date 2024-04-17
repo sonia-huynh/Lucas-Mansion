@@ -1,8 +1,11 @@
 import { useState } from 'react'
 import '../../styles/matching.css'
 import '../../styles/popup.css'
+
+//audio
 import bell from '/audio/bell.mp3'
 import latchUnlock from '/audio/latch-unlock.mp3'
+import cutlery from '/audio/utensil.mp3'
 
 interface Props {
   setMatching: React.Dispatch<React.SetStateAction<boolean>>
@@ -61,6 +64,9 @@ export default function Matching({ setMatching, win, setWin }: Props) {
     }
   }
 
+  const cutlerySound = new Audio(cutlery)
+  cutlerySound.play()
+
   return (
     <div className="match-up-game">
       <div className="plate-game">
@@ -89,7 +95,9 @@ export default function Matching({ setMatching, win, setWin }: Props) {
                   <div>
                     <button
                       className="sides"
-                      onClick={() => handleClick(index, 1)}
+                      onClick={() => {
+                        cutlerySound.play(), handleClick(index, 1)
+                      }}
                     >
                       {'>'}
                     </button>
@@ -98,7 +106,9 @@ export default function Matching({ setMatching, win, setWin }: Props) {
                   <div>
                     <button
                       className="sides"
-                      onClick={() => handleClick(index, -1)}
+                      onClick={() => {
+                        cutlerySound.play(), handleClick(index, -1)
+                      }}
                     >
                       {'<'}
                     </button>
@@ -107,13 +117,17 @@ export default function Matching({ setMatching, win, setWin }: Props) {
                   <div>
                     <button
                       className="sides"
-                      onClick={() => handleClick(index, -1)}
+                      onClick={() => {
+                        cutlerySound.play(), handleClick(index, -1)
+                      }}
                     >
                       {'<'}
                     </button>
                     <button
                       className="sides"
-                      onClick={() => handleClick(index, 1)}
+                      onClick={() => {
+                        cutlerySound.play(), handleClick(index, 1)
+                      }}
                     >
                       {'>'}
                     </button>

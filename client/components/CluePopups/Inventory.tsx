@@ -76,7 +76,6 @@ export default function Inventory({
               )}
               {rips[2] && (
                 <>
-                  {' '}
                   <img
                     className="inventoryimg spacing"
                     src={`puzzle-images/${mapImgs[2]}`}
