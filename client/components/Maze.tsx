@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react'
 import pathing from '../data/Maze.json'
 import { useNavigate } from 'react-router-dom'
+import Map from './GamePopups/Map'
 import '../styles/maze.css'
 
 import steps from '/audio/steps.mp3'
@@ -11,6 +12,7 @@ export default function Maze() {
   //audio
   const [volume, setVolume] = useState(100)
   const [sound, setSound] = useState('')
+  const [map, setMap] = useState(false)
 
   const random = ['running-soundscape', 'running-in-the-woods']
 
@@ -114,6 +116,19 @@ export default function Maze() {
             </button>
           )
         )}
+        <button className='map' onClick={()=>setMap(true)}><img className="mapImage" src="/maze/mapIcon.png" alt="map icon"/></button>
+        {map && (
+        <div className="popup-overlay">
+          <img
+            src="/puzzle-images/full_map_checkpoint.png"
+            alt="maze-map"
+            style={{ height: '500px' }}
+          />
+          <button className="close" style={{position:"absolute", right:"510px", top:"205px"}} onClick={() => setMap(false)}>
+            x
+          </button>
+        </div>
+      )}
       </>
     )
   }
