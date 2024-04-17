@@ -64,8 +64,8 @@
 
 .selected{
   background: white;
-  opacity: 30%;
-  border-radius: 100%;
+  opacity: 10%;
+  border-radius: 10%;
 }
 
 .corner-empty {
