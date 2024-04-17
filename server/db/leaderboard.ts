@@ -2,8 +2,11 @@ import { ScoreDraft, Scores } from '../../models/scores.ts'
 import db from './connection.ts'
 
 export async function getAllScores() {
-  const scores = (await db('leaderboard').select()).sort()
-  return scores
+  const scores = await db('leaderboard').select()
+
+  const newScores = scores.sort((a, b) => b.score - a.score)
+
+  return newScores
 
   // const time = input.time
   // const newMin = Math.floor(time / 60)
