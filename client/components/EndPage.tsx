@@ -93,7 +93,7 @@ export default function EndPage({ timer }: Props) {
                   'drop-shadow(1px 1px 0px wheat) drop-shadow(-1px -1px 0px wheat) drop-shadow(1px -1px 0px wheat) drop-shadow(-1px 1px 0px wheat)',
               }}
             >
-              2 minutes and 27 seconds.
+              {`${Math.floor(timer / 60)} minutes and ${timer % 60} seconds.`}
             </p>
 
             {!submition && (
