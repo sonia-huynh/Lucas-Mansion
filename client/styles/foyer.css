@@ -1,22 +1,102 @@
 .foyer img {
   margin: 0;
   padding: 0;
-  width:520%;
+  width: 520%;
   height: 100%;
 }
 
-.foyerdoordiv{
+.foyerdoordiv {
   position: relative;
 }
 
-.foyerdoor{
+.foyerdoor {
   position: absolute;
-  margin-top:230px;
-  left:15.7%;
+  margin-top: 230px;
+  left: 15.7%;
   background: none;
   border: none;
 }
 
 .foyerdoor:hover {
-  filter:drop-shadow(-5px -5px 5px #aca5a5)
+  filter: drop-shadow(-5px -5px 5px #aca5a5);
+}
+
+.cave {
+  position: absolute;
+}
+
+.caveimg {
+  position: absolute;
+  left: 985px;
+  top: 100px;
+}
+
+.cave:hover {
+  filter: drop-shadow(1px 1px 0.25px black) drop-shadow(-1px 1px 0.25px black)
+    drop-shadow(-1px -1px 0.25px black) drop-shadow(1px -1px 0.25px black);
+  opacity: 1;
+}
+
+.minnie {
+  position: absolute;
+}
+
+.minnie img {
+  position: absolute;
+  left: 540px;
+  top: 309px;
+}
+
+.minnie:hover {
+  filter: drop-shadow(1px 1px 0.25px black) drop-shadow(-1px 1px 0.25px black)
+    drop-shadow(-1px -1px 0.25px black) drop-shadow(1px -1px 0.25px black);
+  opacity: 1;
+}
+
+.keyFrame {
+  position: absolute;
+}
+
+.keyFrame img {
+  position: absolute;
+  left: 732px;
+  top: 190px;
+}
+
+.keyFrame:hover {
+  filter: drop-shadow(1px 1px 0.25px black) drop-shadow(-1px 1px 0.25px black)
+    drop-shadow(-1px -1px 0.25px black) drop-shadow(1px -1px 0.25px black);
+  opacity: 1;
+}
+
+.piano {
+  position: absolute;
+}
+
+.piano img {
+  position: absolute;
+  left: 1210px;
+  top: 460px;
+}
+
+.piano:hover {
+  filter: drop-shadow(1px 1px 0.25px black) drop-shadow(-1px 1px 0.25px black)
+    drop-shadow(-1px -1px 0.25px black) drop-shadow(1px -1px 0.25px black);
+  opacity: 1;
+}
+
+.pianoChair {
+  position: absolute;
+}
+
+.pianoChair img {
+  position: absolute;
+  left: 1142px;
+  top: 726px;
+}
+
+.pianoChair:hover {
+  filter: drop-shadow(1px 1px 0.25px black) drop-shadow(-1px 1px 0.25px black)
+    drop-shadow(-1px -1px 0.25px black) drop-shadow(1px -1px 0.25px black);
+  opacity: 1;
 }

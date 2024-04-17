@@ -1,11 +1,15 @@
 import { useState } from 'react'
 
+//audio:
+import paper from '/audio/paper.mp3'
+
 export default function Puzzle() {
   const [side, setSide] = useState('front')
   const [isHovered, setIsHovered] = useState(false)
+  const paperSound = new Audio(paper)
 
   function handleSeeBack() {
-    setSide('back')
+    paperSound.play(), setSide('back')
   }
 
   const handleMouseEnter = () => {

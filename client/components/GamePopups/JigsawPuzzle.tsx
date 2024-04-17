@@ -4,6 +4,9 @@ import tape from '/audio/stretch-tape.mp3'
 
 import '../../styles/puzzle.css'
 
+//audio:
+import paper from '/audio/paper.mp3'
+
 interface Props {
   setWin: React.Dispatch<React.SetStateAction<boolean>>
   win: boolean
@@ -80,6 +83,8 @@ export default function JigsawPuzzle({ setWin, win }: Props) {
   console.log(rotationStates)
 
   console.log(win)
+
+  const paperSound = new Audio(paper)
 
   return (
     <div className="puzzle-table">
@@ -213,7 +218,9 @@ export default function JigsawPuzzle({ setWin, win }: Props) {
                 <img
                   src={piece}
                   alt="puzzle"
-                  onClick={() => handleClickPiece(index)}
+                  onClick={() => {
+                    paperSound.play(), handleClickPiece(index)
+                  }}
                   className="inventory-piece"
                   style={{ transform: `rotate(${rotationStates[index]}deg)` }}
                 />
@@ -224,7 +231,9 @@ export default function JigsawPuzzle({ setWin, win }: Props) {
                   alt="rotation-button"
                   className="rotate-button"
                   style={{ height: '20px', width: '20px' }}
-                  onClick={() => handleRotation(index)}
+                  onClick={() => {
+                    paperSound.play(), handleRotation(index)
+                  }}
                 />
               </>
             )}
