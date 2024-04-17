@@ -5,7 +5,10 @@ import { useNavigate } from 'react-router-dom'
 import Map from './GamePopups/Map'
 import '../styles/maze.css'
 
+//audio:
 import steps from '/audio/steps.mp3'
+import paper from '/audio/paper.mp3'
+const paperSound = new Audio(paper)
 
 export default function Maze() {
   const [position, setPosition] = useState(0)
@@ -116,7 +119,7 @@ export default function Maze() {
             </button>
           )
         )}
-        <button className='map' onClick={()=>setMap(true)}><img className="mapImage" src="/maze/mapIcon.png" alt="map icon"/></button>
+        <button className='map' onClick={()=>{setMap(true), paperSound.play()}}><img className="mapImage" src="/maze/mapIcon.png" alt="map icon"/></button>
         {map && (
         <div className="popup-overlay">
           <img
@@ -124,7 +127,7 @@ export default function Maze() {
             alt="maze-map"
             style={{ height: '500px' }}
           />
-          <button className="close" style={{position:"absolute", right:"510px", top:"205px"}} onClick={() => setMap(false)}>
+          <button className="close" style={{position:"absolute", right:"510px", top:"205px"}} onClick={() => {setMap(false), paperSound.play()}}>
             x
           </button>
         </div>
