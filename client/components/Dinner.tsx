@@ -13,6 +13,7 @@ import treasure from '/audio/chest.mp3'
 import chair from '/audio/chair.mp3'
 import dish from '/audio/dish.mp3'
 import zipper from '/audio/zipper.mp3'
+import locked from '/audio/cabinet-shake.mp3'
 
 //games:
 import Jigsaw from './GamePopups/Jigsaw'
@@ -158,6 +159,7 @@ export default function Dinner() {
   const chairSound = new Audio(chair)
   const dishSound = new Audio(dish)
   const zip = new Audio(zipper)
+  const lockedClock = new Audio(locked)
 
   return (
     <div className="dinner">
@@ -259,7 +261,7 @@ export default function Dinner() {
       <button
         className="clue clockbod"
         onClick={() => {
-          setClock(true)
+          (!matchingWin && lockedClock.play()), setClock(true)
         }}
       >
         <img
