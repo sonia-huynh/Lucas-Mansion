@@ -2,7 +2,14 @@ import { ScoreDraft, Scores } from '../../models/scores.ts'
 import db from './connection.ts'
 
 export async function getAllScores() {
-  return await db('leaderboard').select()
+  const scores = (await db('leaderboard').select()).sort()
+  return scores
+
+  // const time = input.time
+  // const newMin = Math.floor(time / 60)
+  // const newSec = time % 60
+  // const newTime = `${newMin}min ${newSec}sec`
+  // const newScore = { ...input, time: newTime }
 }
 
 //  post request to add player score, need player and time

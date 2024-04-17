@@ -8,6 +8,7 @@ const router = Router()
 router.get('/', async (req, res) => {
   try {
     const scores = await getAllScores()
+    // make time from number of seconds into 0min 0sec format
     res.json(scores)
   } catch (error) {
     res.status(500).json({ message: 'Error fetching scores' })
@@ -15,7 +16,6 @@ router.get('/', async (req, res) => {
 })
 
 // backend call for post request takes in player and time
-
 router.post('/add', async (req, res) => {
   try {
     const input = req.body
