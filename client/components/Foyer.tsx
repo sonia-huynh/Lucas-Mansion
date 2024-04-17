@@ -28,7 +28,7 @@ export default function Foyer() {
   function handleClick() {
     setDisplay(false)
     setKey(true)
-    interact({ text: 'Key Aquired!', width: 622, height: 224 })
+    interact({ text: 'Key Aquired!', width: 615, height: 224 })
   }
 
   useEffect(() => {
@@ -92,8 +92,8 @@ export default function Foyer() {
           onClick={() =>
             interact({
               text: 'Looks like a cave or something',
-              width: 911,
-              height: 29,
+              width: 959,
+              height: 53,
             })
           }
         >
@@ -132,7 +132,7 @@ export default function Foyer() {
         <button
           className="clue minnie"
           onClick={() =>
-            interact({ text: 'A cute couple', width: 529, height: 391 })
+            interact({ text: 'A cute couple', width: 430, height: 318 })
           }
         >
           <img
@@ -174,6 +174,7 @@ export default function Foyer() {
           />
         </button>
         {interaction && (
+          // {true && (
           <p
             style={{
               position: 'absolute',
