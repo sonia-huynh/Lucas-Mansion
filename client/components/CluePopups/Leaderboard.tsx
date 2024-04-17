@@ -51,7 +51,7 @@ export default function Leaderboard({ setLeaderboard, setBlock }: Props) {
                 <div key={i}>
                   <h2
                     style={{
-                      marginBottom: '20px',
+                      paddingBottom: '20px',
                       marginBlockStart: '0px',
                       marginBlockEnd: '0px',
                       marginLeft: '600px',
@@ -82,7 +82,7 @@ export default function Leaderboard({ setLeaderboard, setBlock }: Props) {
                 <div key={i}>
                   <h2
                     style={{
-                      marginBottom: '20px',
+                      paddingBottom: '20px',
                       marginBlockStart: '0px',
                       marginBlockEnd: '0px',
                       marginLeft: '100px',
@@ -113,7 +113,7 @@ export default function Leaderboard({ setLeaderboard, setBlock }: Props) {
                 <div key={i}>
                   <h2
                     style={{
-                      marginBottom: '20px',
+                      paddingBottom: '20px',
                       marginBlockStart: '0px',
                       marginBlockEnd: '0px',
                       marginLeft: '600px',

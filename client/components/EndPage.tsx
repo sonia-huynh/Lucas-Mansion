@@ -120,8 +120,21 @@ export default function EndPage({ timer }: Props) {
                     id="name"
                     value={score.name}
                     placeholder="Your name"
-                  ></input>
-                  <button type="submit">Submit</button>
+                    style={{ marginRight: '10px', fontSize: '20px' }}
+                  />
+                  <button
+                    type="submit"
+                    style={{
+                      fontFamily: 'Copse',
+                      fontSize: '20px',
+                      border: '2px solid white',
+                      color: 'white',
+                      background: 'black',
+                      borderRadius: '3px',
+                    }}
+                  >
+                    submit
+                  </button>
                 </form>
               </>
             )}
