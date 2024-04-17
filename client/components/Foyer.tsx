@@ -43,6 +43,9 @@ export default function Foyer() {
             alt="foyer door"
           />
         </button>
+        <button className="cave">
+          <img src="/foyer-images/cave.png" />
+        </button>
       </div>
     </>
   )
