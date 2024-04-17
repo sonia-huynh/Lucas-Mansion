@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import Leaderboard from './CluePopups/Leaderboard'
 import '../styles/popup.css'
-import { useLeaderboard, useLeaderboardMutation } from '../hooks/useLeaderboard'
+import '../styles/leaderboard.css'
+import { useLeaderboardMutation } from '../hooks/useLeaderboard'
 interface Props {
   timer: number
 }
@@ -45,21 +46,9 @@ export default function EndPage({ timer }: Props) {
         <img
           src="/end-page/game-cleared.png"
           alt="game cleared text"
-          style={{
-            height: '150px',
-            position: 'absolute',
-            left: '370px',
-            top: '350px',
-          }}
+          className="background-img"
         />
-        <div
-          style={{
-            position: 'absolute',
-            left: '550px',
-            top: '600px',
-            display: 'flex',
-          }}
-        >
+        <div className="message">
           <img
             src="/end-page/lucas-face.png"
             alt="lucas' face"
@@ -67,24 +56,8 @@ export default function EndPage({ timer }: Props) {
               height: '170px',
             }}
           />
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              marginLeft: '70px',
-            }}
-          >
-            <h1
-              style={{
-                marginBlockStart: '0px',
-                marginBlockEnd: '0px',
-                margin: '10px 0px',
-                filter:
-                  'drop-shadow(1px 1px 0px wheat) drop-shadow(-1px -1px 0px wheat) drop-shadow(1px -1px 0px wheat) drop-shadow(-1px 1px 0px wheat)',
-              }}
-            >
-              Your score:
-            </h1>
+          <div className="your-score">
+            <h1 id="score-title">Your score:</h1>
             <p
               style={{
                 marginBlockStart: '0px',
@@ -120,19 +93,8 @@ export default function EndPage({ timer }: Props) {
                     id="name"
                     value={score.name}
                     placeholder="Your name"
-                    style={{ marginRight: '10px', fontSize: '20px' }}
                   />
-                  <button
-                    type="submit"
-                    style={{
-                      fontFamily: 'Copse',
-                      fontSize: '20px',
-                      border: '2px solid white',
-                      color: 'white',
-                      background: 'black',
-                      borderRadius: '3px',
-                    }}
-                  >
+                  <button type="submit" className="submit-name">
                     submit
                   </button>
                 </form>
@@ -156,19 +118,7 @@ export default function EndPage({ timer }: Props) {
             <img
               src="/end-page/leaderboard-moon.png"
               alt="button to leaderboard"
-              className="leaderboard-popup"
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-              style={{
-                height: '340px',
-                width: '340px',
-                filter: isHovered
-                  ? 'drop-shadow(1px 1px 10px white) drop-shadow(-2px -2px 10px white) drop-shadow(2px -2px 10px white) drop-shadow(-2px 2px 10px white)'
-                  : 'none',
-                position: 'absolute',
-                right: '82px',
-                top: '65px',
-              }}
+              className="leaderboard-popup moon-button"
               onClick={handleOpenLeaderboard}
             />
           </>
