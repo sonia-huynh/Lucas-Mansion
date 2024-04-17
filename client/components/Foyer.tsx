@@ -8,6 +8,12 @@ import { useNavigate } from 'react-router-dom'
 //audio
 import door from '/audio/foyerDoor.mp3'
 
+interface Interaction {
+  text: string
+  width: number
+  height: number
+}
+
 export default function Foyer() {
   const navigate = useNavigate()
 
@@ -16,15 +22,24 @@ export default function Foyer() {
 
   const [display, setDisplay] = useState(true)
   const [key, setKey] = useState(false)
+  const [interaction, setInteraction] = useState(false)
+  const [clue, setClue] = useState({ text: '', width: 0, height: 0 })
 
   function handleClick() {
     setDisplay(false)
     setKey(true)
+    interact({ text: 'Key Aquired!', width: 622, height: 224 })
   }
 
   useEffect(() => {
     document.body.style.backgroundImage = "url('/foyer-images/foyer.png')"
   })
+
+  function interact(data: Interaction) {
+    setInteraction(true)
+    setClue(data)
+    setTimeout(() => setInteraction(false), 2000)
+  }
 
   const foyerSound = new Audio(door)
 
@@ -39,7 +54,7 @@ export default function Foyer() {
           volume={volume}
           currentTime={10}
         />
-        {key && (
+        {key ? (
           <button
             className="foyerdoor"
             onClick={() => {
@@ -54,8 +69,34 @@ export default function Foyer() {
               alt="foyer door"
             />
           </button>
+        ) : (
+          <button
+            className="foyerdoor"
+            onClick={() =>
+              interact({
+                text: "It's locked!",
+                width: 311,
+                height: 405,
+              })
+            }
+          >
+            <img
+              className="foyerdoor"
+              src="/foyer-images/foyer-door.png"
+              alt="foyer door"
+            />
+          </button>
         )}
-        <button className="clue cave">
+        <button
+          className="clue cave"
+          onClick={() =>
+            interact({
+              text: 'Looks like a cave or something',
+              width: 911,
+              height: 29,
+            })
+          }
+        >
           <img
             src="/foyer-images/cave.png"
             alt="frame of a dining room"
@@ -64,7 +105,11 @@ export default function Foyer() {
         </button>
         <button
           className="clue keyFrame"
-          onClick={handleClick}
+          onClick={() =>
+            key
+              ? interact({ text: 'A cute couple', width: 529, height: 391 })
+              : handleClick()
+          }
           style={!display ? { display: 'none' } : {}}
         >
           <img
@@ -73,27 +118,61 @@ export default function Foyer() {
             className="keyFrame"
           />
         </button>
-        <button className="clue minnie">
+        <button
+          className="clue minnie"
+          onClick={() =>
+            interact({ text: 'A cute couple', width: 529, height: 391 })
+          }
+        >
           <img
             src="/foyer-images/lucasMinnie.png"
             alt="frame of a lucas and minnie"
             className="minnie"
           />
         </button>
-        <button className="clue piano">
+        <button
+          className="clue piano"
+          onClick={() =>
+            interact({
+              text: 'Seems to be playing by itself',
+              width: 1315,
+              height: 409,
+            })
+          }
+        >
           <img
             src="/foyer-images/piano.png"
             alt="grand piano"
             className="piano"
           />
         </button>
-        <button className="clue pianoChair">
+        <button
+          className="clue pianoChair"
+          onClick={() =>
+            interact({
+              text: 'Nothing of interest here',
+              width: 1098,
+              height: 839,
+            })
+          }
+        >
           <img
             src="/foyer-images/pianoChair.png"
             alt="piano stool"
             className="pianoChair"
           />
         </button>
+        {interaction && (
+          <p
+            style={{
+              position: 'absolute',
+              left: `${clue.width}px`,
+              top: `${clue.height}px`,
+            }}
+          >
+            {clue.text}
+          </p>
+        )}
       </div>
     </>
   )
