@@ -16,6 +16,7 @@ export default function Maze() {
   const [volume, setVolume] = useState(100)
   const [sound, setSound] = useState('')
   const [map, setMap] = useState(false)
+  const [muteAudio, setMuteAudio] = useState(false)
 
   const random = ['running-soundscape', 'running-in-the-woods']
 
@@ -51,6 +52,7 @@ export default function Maze() {
           // eslint-disable-next-line react/no-unknown-property
           volume={volume}
           loop={true}
+          muted={muteAudio}
         />
         <audio
           id="singing"
@@ -59,6 +61,7 @@ export default function Maze() {
           // eslint-disable-next-line react/no-unknown-property
           volume={volume}
           loop={true}
+          muted={muteAudio}
         />
         <audio
           id="singing"
@@ -132,6 +135,7 @@ export default function Maze() {
           </button>
         </div>
       )}
+      <button style={{border:"none", background:"none"}} onClick={()=>{muteAudio ? setMuteAudio(false):setMuteAudio(true)}}><img src={muteAudio? "/mute-on-maze.png":"/mute-off-maze.png"} alt="mute button" style={{position:"absolute", top:"20px", left:"20px", width:"70px", height:"auto"}}/></button>
       </>
     )
   }

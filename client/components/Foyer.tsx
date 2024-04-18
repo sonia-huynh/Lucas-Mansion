@@ -24,6 +24,7 @@ export default function Foyer() {
   const [key, setKey] = useState(false)
   const [interaction, setInteraction] = useState(false)
   const [clue, setClue] = useState({ text: '', width: 0, height: 0 })
+  const [muteAudio, setMuteAudio] = useState(false)
 
   function handleClick() {
     setDisplay(false)
@@ -53,6 +54,7 @@ export default function Foyer() {
           // eslint-disable-next-line react/no-unknown-property
           volume={volume}
           currentTime={10}
+          muted={muteAudio}
         />
         {key ? (
           <button
@@ -186,6 +188,7 @@ export default function Foyer() {
           </p>
         )}
       </div>
+      <button style={{border:"none", background:"none"}} onClick={()=>{muteAudio ? setMuteAudio(false):setMuteAudio(true)}}><img src={muteAudio? "/mute-on-foyer.png":"/mute-off-foyer.png"} alt="mute button" style={{position:"absolute", top:"20px", left:"20px", width:"70px", height:"auto"}}/></button>
     </>
   )
 }
