@@ -53,6 +53,7 @@ export default function Dinner() {
   const [timer, setTimer] = useState(0)
   const [exit, setExit] = useState(false)
   const navigate = useNavigate()
+  const [muteAudio, setMuteAudio] = useState(false)
 
   // paper states
   const [foundPapers, setFoundPapers] = useState([false, false, false])
@@ -163,7 +164,6 @@ export default function Dinner() {
 
   return (
     <div className="dinner">
-      {/* <button><img src="/mute-"/></button> */}
       <audio
         id="dinnerAudio"
         src={'/audio/dinner.mp3'}
@@ -171,6 +171,7 @@ export default function Dinner() {
         loop={true}
         // eslint-disable-next-line react/no-unknown-property
         volume={volume}
+        muted={muteAudio}
       />
       {intro && (
         <div className="popup-overlay">
@@ -521,6 +522,7 @@ export default function Dinner() {
           alt="frame with map"
         />
       </button>
+      <button style={{border:"none", background:"none"}} onClick={()=>{muteAudio ? setMuteAudio(false):setMuteAudio(true)}}><img src={muteAudio? "/mute-on.png":"/mute-off.png"} alt="mute button" style={{position:"absolute", top:"20px", left:"20px", width:"70px", height:"auto"}}/></button>
     </div>
   )
 }
