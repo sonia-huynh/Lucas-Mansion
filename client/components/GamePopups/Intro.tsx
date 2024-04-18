@@ -9,7 +9,7 @@ export default function Intro({ setIntro }: Props) {
       <h2>Welcome!</h2>
       <strong>
         <p>
-          {`After coming to Lucas' mansion for dinner, you have been trapped inside! The room has been locked and you'll need to ecape while racing the clock. 
+          {`After coming to Lucas' mansion for dinner, you have been trapped inside! The room has been locked and you'll need to escape while racing the clock. 
       Hidden inside are puzzles and clues, look for a way out or face your demise!" `}
         </p>
         <br />
