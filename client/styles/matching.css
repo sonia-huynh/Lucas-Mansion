@@ -1,5 +1,5 @@
 #plate-example {
-  background-image: url('match-up/plate-example.png');
+  background-image: url('/match-up/plate-example.png');
 }
 
 .plate-game {
@@ -7,7 +7,7 @@
   width: 90rem;
   padding: 0;
   margin: 0 auto;
-  background-image: url('match-up/plate-game.png');
+  background-image: url('/match-up/plate-game.png');
   background-size: cover;
   background-position: center;
 }

@@ -39,7 +39,7 @@ export default function Gnome({
       {foundPapers[0] === false && (
         <>
           <img
-            src="puzzle-images/exit.png"
+            src="/puzzle-images/exit.png"
             alt="a puzzle pice"
             style={{ height: '130px', marginBottom: '15px' }}
           />

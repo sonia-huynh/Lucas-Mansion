@@ -1,5 +1,5 @@
 .puzzle-table {
-  background-image: url('puzzle-images/console-top.png');
+  background-image: url('/puzzle-images/console-top.png');
   background-size: cover;
   background-position: center;
 }
@@ -88,7 +88,7 @@
   top: 1em;
   left: 22em;
   position: relative;
-  background-image: url('puzzle-images/inventory-board.png');
+  background-image: url('/puzzle-images/inventory-board.png');
   background-size: cover;
   background-position: center;
 }
