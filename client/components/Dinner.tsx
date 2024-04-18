@@ -161,6 +161,7 @@ export default function Dinner() {
 
   return (
     <div className="dinner">
+      {/* <button><img src="/mute-"/></button> */}
       <audio
         id="dinnerAudio"
         src={'/audio/dinner.mp3'}
