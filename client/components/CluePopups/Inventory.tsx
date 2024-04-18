@@ -45,13 +45,13 @@ export default function Inventory({
               >
                 <img
                   className="inventoryimg"
-                  src={'puzzle-images/full_map.png'}
+                  src={'/puzzle-images/full_map.png'}
                   alt={`full map`}
                 />
               </button>
               <img
                 className="inventoryimg spacing"
-                src={'puzzle-images/lantern.png'}
+                src={'/puzzle-images/lantern.png'}
                 alt={`lantern`}
               />
             </div>
@@ -63,14 +63,14 @@ export default function Inventory({
               {rips[0] && (
                 <img
                   className="inventoryimg spacing"
-                  src={`puzzle-images/${mapImgs[0]}`}
+                  src={`/puzzle-images/${mapImgs[0]}`}
                   alt="puzzle piece"
                 />
               )}
               {rips[1] && (
                 <img
                   className="inventoryimg spacing"
-                  src={`puzzle-images/${mapImgs[1]}`}
+                  src={`/puzzle-images/${mapImgs[1]}`}
                   alt="puzzle piece"
                 />
               )}
@@ -78,12 +78,12 @@ export default function Inventory({
                 <>
                   <img
                     className="inventoryimg spacing"
-                    src={`puzzle-images/${mapImgs[2]}`}
+                    src={`/puzzle-images/${mapImgs[2]}`}
                     alt="puzzle piece"
                   />
                   <img
                     className="inventoryimg spacing"
-                    src={'puzzle-images/lantern.png'}
+                    src={'/puzzle-images/lantern.png'}
                     alt={`lantern`}
                   />
                 </>

@@ -55,18 +55,25 @@
 
 .keyFrame {
   position: absolute;
+  opacity: 0;
 }
 
 .keyFrame img {
   position: absolute;
-  left: 732px;
-  top: 190px;
+  left: 734px;
+  top: 192px;
 }
 
 .keyFrame:hover {
   filter: drop-shadow(1px 1px 0.25px black) drop-shadow(-1px 1px 0.25px black)
     drop-shadow(-1px -1px 0.25px black) drop-shadow(1px -1px 0.25px black);
   opacity: 1;
+}
+
+.keyFrame:hover img {
+  position: absolute;
+  left: 732px;
+  top: 190px;
 }
 
 .piano {

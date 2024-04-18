@@ -13,9 +13,9 @@ interface Props {
 }
 
 export default function JigsawPuzzle({ setWin, win }: Props) {
-  const piece1 = 'puzzle-images/entrance.png'
-  const piece2 = 'puzzle-images/corner1.png'
-  const piece3 = 'puzzle-images/exit.png'
+  const piece1 = '/puzzle-images/entrance.png'
+  const piece2 = '/puzzle-images/corner1.png'
+  const piece3 = '/puzzle-images/exit.png'
 
   const [pieces, setPieces] = useState([piece3, piece1, piece2])
   const [rotationStates, setRotationStates] = useState([0, 0, 0])
@@ -91,7 +91,7 @@ export default function JigsawPuzzle({ setWin, win }: Props) {
       <div className="puzzle-container">
         <div className="puzzle-outline">
           <div className="middle">
-            <img src="puzzle-images/middle.png" alt="puzzle piece" />
+            <img src="/puzzle-images/middle.png" alt="puzzle piece" />
           </div>
 
           {!placedPieces[0] ? (
@@ -99,7 +99,7 @@ export default function JigsawPuzzle({ setWin, win }: Props) {
               {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,
             jsx-a11y/no-noninteractive-element-interactions */}
               <img
-                src="puzzle-images/entrance-empty.png"
+                src="/puzzle-images/entrance-empty.png"
                 alt="button-0"
                 onClick={() => handleClickBoard(0)}
                 className={clickedPiece === "" ? "" : "selected"}
@@ -135,7 +135,7 @@ export default function JigsawPuzzle({ setWin, win }: Props) {
             <div className="corner-empty empty-slot">
               {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
               <img
-                src="puzzle-images/corner1-empty.png"
+                src="/puzzle-images/corner1-empty.png"
                 alt="button-1"
                 onClick={() => handleClickBoard(1)}
                 className={clickedPiece === "" ? "" : "selected"}
@@ -170,7 +170,7 @@ export default function JigsawPuzzle({ setWin, win }: Props) {
             <div className="exit-empty empty-slot">
               {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
               <img
-                src="puzzle-images/exit-empty.png"
+                src="/puzzle-images/exit-empty.png"
                 alt="button-2"
                 onClick={() => handleClickBoard(2)}
                 className={clickedPiece === "" ? "" : "selected"}
@@ -207,7 +207,7 @@ export default function JigsawPuzzle({ setWin, win }: Props) {
       {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
       <img
         alt="submit-button"
-        src="puzzle-images/tape.png"
+        src="/puzzle-images/tape.png"
         onClick={checkWin}
         id="submit"
       />
@@ -230,7 +230,7 @@ export default function JigsawPuzzle({ setWin, win }: Props) {
 
                 {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
                 <img
-                  src="puzzle-images/rotate-dark.png"
+                  src="/puzzle-images/rotate-dark.png"
                   alt="rotation-button"
                   className="rotate-button"
                   style={{ height: '20px', width: '20px' }}
