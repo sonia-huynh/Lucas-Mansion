@@ -102,6 +102,7 @@ export default function JigsawPuzzle({ setWin, win }: Props) {
                 src="puzzle-images/entrance-empty.png"
                 alt="button-0"
                 onClick={() => handleClickBoard(0)}
+                className={clickedPiece === "" ? "" : "selected"}
               />
             </div>
           ) : placedPieces[0] === correctAns[0] ? (
@@ -137,6 +138,7 @@ export default function JigsawPuzzle({ setWin, win }: Props) {
                 src="puzzle-images/corner1-empty.png"
                 alt="button-1"
                 onClick={() => handleClickBoard(1)}
+                className={clickedPiece === "" ? "" : "selected"}
               />
             </div>
           ) : placedPieces[1] === correctAns[0] ? (
@@ -171,6 +173,7 @@ export default function JigsawPuzzle({ setWin, win }: Props) {
                 src="puzzle-images/exit-empty.png"
                 alt="button-2"
                 onClick={() => handleClickBoard(2)}
+                className={clickedPiece === "" ? "" : "selected"}
               />
             </div>
           ) : placedPieces[2] === correctAns[0] ? (
