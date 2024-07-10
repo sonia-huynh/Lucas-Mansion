@@ -1,5 +1,9 @@
 # 🏘️ Lucas' Mansion
 
+
+https://github.com/sonia-huynh/Lucas-Mansion/assets/155363911/b4ccb321-6194-493a-a958-f93759eb9086
+
+
 ### 🐭 Who is Lucas???
 
 Lucas' Mansion was a project my team and I created while at Dev Academy, as our final group project. Our goal was to develop a virtual point and click escape room within a web browser, complete with engaging puzzles and games.
